@@ -1,14 +1,16 @@
-import { useState } from 'react'
-import './App.css'
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Menu from "./components/common/Menu";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      
-    </>
-  )
+    <BrowserRouter>
+      <Menu></Menu>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

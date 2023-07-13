@@ -8,3 +8,12 @@
   flex-grow: 1;
   overflow: hidden;
 }
+
+.navbar-cristal {
+  background-color: lightgrey; 
+  backdrop-filter: blur(10px); 
+}
+
+.navbar-cristal .nav-link:hover {
+  color: goldenrod;
+}
