@@ -10,10 +10,36 @@
 }
 
 .navbar-cristal {
-  background-color: lightgrey; 
+  background-color: lightslategray; 
   backdrop-filter: blur(10px); 
 }
 
 .navbar-cristal .nav-link:hover {
   color: goldenrod;
 }
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: goldenrod;
+}
+
+.footer-icon-link {
+  text-decoration: none;
+}
+
+.footer-icon {
+  fill: #b8860b;
+}
+
+.footer-icon:hover {
+  fill: azure;
+}
+
+.footer-text {
+  margin-left: 5px;
+}
+
