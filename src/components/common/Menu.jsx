@@ -11,7 +11,7 @@ const Menu = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <NavLink exact className='nav-item nav-link mx-5' activeClassName='active' to={'/'}>Inicio</NavLink>
-            <NavLink className='nav-item nav-link mx-5' activeClassName='active' to={'*'}>Chefs</NavLink>
+            <NavLink className='nav-item nav-link mx-3' activeClassName='active' to={'*'}>Chefs</NavLink>
             <NavLink className='nav-item nav-link mx-5' activeClassName='active' to={'*'}>Sucursales</NavLink>
             <NavLink className='nav-item nav-link me-5' activeClassName='active' to={'/administrador'}>Administrador</NavLink>
             <Button variant="dark">Cerrar Sesion</Button>
