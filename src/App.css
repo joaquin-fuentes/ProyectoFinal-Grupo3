@@ -77,3 +77,8 @@
     transform: translateX(-50%);
 
   }
+
+.fondo-tabla
+{
+  background-color: #8c7851;
+}
