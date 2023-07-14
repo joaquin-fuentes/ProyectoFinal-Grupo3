@@ -9,6 +9,8 @@
   overflow: hidden;
 }
 
+/*Navbbar*/
+
 .navbar-cristal {
   background-color: lightslategray; 
   backdrop-filter: blur(10px); 
@@ -17,6 +19,8 @@
 .navbar-cristal .nav-link:hover {
   color: goldenrod;
 }
+
+/*Footer*/
 
 .footer-link {
   color: white;
@@ -43,3 +47,33 @@
   margin-left: 5px;
 }
 
+/*Error 404*/
+
+.error404-img {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  }
+
+  .error404-texto {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: bolder;
+    color: #000000;
+    z-index: 1;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  .error404-contenido {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+  }
