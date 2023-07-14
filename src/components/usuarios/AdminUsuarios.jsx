@@ -1,24 +1,23 @@
 import React from 'react';
+import ItemUsuario from './ItemUsuario';
 import { Container, Table } from 'react-bootstrap';
-import ItemPedido from './ItemPedido';
-const AdminPedidos = () => {
+const AdminUsuario = () => {
     return (
         <Container className='mainSection my-4'>
-        <h1 className='display-4'>Administrador de Pedidos</h1>
+        <h1 className='display-4'>Administrador de Usuarios</h1>
         <hr></hr>
         <section className='table-responsive'>
             <Table bordered hover className='table-dark'>
                 <thead>
                     <tr>
-                        <th>Nombre del Cliente</th>
-                        <th>Pedido</th>
-                        <th>Cantidad</th>
-                        <th>Total</th>
+                        <th>Nombre de Usuario</th>
+                        <th>Email</th>
+                        <th>Estado de la Cuenta</th>
                         <th>Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <ItemPedido></ItemPedido>
+                    <ItemUsuario></ItemUsuario>
                 </tbody>
             </Table>
         </section>
@@ -26,4 +25,4 @@ const AdminPedidos = () => {
     );
 };
 
-export default AdminPedidos;
+export default AdminUsuario;
