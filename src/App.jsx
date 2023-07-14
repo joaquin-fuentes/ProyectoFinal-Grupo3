@@ -6,6 +6,7 @@ import Error404 from "./components/views/Error404"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import AdminProductos from "./components/productos/AdminProductos";
+import AdminPedidos from "./components/pedidos/AdminPedidos";
 
 
 
@@ -17,6 +18,7 @@ function App() {
       <Routes>
       <Route path="/404" element={<Error404></Error404>}></Route>
       <Route path="/administradorProductos" element={<AdminProductos></AdminProductos>}></Route> 
+      <Route path="/administradorPedidos" element={<AdminPedidos></AdminPedidos>}></Route> 
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
