@@ -87,3 +87,23 @@
   .sobreNosotros-card {
     justify-content: center;
   }
+
+
+  /* Pedido */
+  .contenedorImgTabla{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+  }
+
+  .imgTabla{
+    width: 80px;
+    margin: 10px;
+    height: 100%;
+  }
+  .contenedorCantidad{
+    height: 100px;
+  }
+  

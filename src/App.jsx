@@ -10,7 +10,7 @@ import AdminProductos from "./components/productos/AdminProductos";
 import AdminPedidos from "./components/pedidos/AdminPedidos";
 import AdminUsuarios from "./components/usuarios/AdminUsuarios";
 import DetalleProducto from "./components/views/DetalleProducto";
-
+import Pedido from "./components/views/Pedido";
 
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
       <Route path="/404" element={<Error404></Error404>}></Route> 
       <Route path="/AcercaDe" element={<SobreNosotros></SobreNosotros>}></Route> 
       <Route exact path="/detalleProducto/:id" element={<DetalleProducto></DetalleProducto>} ></Route>
+      <Route exact path="/pedido" element={<Pedido></Pedido>} ></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
