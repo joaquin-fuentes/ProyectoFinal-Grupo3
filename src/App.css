@@ -50,6 +50,20 @@
   animation: pulso 2s infinite;
 }
 
+.categoria{
+  width: 170px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--detalles);
+  align-items: center;
+  text-decoration: none;
+  color: #fafafa;
+}
+
+.categoria span{
+  font-size: 1.2rem;
+}
+
 /*Footer*/
 
 .footer-link {
