@@ -13,7 +13,7 @@ const Footer = () => {
             <h5>JSONGourmet</h5>
             <ul className="list-unstyled">
               <li><Link to="/" className="footer-link">Inicio</Link></li>
-              <li><Link to="/about" className="footer-link">Acerca de</Link></li>
+              <li><Link to="/AcercaDe" className="footer-link">Acerca de</Link></li>
               <li><Link to="/404" className="footer-link">Socios</Link></li>
             </ul>
           </Col>
