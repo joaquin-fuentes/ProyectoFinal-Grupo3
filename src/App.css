@@ -82,3 +82,8 @@
 {
   background-color: #8c7851;
 }
+  /*Sobre Nosotros*/
+
+  .sobreNosotros-card {
+    justify-content: center;
+  }
