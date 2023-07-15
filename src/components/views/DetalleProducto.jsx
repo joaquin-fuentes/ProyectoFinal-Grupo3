@@ -31,7 +31,7 @@ const DetalleProducto = () => {
                 </Col>
             </Row>
             <Breadcrumb>
-                <Breadcrumb.Item href="#">Volver a la página principal</Breadcrumb.Item>
+                <Breadcrumb.Item href="/">Volver a la página principal</Breadcrumb.Item>
             </Breadcrumb>
         </Container>
     );
