@@ -77,3 +77,9 @@
     transform: translateX(-50%);
 
   }
+
+  /*Sobre Nosotros*/
+
+  .sobreNosotros-card {
+    justify-content: center;
+  }
