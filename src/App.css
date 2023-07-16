@@ -1,3 +1,7 @@
+*{
+  --detalles: #8c7851;
+  --texto-secundario: #716040;
+}
 #root{
   display: flex;
   flex-direction: column;
@@ -18,6 +22,66 @@
 
 .navbar-cristal .nav-link:hover {
   color: goldenrod;
+}
+
+/*Landing Page*/
+
+/* .banner-image {
+  background: linear-gradient(to right, #161616 65%, #C0FF0D 40%);
+} */
+.banner{
+  height: 100vh;
+}
+#banner-image{
+  display:none;
+}
+
+.texto-landing h1,p{
+  color: var(--texto-secundario);
+}
+
+#btn-landing{
+  text-decoration: none;
+  color: #fafafa;
+  background-color: var(--detalles);
+  border: none;
+}
+
+.icono-abajo-landing{
+  margin-right: 0em;
+  animation: pulso 2s infinite;
+}
+
+.categoria{
+  width: 170px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--detalles);
+  align-items: center;
+  text-decoration: none;
+  color: #fafafa;
+}
+
+.categoria span{
+  font-size: 1.2rem;
+}
+
+.buscador{
+  width: 100%;
+}
+
+#btn-buscador{
+  background-color: var(--detalles);
+  border: none;
+}
+
+#btn-comida{
+  text-decoration: none;
+  color: #fafafa;
+}
+
+#precio-comida{
+  color: #f25042;
 }
 
 /*Footer*/
@@ -103,7 +167,36 @@
     margin: 10px;
     height: 100%;
   }
+
   .contenedorCantidad{
     height: 100px;
   }
   
+  #btn-comida{
+    margin: 0 auto;
+    background-color: var(--detalles);
+    border: none;
+  }
+
+  @keyframes pulso {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @media (min-width: 769px) {
+    #banner-image{
+      display:block;
+    }
+
+    .buscador{
+      width: 50%;
+    }
+    
+  }
