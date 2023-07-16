@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Breadcrumb, Table, Button } from "react-bootstrap"
-import { BsFillTrashFill } from "react-icons/Bs"
+import { BsFillTrashFill } from "react-icons/bs"
 
 const Pedido = () => {
     return (
