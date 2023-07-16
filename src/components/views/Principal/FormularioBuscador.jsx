@@ -1,5 +1,5 @@
 import { Container, Form, Button } from "react-bootstrap";
-import { BsSearch } from "react-icons/bs/index.esm";
+import { BsSearch } from "react-icons/bs";
 
 const FormularioBuscador = () => {
   return (

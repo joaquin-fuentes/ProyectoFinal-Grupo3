@@ -1,6 +1,6 @@
 import { Image, Container } from "react-bootstrap";
 import imgLanding from "../../../assets/banner.png";
-import { BsChevronCompactDown } from "react-icons/bs/index.esm";
+import { BsChevronCompactDown } from "react-icons/bs";
 
 const LandingPage = () => {
   return (
