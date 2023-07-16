@@ -79,6 +79,11 @@
   text-decoration: none;
   color: #fafafa;
 }
+
+#precio-comida{
+  color: #f25042;
+}
+
 /*Footer*/
 
 .footer-link {

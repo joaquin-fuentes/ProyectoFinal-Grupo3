@@ -21,6 +21,7 @@ const Comida = () => {
                 lead-in to additional content. This content is a little bit
                 longer.
               </p>
+              <h5 className="card-title" id="precio-comida">$ 3.500</h5>
               <Link id="btn-comida" className="btn">
                 Agregar al pedido
               </Link>
