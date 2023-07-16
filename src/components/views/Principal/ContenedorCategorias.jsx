@@ -1,16 +1,22 @@
-import { Container } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import Categoria from "./Categoria";
 
 const ContenedorCategorias = () => {
-    return (
-        <Container fluid className="d-flex justify-content-between">
+  return (
+    <section className="table-responsive">
+      <Table>
+        <thead>
+          <tr>
             <Categoria categoria="Categoria"></Categoria>
             <Categoria categoria="Categoria"></Categoria>
             <Categoria categoria="Categoria"></Categoria>
             <Categoria categoria="Categoria"></Categoria>
             <Categoria categoria="Categoria"></Categoria>
-        </Container>
-    );
+          </tr>
+        </thead>
+      </Table>
+    </section>
+  );
 };
 
 export default ContenedorCategorias;

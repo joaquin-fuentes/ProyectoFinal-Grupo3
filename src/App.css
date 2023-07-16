@@ -64,6 +64,11 @@
   font-size: 1.2rem;
 }
 
+#btn-buscador{
+  background-color: var(--detalles);
+  border: none;
+}
+
 /*Footer*/
 
 .footer-link {
@@ -167,4 +172,9 @@
     #banner-image{
       display:block;
     }
+    
+    .buscador{
+      width: 50%;
+    }
+    
   }
