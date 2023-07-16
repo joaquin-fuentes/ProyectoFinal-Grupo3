@@ -1,4 +1,4 @@
-import { Image, Container, Button } from "react-bootstrap";
+import { Image, Container } from "react-bootstrap";
 import imgLanding from "../../../assets/banner.png";
 import { BsChevronCompactDown } from "react-icons/bs/index.esm";
 
@@ -13,10 +13,10 @@ const LandingPage = () => {
         <p className="display-6">Menu especial!</p>
         <p>Disfuta de las mejores comidas y en el momento que quieras!</p>
         <div className="text-center ms-lg-5">
-          <Button className="w-100" id="btn-landing">
+          <a className="w-100 btn" id="btn-landing" href="#categoria">
             Elige ahora!  
           <BsChevronCompactDown className="icono-abajo-landing ms-2"></BsChevronCompactDown>
-          </Button>
+          </a>
         </div>
       </div>
     </Container>

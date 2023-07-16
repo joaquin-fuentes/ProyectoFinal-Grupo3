@@ -3,7 +3,7 @@ import Categoria from "./Categoria";
 
 const ContenedorCategorias = () => {
   return (
-    <section className="table-responsive">
+    <section className="table-responsive" id="categoria">
       <Table>
         <thead>
           <tr>

@@ -41,6 +41,8 @@
 }
 
 #btn-landing{
+  text-decoration: none;
+  color: #fafafa;
   background-color: var(--detalles);
   border: none;
 }
