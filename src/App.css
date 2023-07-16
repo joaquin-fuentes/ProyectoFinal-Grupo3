@@ -64,11 +64,19 @@
   font-size: 1.2rem;
 }
 
+.buscador{
+  width: 100%;
+}
+
 #btn-buscador{
   background-color: var(--detalles);
   border: none;
 }
 
+#btn-comida{
+  text-decoration: none;
+  color: #fafafa;
+}
 /*Footer*/
 
 .footer-link {
@@ -152,10 +160,17 @@
     margin: 10px;
     height: 100%;
   }
+
   .contenedorCantidad{
     height: 100px;
   }
   
+  #btn-comida{
+    margin: 0 auto;
+    background-color: var(--detalles);
+    border: none;
+  }
+
   @keyframes pulso {
     0% {
       transform: scale(1);
@@ -172,7 +187,7 @@
     #banner-image{
       display:block;
     }
-    
+
     .buscador{
       width: 50%;
     }
