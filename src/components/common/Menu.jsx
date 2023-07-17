@@ -16,6 +16,7 @@ const Menu = () => {
             <NavLink className='nav-item nav-link' to={'/administrador'}>Administrador</NavLink>
             <Button variant="dark">Cerrar Sesion</Button>
             <NavLink className='nav-item nav-link'to={'/login'}>Iniciar sesion</NavLink>
+            <NavLink className='nav-item nav-link'to={'/registro'}>Registrarse</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
