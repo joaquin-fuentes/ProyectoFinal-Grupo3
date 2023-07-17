@@ -11,6 +11,7 @@ import AdminUsuarios from "./components/usuarios/AdminUsuarios";
 import DetalleProducto from "./components/views/DetalleProducto";
 import Pedido from "./components/views/Pedido";
 import PagPrincipal from "./components/views/Principal/PagPrincipal";
+import RegistroUsuarios from "./components/views/RegistroUsuarios";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Route path="/AcercaDe" element={<SobreNosotros></SobreNosotros>}></Route> 
       <Route exact path="/detalleProducto/:id" element={<DetalleProducto></DetalleProducto>} ></Route>
       <Route exact path="/pedido" element={<Pedido></Pedido>} ></Route>
+      <Route exact path="/registro" element={<RegistroUsuarios></RegistroUsuarios>} ></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
