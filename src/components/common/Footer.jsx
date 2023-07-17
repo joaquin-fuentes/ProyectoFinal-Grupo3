@@ -5,6 +5,9 @@ import { FaEnvelope, FaFacebook, FaInstagram, FaPhoneAlt, FaTiktok, FaTwitter, F
 import '../../App.css';
 
 const Footer = () => {
+
+  const urlGoogle = "https://www.google.com/maps/search/?api=1&query=General+Paz+576%2C+T4000+San+Miguel+de+Tucumán%2C+Tucumán";
+
   return (
     <footer className="bg-dark text-light py-4">
       <Container>
@@ -65,17 +68,16 @@ const Footer = () => {
               </div>
               <li className="pt-2">
                 <FaPhoneAlt className="text-secondary" />
-                <span className="footer-text">+123456789</span>
+                <span className="footer-text">+038142567890</span>
               </li>
               <li className="my-3">
                 <FaEnvelope className="text-white" />
-                <span className="footer-text">example@example.com</span>
+                <Link to="/404" className="footer-text footer-link">JSON.Gourmet@gmail.com</Link>
               </li>
               <li>
                 <FaLocationArrow className="text-warning" />
-                <span className="footer-text">Dirección Ejemplo</span>
+                <a href={urlGoogle} target="_blank" rel="noopener noreferrer" className="footer-text footer-link">General Paz 576, T4000 San Miguel de Tucumán, Tucumán</a>
               </li>
-              <div className="map">Mapa interactivo de Google Maps aquí</div> 
             </ul>
           </Col>
         </Row>
