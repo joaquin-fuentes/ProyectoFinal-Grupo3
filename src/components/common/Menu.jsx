@@ -1,4 +1,4 @@
-import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { Navbar, Container, Nav, Button, NavDropdown } from "react-bootstrap";
 import { Link, NavLink } from 'react-router-dom';
 import '../../App.css';
 
@@ -13,7 +13,11 @@ const Menu = () => {
             <NavLink className='nav-item nav-link' to={'/'}>Inicio</NavLink>
             <NavLink className='nav-item nav-link' to={'/AcercaDe'}>Chefs</NavLink>
             <NavLink className='nav-item nav-link' to={'/404'}>Sucursales</NavLink>
-            <NavLink className='nav-item nav-link' to={'/administrador'}>Administrador</NavLink>
+            <NavDropdown title="Administrador" id="basic-nav-dropdown">
+              <NavDropdown.Item as={NavLink} to={'/administrador'}>Productos</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to={'/administrador/usuarios'}>Usuarios</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to={'/administrador/pedidos'}>Pedidos</NavDropdown.Item>
+            </NavDropdown>
             <Button variant="dark">Cerrar Sesion</Button>
             <NavLink className='nav-item nav-link'to={'/login'}>Iniciar sesion</NavLink>
           </Nav>
