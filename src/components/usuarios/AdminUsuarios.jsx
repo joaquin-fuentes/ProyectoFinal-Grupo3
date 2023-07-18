@@ -1,7 +1,7 @@
 import React from "react";
 import ItemUsuario from "./ItemUsuario";
 import { Container, Table } from "react-bootstrap";
-const AdminUsuario = () => {
+const AdminUsuarios = () => {
   return (
     <Container className="mainSection my-4">
       <h1 className="display-4">Administrador de Usuarios</h1>
@@ -25,4 +25,4 @@ const AdminUsuario = () => {
   );
 };
 
-export default AdminUsuario;
+export default AdminUsuarios;

@@ -8,7 +8,7 @@ const AdminProductos = () => {
     <Container className="mainSection my-4">
       <h1 className="display-4">Administrador de Productos</h1>
       <hr></hr>
-      <Link to={'/administradorProductos/crear'}><Button className="btn btn-primary mb-3 rounded-pill">Agregar Producto</Button></Link>
+      <Link to={'/administrador/crear'}><Button className="btn btn-primary mb-3 rounded-pill">Agregar Producto</Button></Link>
       <section className="table-responsive">
         <Table bordered hover className="table-dark">
           <thead>
