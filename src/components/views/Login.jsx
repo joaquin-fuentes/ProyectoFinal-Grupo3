@@ -1,4 +1,7 @@
 import React from 'react';
+import Container from 'react-bootstrap/esm/Container';
+import {Card, Form, Button } from 'react-bootstrap';
+import '../../Registro.css';
 
 const Login = () => {
     return (
