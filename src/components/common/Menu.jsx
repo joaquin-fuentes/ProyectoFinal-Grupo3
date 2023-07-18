@@ -1,5 +1,6 @@
 import { Navbar, Container, Nav, Button, NavDropdown } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/logo.png"
 import "../../App.css";
 
 const Menu = () => {
@@ -7,7 +8,7 @@ const Menu = () => {
     <Navbar className="navbar-cristal pb-4" variant="dark" expand="lg">
       <Container>
         <Navbar.Brand as={Link} to={"/"}>
-          JSONGourmet
+        <img src={logo} alt="Logo JSON" className="logoJSON" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-gourmet" />
         <Navbar.Collapse id="navbar-gourmet">
