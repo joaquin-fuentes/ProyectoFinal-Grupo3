@@ -13,7 +13,7 @@ const ItemProducto = () => {
       <td>
         <Link
           className="btn btn-warning mb-2 mb-md-0"
-          to={`/administradorProductos/editar`}
+          to={`/administrador/editar`}
         >
           <FaPenToSquare className="fs-4"></FaPenToSquare>
         </Link>
