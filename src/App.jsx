@@ -29,6 +29,7 @@ function App() {
       <Route exact path="/detalleProducto/:id" element={<DetalleProducto></DetalleProducto>} ></Route>
       <Route exact path="/pedido" element={<Pedido></Pedido>} ></Route>
       <Route exact path="/registro" element={<RegistroUsuarios></RegistroUsuarios>} ></Route>
+      <Route exact path="/login" element={<Login></Login>} ></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
