@@ -12,6 +12,7 @@ import DetalleProducto from "./components/views/DetalleProducto";
 import Pedido from "./components/views/Pedido";
 import PagPrincipal from "./components/views/Principal/PagPrincipal";
 import RegistroUsuarios from "./components/views/RegistroUsuarios";
+import Login from "./components/views/Login";
 
 
 function App() {
