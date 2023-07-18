@@ -24,6 +24,10 @@
   color: goldenrod;
 }
 
+.logoJSON{
+  width: 100px;
+  height: auto;
+}
 /*Landing Page*/
 
 /* .banner-image {
@@ -142,16 +146,20 @@
 
   }
 
-.fondo-tabla
-{
-  background-color: #8c7851;
-}
   /*Sobre Nosotros*/
 
   .sobreNosotros-card {
     justify-content: center;
   }
 
+  .brandJSON{
+    width: 700px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 
   /* Pedido */
   .contenedorImgTabla{
@@ -200,3 +208,12 @@
     }
     
   }
+
+textarea{
+  resize: none !important;
+}
+
+.admin-formulario
+{
+  background-color: #b6b1a6;
+}

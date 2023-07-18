@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Table } from "react-bootstrap";
 import ItemPedido from "./ItemPedido";
 

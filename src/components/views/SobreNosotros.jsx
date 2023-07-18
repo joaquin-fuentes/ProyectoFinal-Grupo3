@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import brand from "../../assets/brand.png"
 import '../../App.css';
 
 const AcercaDe = () => {
@@ -19,6 +20,7 @@ const AcercaDe = () => {
         <p className="text-center fw-semibold">
           En nuestra página web, los usuarios podrán explorar nuestro menú, conocer más sobre nuestros chefs y reservar un pedido en línea.  ¡Esperamos darles la bienvenida y hacer que su experiencia culinaria sea unica e inigualable!
         </p>
+        <img src={brand} alt="Logo JSON" className="brandJSON" />
       </section>
       <hr />
       <section className="bg-body-tertiary">

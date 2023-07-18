@@ -13,6 +13,7 @@ import Pedido from "./components/views/Pedido";
 import PagPrincipal from "./components/views/Principal/PagPrincipal";
 import RegistroUsuarios from "./components/views/RegistroUsuarios";
 import Login from "./components/views/Login";
+import RutasAdministrador from "./components/routes/RutasAdministrador";
 
 
 function App() {
@@ -22,9 +23,7 @@ function App() {
       <Menu></Menu>
       <Routes>
       <Route path="/" element={<PagPrincipal></PagPrincipal>}></Route> 
-      <Route path="/administradorProductos" element={<AdminProductos></AdminProductos>}></Route> 
-      <Route path="/administradorPedidos" element={<AdminPedidos></AdminPedidos>}></Route> 
-      <Route path="/administradorUsuarios" element={<AdminUsuarios></AdminUsuarios>}></Route> 
+      <Route exact path="/administrador/*" element={<RutasAdministrador></RutasAdministrador>}></Route>
       <Route path="/404" element={<Error404></Error404>}></Route> 
       <Route path="/AcercaDe" element={<SobreNosotros></SobreNosotros>}></Route> 
       <Route exact path="/detalleProducto/:id" element={<DetalleProducto></DetalleProducto>} ></Route>
