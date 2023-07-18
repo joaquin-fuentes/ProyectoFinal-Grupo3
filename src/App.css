@@ -142,10 +142,6 @@
 
   }
 
-.fondo-tabla
-{
-  background-color: #8c7851;
-}
   /*Sobre Nosotros*/
 
   .sobreNosotros-card {
@@ -200,3 +196,12 @@
     }
     
   }
+
+textarea{
+  resize: none !important;
+}
+
+.admin-formulario
+{
+  background-color: #b6b1a6;
+}
