@@ -4,6 +4,7 @@ import CrearProducto from "../productos/CrearProducto";
 import AdminUsuarios from "../usuarios/AdminUsuarios";
 import AdminPedidos from "../pedidos/AdminPedidos";
 import EditarProducto from "../productos/EditarProducto";
+import EditarPedido from "../pedidos/EditarPedido";
 
 const RutasAdministrador = () => {
     return (
@@ -13,6 +14,7 @@ const RutasAdministrador = () => {
             <Route exact path="/crear" element={<CrearProducto></CrearProducto>}></Route>
             <Route exact path="/editar" element={<EditarProducto></EditarProducto>}></Route>
             <Route path="/pedidos" element={<AdminPedidos></AdminPedidos>}></Route> 
+            <Route path="/pedidos/editar/*" element={<EditarPedido></EditarPedido>}></Route> 
             <Route path="/usuarios" element={<AdminUsuarios></AdminUsuarios>}></Route>
             </Routes>
         </>
