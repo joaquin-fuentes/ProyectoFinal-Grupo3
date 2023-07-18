@@ -1,4 +1,3 @@
-import React from "react";
 import ItemUsuario from "./ItemUsuario";
 import { Container, Table } from "react-bootstrap";
 const AdminUsuarios = () => {
