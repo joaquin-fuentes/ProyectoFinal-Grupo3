@@ -1,11 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Libre+Baskerville&display=swap');
+
 *{
   --detalles: #8c7851;
   --texto-secundario: #716040;
+  font-family: 'Libre Baskerville', serif;
 }
 #root{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+
+
+h1, h2{
+  font-family: 'Castoro Titling', cursive;
 }
 
 .mainSection{
