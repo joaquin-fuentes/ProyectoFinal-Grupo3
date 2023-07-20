@@ -1,5 +1,7 @@
 import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { crearProducto } from "../../helpers/queries";
+import Swal from "sweetalert2";
 
 const CrearProducto = () => {
   const {
@@ -8,11 +10,30 @@ const CrearProducto = () => {
     formState: { errors },
     reset,
   } = useForm();
+
+  const onSubtmit = (productoNuevo) => {
+    crearProducto(productoNuevo).then((respuesta)  => {
+      if(respuesta.status === 201)
+      {
+        Swal.fire(
+          'Producto creado',
+          `El producto ${productoNuevo.nombreProducto} fue creado`,
+          'success');
+          reset()
+      }else{
+        Swal.fire(
+          'Error',
+          `El producto no pudo ser creado, intentelo más tarde`,
+          'error');
+      }
+    })
+  }
+
   return (
     <Container className="mainSection my-4 border rounded border-5 border-secondary admin-formulario text-white">
       <h1 className="display-4 text-center">Crear Producto</h1>
       <hr />
-      <Form onSubmit={handleSubmit()}>
+      <Form onSubmit={handleSubmit(onSubtmit)}>
         <Form.Group className="mb-3" controlId="formProducto">
           <Form.Label className="fs-4">Producto*</Form.Label>
           <Form.Control
