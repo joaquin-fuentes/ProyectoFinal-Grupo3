@@ -5,9 +5,6 @@ import Footer from "./components/common/Footer";
 import Error404 from "./components/views/Error404"
 import SobreNosotros from "./components/views/SobreNosotros"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AdminProductos from "./components/productos/AdminProductos";
-import AdminPedidos from "./components/pedidos/AdminPedidos";
-import AdminUsuarios from "./components/usuarios/AdminUsuarios";
 import DetalleProducto from "./components/views/DetalleProducto";
 import Pedido from "./components/views/Pedido";
 import PagPrincipal from "./components/views/Principal/PagPrincipal";
