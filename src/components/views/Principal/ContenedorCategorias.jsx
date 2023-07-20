@@ -12,6 +12,7 @@ const ContenedorCategorias = () => {
             <Categoria categoria="Categoria"></Categoria>
             <Categoria categoria="Categoria"></Categoria>
             <Categoria categoria="Categoria"></Categoria>
+            <Categoria categoria="Categoria"></Categoria>
           </tr>
         </thead>
       </Table>
