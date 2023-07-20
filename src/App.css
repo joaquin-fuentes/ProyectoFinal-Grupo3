@@ -37,6 +37,33 @@ h1, h2{
   width: 100px;
   height: auto;
 }
+
+.btn-floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: goldenrod;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.btn-floating.show-button {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 /*Landing Page*/
 
 /* .banner-image {
@@ -66,7 +93,7 @@ h1, h2{
 }
 
 .categoria{
-  width: 160px;
+  width: 170px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   background-color: var(--detalles);

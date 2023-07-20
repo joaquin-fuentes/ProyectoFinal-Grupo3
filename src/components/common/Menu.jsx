@@ -1,11 +1,31 @@
+import React, { useEffect } from "react"
 import { Navbar, Container, Nav, Button, NavDropdown } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png"
+import { FaArrowUp, FaShoppingCart } from "react-icons/fa";
 import "../../App.css";
 
 const Menu = () => {
+
+  const handleScroll = () => {
+    const button = document.getElementById("boton-arriba");
+    if (window.scrollY > 100) {
+      button.classList.add("show-button");
+    } else {
+      button.classList.remove("show-button");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Navbar className="navbar-cristal pb-4" variant="dark" expand="lg">
+    <>
+    <Navbar className="navbar-cristal" variant="dark" expand="lg">
       <Container>
         <Navbar.Brand as={Link} to={"/"}>
         <img src={logo} alt="Logo JSON" className="logoJSON" />
@@ -43,11 +63,16 @@ const Menu = () => {
 
             <NavLink className='nav-item nav-link'to={'/login'}>Iniciar sesion</NavLink>
             <NavLink className='nav-item nav-link'to={'/registro'}>Registrarse</NavLink>
+            <NavLink className='nav-item nav-link'to={'/carrito'}><FaShoppingCart className="fs-4"/></NavLink>
      
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    <a href="#" className="btn-floating" id="boton-arriba">
+    <FaArrowUp />
+  </a>
+  </>
   );
 };
 
