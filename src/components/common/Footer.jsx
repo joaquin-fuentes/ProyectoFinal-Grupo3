@@ -34,7 +34,7 @@ const Footer = () => {
             <ul className="list-unstyled">
               <li><Link to="/login" className="footer-link">Iniciar Sesión</Link></li>
               <li><Link to="/registro" className="footer-link">Registrarse</Link></li>
-              <li><Link to="/cart" className="footer-link">Mi Carrito</Link></li>
+              <li><Link to="/cart" className="footer-link">Mis Productos</Link></li>
             </ul>
           </Col>
           <Col md={3}>

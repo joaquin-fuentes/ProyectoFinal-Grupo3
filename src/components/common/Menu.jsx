@@ -19,9 +19,6 @@ const Menu = () => {
             <NavLink className="nav-item nav-link" to={"/AcercaDe"}>
               Chefs
             </NavLink>
-            <NavLink className="nav-item nav-link" to={"/404"}>
-              Sucursales
-            </NavLink>
             <NavDropdown title="Administrador" id="admin-dropdown">
               <NavDropdown.Item
                 as={NavLink}
