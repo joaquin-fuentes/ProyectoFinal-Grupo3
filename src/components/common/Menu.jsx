@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { Navbar, Container, Nav, Button, NavDropdown } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png"
-import { FaArrowUp } from "react-icons/fa";
+import { FaArrowUp, FaShoppingCart } from "react-icons/fa";
 import "../../App.css";
 
 const Menu = () => {
@@ -63,6 +63,7 @@ const Menu = () => {
 
             <NavLink className='nav-item nav-link'to={'/login'}>Iniciar sesion</NavLink>
             <NavLink className='nav-item nav-link'to={'/registro'}>Registrarse</NavLink>
+            <NavLink className='nav-item nav-link'to={'/carrito'}><FaShoppingCart className="fs-4"/></NavLink>
      
           </Nav>
         </Navbar.Collapse>
