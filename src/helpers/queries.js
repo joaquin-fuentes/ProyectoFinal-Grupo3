@@ -31,7 +31,7 @@ export const login = async (usuario) => {
 
 export const consultaCrearUsuario = async(usuario)=>{
     try {
-        const respuesta = await fetch(, {
+        const respuesta = await fetch(URL_USUARIO, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
