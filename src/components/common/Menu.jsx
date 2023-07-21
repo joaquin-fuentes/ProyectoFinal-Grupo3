@@ -53,41 +53,42 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-gourmet" />
         <Navbar.Collapse id="navbar-gourmet">
-          <Nav className="ms-auto">
-            <NavLink className="nav-item nav-link" to={"/"}>
-              Inicio
-            </NavLink>
-            <NavLink className="nav-item nav-link" to={"/AcercaDe"}>
-              Chefs
-            </NavLink>
-            <NavLink className='nav-item nav-link'to={'/carrito'}><FaShoppingCart className="fs-4"/></NavLink>
-                                
-            {usuarioLogueado.id ? (
-                <>
-                  <NavDropdown title="Administrador" id="admin-dropdown">
-                    <NavDropdown.Item as={NavLink} to={"/administrador/productos"}>
-                      Productos
-                    </NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to={"/administrador/usuarios"}>
-                      Usuarios
-                    </NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to={"/administrador/pedidos"}>
-                      Pedidos
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                  <Button variant="dark" onClick={logout}>
-                    Cerrar Sesion
-                  </Button>
-                </>
-              ) : (
-                <>
-                  <NavLink className='nav-item nav-link' to={'/login'}>Iniciar sesion</NavLink>
-                  <NavLink className='nav-item nav-link' to={'/registro'}>Registrarse</NavLink>
-                </>
-              )}
-            
-          </Nav>
-        </Navbar.Collapse>
+    <Nav className="ms-auto">
+      <NavLink className="nav-item nav-link" to={"/"}>
+        Inicio
+      </NavLink>
+      <NavLink className="nav-item nav-link" to={"/AcercaDe"}>
+        Chefs
+      </NavLink>
+      <NavLink className='nav-item nav-link'to={'/carrito'}><FaShoppingCart className="fs-4"/></NavLink>
+                              
+      {usuarioLogueado.id ? (
+        <>
+          {usuarioLogueado.isAdmin ? ( // Check if the user is an admin
+            <NavDropdown title="Administrador" id="admin-dropdown">
+              <NavDropdown.Item as={NavLink} to={"/administrador/productos"}>
+                Productos
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to={"/administrador/usuarios"}>
+                Usuarios
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to={"/administrador/pedidos"}>
+                Pedidos
+              </NavDropdown.Item>
+            </NavDropdown>
+          ) : null}
+          <Button variant="dark" onClick={logout}>
+            Cerrar Sesion
+          </Button>
+        </>
+      ) : (
+        <>
+          <NavLink className='nav-item nav-link' to={'/login'}>Iniciar sesion</NavLink>
+          <NavLink className='nav-item nav-link' to={'/registro'}>Registrarse</NavLink>
+        </>
+      )}
+    </Nav>
+  </Navbar.Collapse>
       </Container>
     </Navbar>
     <a href="#" className="btn-floating" id="boton-arriba">
