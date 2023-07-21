@@ -1,5 +1,6 @@
 const URL_PRODUCTO = import.meta.env.VITE_API_PRODUCTO
 const URL_USUARIO = import.meta.env.VITE_API_USUARIO
+const URL_PEDIDO = import.meta.env.VITE_API_PEDIDO
 
 export const login = async (usuario) => {
   try {
@@ -72,6 +73,26 @@ export const crearProducto = async (producto) => {
 export const borrarProducto = async (id) => {
     try {
         const respuesta = await fetch(`${URL_PRODUCTO}/${id}`,{
+            method: "DELETE"
+        });
+        return respuesta
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const borrarUsuario = async (id) => {
+    try {
+        const respuesta = await fetch(`${URL_USUARIO}/${id}`,{
+            method: "DELETE"
+        });
+        return respuesta
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const borrarPedido = async (id) => {
+    try {
+        const respuesta = await fetch(`${URL_PEDIDO}/${id}`,{
             method: "DELETE"
         });
         return respuesta
