@@ -2,32 +2,27 @@ const URL_PRODUCTO = import.meta.env.VITE_API_PRODUCTO
 const URL_USUARIO = import.meta.env.VITE_API_USUARIO
 
 export const login = async (usuario) => {
-    console.log(usuario);
-    try {
-      const respuesta = await fetch(URL_USUARIO);
-      const listaUsuarios = await respuesta.json();
-      console.log(listaUsuarios);
-      const usuarioBuscado = listaUsuarios.find(
-        (itemUsuario) => itemUsuario.email === usuario.email
-      );
-      if (usuarioBuscado) {
-        console.log('Email encontrado');
-        if (usuarioBuscado.password === usuario.password) {
-          console.log('encontramos al usuario!!!');
-          return usuarioBuscado;
-        } else {
-          console.log('password incorrecto');
-          return "";
-        }
+  try {
+    const respuesta = await fetch(URL_USUARIO);
+    const listaUsuarios = await respuesta.json();
+    const usuarioBuscado = listaUsuarios.find(
+      (itemUsuario) => itemUsuario.email === usuario.email
+    );
+    if (usuarioBuscado) {
+      if (usuarioBuscado.password === usuario.password) {
+        return usuarioBuscado;
       } else {
-        console.log('email incorrecto');
-        return null;
+        return "";
       }
-    } catch (error) {
-      console.log(error);
+    } else {
       return null;
     }
-  };
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
+
   
   export const crearUsuario = async (usuario) => {
     try {

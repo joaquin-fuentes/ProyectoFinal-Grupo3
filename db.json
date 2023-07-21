@@ -38,7 +38,8 @@
       "id": 1,
       "nombreUsuario": "admin",
       "email": "admin@jsongourmet.com",
-      "password": "123Xyz89"
+      "password": "123Xyz89",
+      "isAdmin": true
     },
     {
       "nombreUsuario": "MaximoCozzetti",
