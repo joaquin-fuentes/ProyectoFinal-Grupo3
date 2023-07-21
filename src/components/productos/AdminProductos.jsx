@@ -13,7 +13,6 @@ const AdminProductos = () => {
     obtenerProductos().then((respuesta) => {
       if(respuesta)
       {
-        console.log(respuesta)
         setProductos(respuesta);
       }
       else{
