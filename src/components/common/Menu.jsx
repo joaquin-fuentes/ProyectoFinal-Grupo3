@@ -1,17 +1,32 @@
-import React, { useEffect } from "react"
+import React, { useEffect } from "react";
 import { Navbar, Container, Nav, Button, NavDropdown } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import logo from "../../assets/logo.png"
+import logo from "../../assets/logo.png";
 import { FaArrowUp, FaShoppingCart } from "react-icons/fa";
 import "../../App.css";
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.css';
 
 const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
   const navegar = useNavigate();
 
   const logout = () => {
-    sessionStorage.removeItem('usuario');
-    setUsuarioLogueado({});
-    navegar('/');
+    Swal.fire({
+      title: '¿Está seguro?',
+      text: '¿Desea cerrar sesión?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, cerrar sesión',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        sessionStorage.removeItem('usuario');
+        setUsuarioLogueado({});
+        navegar('/');
+      }
+    });
   }
 
   const handleScroll = () => {
@@ -29,7 +44,6 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
   return (
     <>
     <Navbar className="navbar-cristal" variant="dark" expand="lg">
@@ -46,6 +60,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
             <NavLink className="nav-item nav-link" to={"/AcercaDe"}>
               Chefs
             </NavLink>
+            <NavLink className='nav-item nav-link'to={'/carrito'}><FaShoppingCart className="fs-4"/></NavLink>
                                 
             {usuarioLogueado.id ? (
                 <>
@@ -65,18 +80,19 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                   </Button>
                 </>
               ) : (
-                <NavLink className='nav-item nav-link' to={'/login'}>Iniciar sesion</NavLink>
+                <>
+                  <NavLink className='nav-item nav-link' to={'/login'}>Iniciar sesion</NavLink>
+                  <NavLink className='nav-item nav-link' to={'/registro'}>Registrarse</NavLink>
+                </>
               )}
-          <NavLink className='nav-item nav-link'to={'/registro'}>Registrarse</NavLink>
-            <NavLink className='nav-item nav-link'to={'/carrito'}><FaShoppingCart className="fs-4"/></NavLink>
-     
+            
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
     <a href="#" className="btn-floating" id="boton-arriba">
-    <FaArrowUp />
-  </a>
+      <FaArrowUp />
+    </a>
   </>
   );
 };
