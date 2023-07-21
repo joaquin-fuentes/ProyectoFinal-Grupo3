@@ -6,14 +6,16 @@
       "categoria": "Al Plato",
       "imagen": "https://www.recetasparaguay.com/base/stock/Recipe/92-image/92-image_web.jpg",
       "detalle": "Tallarines con carne molida",
+      "cantidad": "20",
       "id": "1"
-    },
+    },  
     {
       "nombreProducto": "Milanesa a Caballo",
       "precio": "1700",
       "categoria": "Al Plato",
       "imagen": "http://milanesacaballo.jpg",
       "detalle": "Milanesa con huevo frito encima",
+      "cantidad": "50",
       "id": "2"
     },
     {
@@ -22,6 +24,7 @@
       "categoria": "Sandwich",
       "imagen": "http://sandwichdemilanesa.jpg",
       "detalle": "Sandwich de Milanesa",
+      "cantidad": "10",
       "id": "3"
     },
     {
@@ -30,6 +33,7 @@
       "categoria": "Al Plato",
       "imagen": "https://jetextramar.com/wp-content/uploads/2021/10/receta-de-ravioli-de-carne-empresa-en-Valencia.jpg",
       "detalle": "Ravioles con salsa blanca",
+      "cantidad": "30",
       "id": "NCcm7uZ"
     }
   ],
