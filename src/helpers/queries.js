@@ -38,6 +38,21 @@ export const login = async (usuario) => {
       console.log(error);
     }
   };
+
+export const consultaCrearUsuario = async(usuario)=>{
+    try {
+        const respuesta = await fetch(URL_USUARIO, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(usuario)
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+    }
+}
   
 export const crearProducto = async (producto) => {
     try {
@@ -63,4 +78,24 @@ export const borrarProducto = async (id) => {
     } catch (error) {
         console.log(error)
     }
+}
+
+export const obtenerProductos = async()=>{
+  try {
+      const respuesta = await fetch(URL_PRODUCTO)
+      const listaProductos = await respuesta.json();
+      return listaProductos;
+  } catch (error) {
+      console.log(error);
+  }
+}
+
+export const obtenerProducto = async(id)=>{
+  try {
+      const respuesta = await fetch(`${URL_PRODUCTO}/${id}`)
+      const producto = await respuesta.json();
+      return producto;
+  } catch (error) {
+      console.log(error);
+  }
 }
