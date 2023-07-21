@@ -55,3 +55,23 @@ export const borrarProducto = async (id) => {
         console.log(error)
     }
 }
+
+export const obtenerProductos = async()=>{
+  try {
+      const respuesta = await fetch(URL_PRODUCTO)
+      const listaProductos = await respuesta.json();
+      return listaProductos;
+  } catch (error) {
+      console.log(error);
+  }
+}
+
+export const obtenerProducto = async(id)=>{
+  try {
+      const respuesta = await fetch(`${URL_PRODUCTO}/${id}`)
+      const producto = await respuesta.json();
+      return producto;
+  } catch (error) {
+      console.log(error);
+  }
+}
