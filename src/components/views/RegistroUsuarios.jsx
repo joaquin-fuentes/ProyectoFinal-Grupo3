@@ -6,6 +6,7 @@ import { crearUsuario } from "../../helpers/queries.js";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.css";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom"; 
 
 const RegistroUsuarios = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +21,8 @@ const RegistroUsuarios = () => {
     formState: { errors },
   } = useForm();
 
+  const navegacion = useNavigate(); 
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({
@@ -32,7 +35,10 @@ const RegistroUsuarios = () => {
     crearUsuario(data)
       .then((respuesta) => {
         if (respuesta.ok) {
-          Swal.fire('Usuario creado', 'El usuario ha sido registrado correctamente', 'success');
+          Swal.fire('Usuario creado', 'El usuario ha sido registrado correctamente', 'success')
+            .then(() => {
+              navegacion('/'); // Redirect to the homepage after Swal notification
+            });
         } else {
           Swal.fire('Error', 'No se pudo crear el usuario', 'error');
         }

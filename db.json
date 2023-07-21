@@ -39,6 +39,12 @@
       "nombreUsuario": "admin",
       "email": "admin@jsongourmet.com",
       "password": "123Xyz89"
+    },
+    {
+      "nombreUsuario": "MaximoCozzetti",
+      "email": "Maximo.Cozzetti@gmail.com",
+      "password": "TortugaMaritima3",
+      "id": 2
     }
   ]
 }
