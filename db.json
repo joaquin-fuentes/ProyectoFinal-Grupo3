@@ -39,6 +39,13 @@
       "nombreUsuario": "admin",
       "email": "admin@jsongourmet.com",
       "password": "123Xyz89"
-    }
+    },
+    [
+      {
+        "nombreUsuario": "prueba",
+        "email": "prueba@jsongourmet.com",
+        "password": "321Xyz89"
+      }
+    ]
   ]
 }

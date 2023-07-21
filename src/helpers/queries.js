@@ -28,6 +28,21 @@ export const login = async (usuario) => {
       return null;
     }
   };
+
+export const consultaCrearUsuario = async(usuario)=>{
+    try {
+        const respuesta = await fetch(, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(usuario)
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+    }
+}
   
 
 export const crearProducto = async (producto) => {
