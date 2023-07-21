@@ -1,8 +1,41 @@
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { FaSquareXmark, FaPenToSquare } from "react-icons/fa6";
+import { borrarUsuario } from "../../helpers/queries";
+import Swal from "sweetalert2";
 
-const ItemUsuario = () => {
+const ItemUsuario = ({usuario, setUsuarios}) => {
+  const eliminarUsuario = () => {
+    Swal.fire({
+      title: "¿Esta seguro de eliminar el usuario?",
+      text: "Una vez borrado no se puede recuperar",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Borrar",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        //aqui tengo que hacer la peticion delete
+        borrarUsuario(usuario.id).then((respuesta) => {
+          if (respuesta.status === 200) {
+            Swal.fire(
+              "Usuario Eliminado",
+              `El usuario ${usuario.usuario} fue eliminado`,
+              "success"
+            );
+            ///obtenerUsuarios().then((respuesta) => {
+            setUsuarios(respuesta);
+            //})
+          } else {
+            Swal.fire("Se produjo un error", "Intentelo mas tarde", "error");
+          }
+        });
+      }
+    });
+  }
+
   return (
     <tr>
       <td>Juan Perez</td>
@@ -16,7 +49,7 @@ const ItemUsuario = () => {
           <FaPenToSquare className="fs-4"></FaPenToSquare>
         </Link>
         <Button className="ms-md-2" variant="danger">
-          <FaSquareXmark className="fs-4"></FaSquareXmark>
+          <FaSquareXmark className="fs-4" onClick={eliminarUsuario}></FaSquareXmark>
         </Button>
       </td>
     </tr>

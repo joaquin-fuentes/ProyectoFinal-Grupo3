@@ -7,7 +7,7 @@ import { borrarPedido } from "../../helpers/queries";
 const ItemPedido = ({ pedido, setPedidos }) => {
   const eliminarPedido = () => {
     Swal.fire({
-      title: "¿Esta seguro de eliminar el producto?",
+      title: "¿Esta seguro de eliminar el pedido?",
       text: "Una vez borrado no se puede recuperar",
       icon: "warning",
       showCancelButton: true,
