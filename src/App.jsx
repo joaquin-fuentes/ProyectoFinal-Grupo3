@@ -10,23 +10,31 @@ import Pedido from "./components/views/Pedido";
 import PagPrincipal from "./components/views/Principal/PagPrincipal";
 import RegistroUsuarios from "./components/views/RegistroUsuarios";
 import Login from "./components/views/Login";
+import { useState } from "react";
 import RutasAdministrador from "./components/routes/RutasAdministrador";
-
+import RutasProtegidas from "./components/routes/RutasProtegidas";
 
 function App() {
 
+  const usuarioStorage = JSON.parse(sessionStorage.getItem('usuario')) || {}
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuarioStorage);
+
   return (
     <BrowserRouter>
-      <Menu></Menu>
+      <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
       <Routes>
       <Route path="/" element={<PagPrincipal></PagPrincipal>}></Route> 
-      <Route exact path="/administrador/*" element={<RutasAdministrador></RutasAdministrador>}></Route>
+      <Route exact path="/administrador/*" element={
+        <RutasProtegidas>
+      <RutasAdministrador></RutasAdministrador>
+      </RutasProtegidas>
+      }></Route>
       <Route path="/404" element={<Error404></Error404>}></Route> 
       <Route path="/AcercaDe" element={<SobreNosotros></SobreNosotros>}></Route> 
       <Route exact path="/detalleProducto/:id" element={<DetalleProducto></DetalleProducto>} ></Route>
       <Route exact path="/pedido" element={<Pedido></Pedido>} ></Route>
       <Route exact path="/registro" element={<RegistroUsuarios></RegistroUsuarios>} ></Route>
-      <Route exact path="/login" element={<Login></Login>} ></Route>
+      <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>} ></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>

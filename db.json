@@ -32,5 +32,13 @@
       "detalle": "Ravioles con salsa blanca",
       "id": "NCcm7uZ"
     }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombreUsuario": "admin",
+      "email": "admin@jsongourmet.com",
+      "password": "123Xyz89"
+    }
   ]
 }
