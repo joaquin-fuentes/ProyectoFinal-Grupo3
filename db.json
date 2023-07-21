@@ -46,6 +46,12 @@
       "email": "Maximo.Cozzetti@gmail.com",
       "password": "TortugaMaritima3",
       "id": 2
+    },
+    {
+      "nombreUsuario": "MarioSantos",
+      "email": "Mario.Santos@gmail.com",
+      "password": "Disculpe1fuegotiene",
+      "id": 3
     }
   ]
 }
