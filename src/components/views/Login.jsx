@@ -25,7 +25,7 @@ const Login = ({setUsuarioLogueado}) => {
               sessionStorage.setItem('usuario', JSON.stringify(respuesta));
               setUsuarioLogueado(respuesta);
               Swal.fire('Bienvenido', 'Ha ingresado correctamente', 'success');
-              navegacion('/administrador/productos');
+              navegacion('/');
             } else {
               Swal.fire('Error', 'Contraseña incorrecta', 'error');
             }
