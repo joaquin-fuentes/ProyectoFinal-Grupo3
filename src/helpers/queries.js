@@ -66,12 +66,3 @@ export const obtenerProductos = async()=>{
   }
 }
 
-export const obtenerProducto = async(id)=>{
-  try {
-      const respuesta = await fetch(`${URL_PRODUCTO}/${id}`)
-      const producto = await respuesta.json();
-      return producto;
-  } catch (error) {
-      console.log(error);
-  }
-}
