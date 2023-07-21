@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { FaSquareXmark, FaPenToSquare } from "react-icons/fa6";
 
-const ItemProducto = () => {
+const ItemProducto = ({producto, setProductos}) => {
   return (
     <tr>
-      <td>Milanesa con Papas Fritas</td>
-      <td>$2000</td>
-      <td>10</td>
-      <td>Al Plato</td>
+      <td>{producto.nombreProducto}</td>
+      <td>{producto.precio}</td>
+      <td>{producto.cantidad}</td>
+      <td>{producto.categoria}</td>
       <td>
         <Link
           className="btn btn-warning mb-2 mb-md-0"
