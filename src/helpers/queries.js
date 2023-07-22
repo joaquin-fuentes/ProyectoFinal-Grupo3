@@ -77,7 +77,7 @@ export const crearProducto = async (producto) => {
 
 export const consultaeditarProducto = async(producto, id)=>{
   try {
-      const respuesta = await fetch(`${}/${id}`, {
+      const respuesta = await fetch(`${URL_PRODUCTO}/${id}`, {
           method: "PUT",
           headers: {
               "Content-Type": "application/json"
