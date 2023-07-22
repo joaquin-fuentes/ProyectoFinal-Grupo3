@@ -75,7 +75,20 @@ export const crearProducto = async (producto) => {
     }
 }
 
-
+export const consultaeditarProducto = async(producto, id)=>{
+  try {
+      const respuesta = await fetch(`${}/${id}`, {
+          method: "PUT",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(producto)
+      });
+      return respuesta;
+  } catch (error) {
+      console.log(error);
+  }
+}
 
 export const borrarProducto = async (id) => {
     try {
