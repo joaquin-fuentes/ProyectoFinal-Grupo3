@@ -92,7 +92,7 @@ export const consultaeditarProducto = async(producto, id)=>{
 
 export const consultaEditarUsuario = async(usuario, id)=>{
   try {
-      const respuesta = await fetch(`${}/${id}`, {
+      const respuesta = await fetch(`${URL_USUARIO}/${id}`, {
           method: "PUT",
           headers: {
               "Content-Type": "application/json"
