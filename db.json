@@ -8,7 +8,7 @@
       "detalle": "Tallarines con carne molida",
       "cantidad": "20",
       "id": "1"
-    },  
+    },
     {
       "nombreProducto": "Milanesa a Caballo",
       "precio": "1700",
@@ -43,19 +43,14 @@
       "nombreUsuario": "admin",
       "email": "admin@jsongourmet.com",
       "password": "123Xyz89",
-      "isAdmin": true
+      "rol": "administrador"
     },
     {
       "nombreUsuario": "MaximoCozzetti",
       "email": "Maximo.Cozzetti@gmail.com",
-      "password": "TortugaMaritima3",
+      "password": "TortugaMaritima1",
+      "isAdmin": false,
       "id": 2
-    },
-    {
-      "nombreUsuario": "MarioSantos",
-      "email": "Mario.Santos@gmail.com",
-      "password": "Disculpe1fuegotiene",
-      "id": 3
     }
   ]
 }

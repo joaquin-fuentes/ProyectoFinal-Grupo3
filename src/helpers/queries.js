@@ -23,36 +23,36 @@ export const login = async (usuario) => {
   }
 };
 
-  
-  export const crearUsuario = async (usuario) => {
+export const crearUsuario = async (usuario) => {
+  try {
+    const respuesta = await fetch(URL_USUARIO, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+  export const consultaCrearUsuario = async (usuario) => {
     try {
+      const { isAdmin, ...usuarioSinAdmin } = usuario;
       const respuesta = await fetch(URL_USUARIO, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(usuario),
+        body: JSON.stringify(usuarioSinAdmin),
       });
       return respuesta;
     } catch (error) {
       console.log(error);
     }
   };
-
-export const consultaCrearUsuario = async(usuario)=>{
-    try {
-        const respuesta = await fetch(URL_USUARIO, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(usuario)
-        });
-        return respuesta;
-    } catch (error) {
-        console.log(error);
-    }
-}
   
 export const crearProducto = async (producto) => {
     try {

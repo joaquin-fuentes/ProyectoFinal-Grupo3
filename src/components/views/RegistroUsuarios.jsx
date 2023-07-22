@@ -32,12 +32,20 @@ const RegistroUsuarios = () => {
   };
 
   const onSubmit = (data) => {
-    crearUsuario(data)
+    const newData = { ...data };
+  
+    if (data.email === "admin@jsongourmet.com") {
+      newData.isAdmin = true;
+    } else {
+      newData.isAdmin = false;
+    }
+  
+    crearUsuario(newData)
       .then((respuesta) => {
         if (respuesta.ok) {
           Swal.fire('Usuario creado', 'El usuario ha sido registrado correctamente', 'success')
             .then(() => {
-              navegacion('/'); // Redirect to the homepage after Swal notification
+              navegacion('/');
             });
         } else {
           Swal.fire('Error', 'No se pudo crear el usuario', 'error');
@@ -48,7 +56,7 @@ const RegistroUsuarios = () => {
         Swal.fire('Error', 'Hubo un error al crear el usuario', 'error');
       });
   };
-
+  
   return (
     <Container className="mainSection">
       <Card className="my-5 cardPrincipal">
