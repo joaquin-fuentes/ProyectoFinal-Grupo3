@@ -39,6 +39,21 @@ export const login = async (usuario) => {
     }
   };
 
+  export const consultaEditarUsuario = async(usuario, id)=>{
+    try {
+        const respuesta = await fetch(`${URL_USUARIO}/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(usuario)
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+    }
+  }
+
   export const obtenerProductos = async()=>{
     try {
         const respuesta = await fetch(URL_PRODUCTO)
@@ -83,21 +98,6 @@ export const consultaeditarProducto = async(producto, id)=>{
               "Content-Type": "application/json"
           },
           body: JSON.stringify(producto)
-      });
-      return respuesta;
-  } catch (error) {
-      console.log(error);
-  }
-}
-
-export const consultaEditarUsuario = async(usuario, id)=>{
-  try {
-      const respuesta = await fetch(`${URL_USUARIO}/${id}`, {
-          method: "PUT",
-          headers: {
-              "Content-Type": "application/json"
-          },
-          body: JSON.stringify(usuario)
       });
       return respuesta;
   } catch (error) {
