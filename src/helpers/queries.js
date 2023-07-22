@@ -90,6 +90,21 @@ export const consultaeditarProducto = async(producto, id)=>{
   }
 }
 
+export const consultaEditarUsuario = async(usuario, id)=>{
+  try {
+      const respuesta = await fetch(`${}/${id}`, {
+          method: "PUT",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(usuario)
+      });
+      return respuesta;
+  } catch (error) {
+      console.log(error);
+  }
+}
+
 export const borrarProducto = async (id) => {
     try {
         const respuesta = await fetch(`${URL_PRODUCTO}/${id}`,{
