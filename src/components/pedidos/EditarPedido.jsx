@@ -56,7 +56,7 @@ const EditarPedido = () => {
                 message: "La nota debe tener como máximo 30 carácteres",
               },
               pattern: {
-                value: /^(?=.*[A-Z])[A-Za-z0-9:,.\s]{1,29}$/,
+                value: /^([A-Z\u00D1])[A-Za-z0-9:,.\s\u00D1\u00F1]{1,29}$/,
                 message:
                   "La nota debe ser corta entre 2 y 30 carácteres (puede usar letras, numeros y signos de puntuacion",
               },
