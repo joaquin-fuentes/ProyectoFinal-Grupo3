@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button, Card, Col } from "react-bootstrap";
-import { FaSquareXmark, FaPenToSquare } from "react-icons/fa6";
-import { BsFillPinAngleFill } from "react-icons/bs";
+import { FaSquareXmark} from "react-icons/fa6";
+import { HiX } from "react-icons/hi";
 import Swal from "sweetalert2";
 import { borrarPedido } from "../../helpers/queries";
 
@@ -39,19 +39,19 @@ const ItemPedido = ({ pedido, setPedidos }) => {
 
   return (
     <Col xs={12} md={6} lg={6}>
-      <Card className="mt-3 colorCardCuerpo">
+      <Card className="mt-3">
         <Card.Header className="colorCard">
           <span className="d-flex justify-content-end">
             <Button variant="danger">
-              <FaSquareXmark className="fs-4"></FaSquareXmark>
+              <HiX className="fs-4"></HiX>
             </Button>
           </span>
           <h3 className="text-start">Pedido</h3>
         </Card.Header>
-        <Card.Body className="colorCardCuerpo">
+        <Card.Body className="colorCard">
           <h6>Nombre de Usuario: Juan Perez</h6>
           <h6>Pedido:</h6>
-          <ul className="ms-4">
+          <ul className="ps-5">
             <li>2 Milanesa Napolitanas con Papas Fritas</li>
             <li>1 Gaseosa</li>
           </ul>
@@ -60,7 +60,7 @@ const ItemPedido = ({ pedido, setPedidos }) => {
           <Button className="disabled btn-secondary me-md-2">
             Pendiente...
           </Button>
-          <Button variant="outline-success text-light">Realizado</Button>
+          <Button className="btn-success">Realizado</Button>
         </Card.Footer>
       </Card>
     </Col>
