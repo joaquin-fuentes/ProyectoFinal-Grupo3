@@ -116,3 +116,14 @@ export const borrarProducto = async (id) => {
     }
 }
 
+export const obtenerPedidos = async()=>{
+  try {
+      const respuesta = await fetch(URL_)
+      const listaPedidos = await respuesta.json();
+      return listaPedidos;
+  } catch (error) {
+      console.log(error);
+  }
+}
+
+
