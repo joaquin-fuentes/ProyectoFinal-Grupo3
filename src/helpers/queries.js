@@ -1,5 +1,6 @@
 const URL_PRODUCTO = import.meta.env.VITE_API_PRODUCTO
 const URL_USUARIO = import.meta.env.VITE_API_USUARIO
+const URL_PEDIDOS = import.meta.env.VITE_API_PEDIDOS
 
 export const login = async (usuario) => {
   try {
@@ -118,7 +119,7 @@ export const borrarProducto = async (id) => {
 
 export const obtenerPedidos = async()=>{
   try {
-      const respuesta = await fetch(URL_)
+      const respuesta = await fetch(URL_PEDIDOS)
       const listaPedidos = await respuesta.json();
       return listaPedidos;
   } catch (error) {
@@ -126,4 +127,13 @@ export const obtenerPedidos = async()=>{
   }
 }
 
+export const obtenerPedido = async(id)=>{
+  try {
+      const respuesta = await fetch(`${URL_PEDIDOS}/${id}`)
+      const pedido = await respuesta.json();
+      return pedido;
+  } catch (error) {
+      console.log(error);
+  }
+}
 

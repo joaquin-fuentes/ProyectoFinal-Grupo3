@@ -53,5 +53,23 @@
       "password": "Disculpe1fuegotiene",
       "id": 3
     }
+  ],
+  "pedidos": [
+    {
+      "usuario": "MaximoCozzetti",
+      "fecha": "23-07-2023",
+      "productos": [
+        {
+          "nombreProducto": "Fideos con Salsa",
+          "precio": "1500",
+          "cantidad": 2
+        },
+        {
+          "nombreProducto": "Milanesa a Caballo",
+          "precio": "1700",
+          "cantidad": 1
+        }
+      ]
+    }
   ]
 }
