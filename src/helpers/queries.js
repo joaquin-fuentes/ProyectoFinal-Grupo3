@@ -151,3 +151,18 @@ export const crearPedido = async (pedido) => {
       console.log(error)
   }
 }
+
+export const consultaEditarPedido = async(pedido, id)=>{
+  try {
+      const respuesta = await fetch(`${URL_PEDIDOS}/${id}`, {
+          method: "PUT",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(pedido)
+      });
+      return respuesta;
+  } catch (error) {
+      console.log(error);
+  }
+}
