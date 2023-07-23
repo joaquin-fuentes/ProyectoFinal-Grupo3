@@ -55,6 +55,7 @@ const ItemPedido = ({ pedido, setPedidos }) => {
             <li>2 Milanesa Napolitanas con Papas Fritas</li>
             <li>1 Gaseosa</li>
           </ul>
+          <h6 className="text-end">Total: $6500</h6>
         </Card.Body>
         <Card.Footer className="justify-content-end d-flex colorCard">
           <Button className="disabled btn-secondary me-md-2">
