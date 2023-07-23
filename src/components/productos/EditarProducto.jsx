@@ -31,7 +31,7 @@ const EditarProducto = () => {
                   "El nombre del producto debe contener como máximo 50 carácteres",
               },
               pattern: {
-                value: /^[A-Z][A-Za-z\s0-9]{1,49}$/,
+                value: /^[A-Z\u00D1][A-ZÁ-Úa-zá-ú\s0-9\u00F1\u00D1]{1,49}$/,
                 message:
                   "El nombre del producto debe comenzar con letra mayúscula además solo puede contener letras y numeros entre 2 y 50 carácteres",
               },
@@ -91,16 +91,16 @@ const EditarProducto = () => {
             placeholder="Ej: https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/KRMQHXYYBFBI5KRDXUYY5AXH2A.jpg"
             {...register("imagen", {
               required:
-                "La URL de la Imagen es obligatoria y debe terminar con .jpg/.png/.svg/.jpeg",
+                "La URL de la Imagen es obligatoria y debe terminar con .jpg/.png/.svg/.jpeg/.webp",
               minLength: {
                 value: 1,
                 message:
                   "La URL de la Imagen Imagen del Producto debe contener como mínimo 1 carácter",
               },
               pattern: {
-                value: /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png|svg)$/,
+                value: /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png|svg|webp)$/,
                 message:
-                  "La URL de la Imagen debe terminar con .jpg/.png/.svg/.jpeg",
+                  "La URL de la Imagen debe terminar con .jpg/.png/.svg/.jpeg/.webp",
               },
             })}
           />
@@ -126,7 +126,7 @@ const EditarProducto = () => {
                   "El detalle del Producto debe contener como máximo 150 carácteres",
               },
               pattern: {
-                value: /^(?=.*[A-Z])[A-Za-z0-9:,.\s]{7,199}$/,
+                value: /^([A-Z\u00D1])[A-Za-z0-9:,.\s\u00D1\u00F1]{7,199}$/,
                 message:
                   "El detalle del producto debe comenzar con mayúscula y debe contener como mínimo 8 carácteres y como máximo 150 carácteres (puede usar letras, números y signos de puntuación)",
               },
