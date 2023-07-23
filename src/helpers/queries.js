@@ -54,6 +54,42 @@ export const crearUsuario = async (usuario) => {
       console.log(error);
     }
   };
+
+  export const consultaEditarUsuario = async(usuario, id)=>{
+    try {
+        const respuesta = await fetch(`${URL_USUARIO}/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(usuario)
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+    }
+  }
+
+  export const obtenerProductos = async()=>{
+    try {
+        const respuesta = await fetch(URL_PRODUCTO)
+        const listaProductos = await respuesta.json();
+        return listaProductos;
+    } catch (error) {
+        console.log(error);
+    }
+  }
+  
+  export const obtenerProducto = async(id)=>{
+    try {
+        const respuesta = await fetch(`${URL_PRODUCTO}/${id}`)
+        const producto = await respuesta.json();
+        return producto;
+    } catch (error) {
+        console.log(error);
+    }
+  }
+  
   
 export const crearProducto = async (producto) => {
     try {
@@ -68,6 +104,21 @@ export const crearProducto = async (producto) => {
     } catch (error) {
         console.log(error)
     }
+}
+
+export const consultaeditarProducto = async(producto, id)=>{
+  try {
+      const respuesta = await fetch(`${URL_PRODUCTO}/${id}`, {
+          method: "PUT",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(producto)
+      });
+      return respuesta;
+  } catch (error) {
+      console.log(error);
+  }
 }
 
 export const borrarProducto = async (id) => {
@@ -101,22 +152,3 @@ export const borrarPedido = async (id) => {
     }
 }
 
-export const obtenerProductos = async()=>{
-  try {
-      const respuesta = await fetch(URL_PRODUCTO)
-      const listaProductos = await respuesta.json();
-      return listaProductos;
-  } catch (error) {
-      console.log(error);
-  }
-}
-
-export const obtenerProducto = async(id)=>{
-  try {
-      const respuesta = await fetch(`${URL_PRODUCTO}/${id}`)
-      const producto = await respuesta.json();
-      return producto;
-  } catch (error) {
-      console.log(error);
-  }
-}
