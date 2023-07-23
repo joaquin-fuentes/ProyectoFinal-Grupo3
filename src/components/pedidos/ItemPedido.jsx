@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
-import { FaSquareXmark, FaPenToSquare } from "react-icons/fa6";
+import { Button, Card, Col } from "react-bootstrap";
+import { FaSquareXmark} from "react-icons/fa6";
+import { HiX } from "react-icons/hi";
 import Swal from "sweetalert2";
 import { borrarPedido } from "../../helpers/queries";
 
@@ -37,26 +38,33 @@ const ItemPedido = ({ pedido, setPedidos }) => {
   };
 
   return (
-    <tr>
-      <td>Juan Perez</td>
-      <td>Milanesas con papas fritas</td>
-      <td>2</td>
-      <td>$3000</td>
-      <td>
-        <Link
-          className="btn btn-warning mb-2 mb-md-0"
-          to={`/administrador/pedidos/editar`}
-        >
-          <FaPenToSquare className="fs-4"></FaPenToSquare>
-        </Link>
-        <Button className="ms-md-2" variant="danger">
-          <FaSquareXmark
-            className="fs-4"
-            onClick={eliminarPedido}
-          ></FaSquareXmark>
-        </Button>
-      </td>
-    </tr>
+    <Col xs={12} md={6} lg={6}>
+      <Card className="mt-3">
+        <Card.Header className="colorCard">
+          <span className="d-flex justify-content-end">
+            <Button variant="danger">
+              <HiX className="fs-4"></HiX>
+            </Button>
+          </span>
+          <h3 className="text-start">Pedido</h3>
+        </Card.Header>
+        <Card.Body className="colorCard">
+          <h6>Nombre de Usuario: Juan Perez</h6>
+          <h6>Pedido:</h6>
+          <ul className="ps-5">
+            <li>2 Milanesa Napolitanas con Papas Fritas</li>
+            <li>1 Gaseosa</li>
+          </ul>
+          <h6 className="text-end">Total: $6500</h6>
+        </Card.Body>
+        <Card.Footer className="justify-content-end d-flex colorCard">
+          <Button className="disabled btn-secondary me-md-2">
+            Pendiente...
+          </Button>
+          <Button className="btn-success">Realizado</Button>
+        </Card.Footer>
+      </Card>
+    </Col>
   );
 };
 
