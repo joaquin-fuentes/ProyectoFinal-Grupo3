@@ -137,3 +137,17 @@ export const obtenerPedido = async(id)=>{
   }
 }
 
+export const crearPedido = async (pedido) => {
+  try {
+      const respuesta = await fetch(URL_PEDIDOS,{
+          method: "POST",
+          headers:{
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(pedido)
+      });
+      return respuesta
+  } catch (error) {
+      console.log(error)
+  }
+}
