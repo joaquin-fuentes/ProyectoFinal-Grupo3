@@ -8,33 +8,32 @@ import { useNavigate } from "react-router-dom"
 import Swal from "sweetalert2"
 import "sweetalert2/dist/sweetalert2.css"
 
-const Login = ({setUsuarioLogueado}) => {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-        reset
-      } = useForm();
-      const navegacion = useNavigate();
-    
-      
-      const onSubmit = (usuario) => {
-        login(usuario).then((respuesta) => {
-          if (respuesta) {
-            if (respuesta !== "") {
-              sessionStorage.setItem('usuario', JSON.stringify(respuesta));
-              setUsuarioLogueado(respuesta);
-              Swal.fire('Bienvenido', 'Ha ingresado correctamente', 'success');
-              navegacion('/');
-            } else {
-              Swal.fire('Error', 'Contraseña incorrecta', 'error');
-            }
-          } else {
-            Swal.fire('Error', 'Email incorrecto', 'error');
-          }
-        });
-      };
-      
+const Login = ({ setUsuarioLogueado }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+  const navegacion = useNavigate();
+
+  const onSubmit = (usuario) => {
+    login(usuario).then((respuesta) => {
+      if (respuesta) {
+        if (respuesta !== "") {
+          const usuarioSinAdmin = { ...respuesta, isAdmin: false };
+          sessionStorage.setItem("usuario", JSON.stringify(usuarioSinAdmin));
+          setUsuarioLogueado(usuarioSinAdmin);
+          Swal.fire("Bienvenido", "Ha ingresado correctamente", "success");
+          navegacion("/");
+        } else {
+          Swal.fire("Error", "Contraseña incorrecta", "error");
+        }
+      } else {
+        Swal.fire("Error", "Email incorrecto", "error");
+      }
+    });
+  };
 
     return (
     <Container className="mainSection">

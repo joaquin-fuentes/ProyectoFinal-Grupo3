@@ -1,8 +1,30 @@
 import { Container, Table, Button } from "react-bootstrap";
 import ItemProducto from "./ItemProducto";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { obtenerProductos } from "../../helpers/queries";
+import Swal from "sweetalert2";
 
 const AdminProductos = () => {
+
+  const [productos, setProductos] = useState([])
+
+  useEffect(() => {
+    obtenerProductos().then((respuesta) => {
+      if(respuesta)
+      {
+        setProductos(respuesta);
+      }
+      else{
+        Swal.fire(
+          'Se produjo un error al intentar cargar los datos',
+          `Intente realizar esta operacion mas tarde`,
+          'error');
+      }
+    })
+
+  },[])
+
   return (
     <Container className="mainSection my-4">
       <h1 className="display-4">Administrador de Productos</h1>
@@ -25,7 +47,9 @@ const AdminProductos = () => {
             </tr>
           </thead>
           <tbody>
-            <ItemProducto></ItemProducto>
+            {
+            productos.map((producto) => <ItemProducto key={producto.id} producto={producto} setProductos={setProductos}></ItemProducto>)
+            }
           </tbody>
         </Table>
       </section>

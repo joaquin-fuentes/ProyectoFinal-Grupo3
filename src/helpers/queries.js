@@ -2,6 +2,7 @@ const URL_PRODUCTO = import.meta.env.VITE_API_PRODUCTO
 const URL_USUARIO = import.meta.env.VITE_API_USUARIO
 const URL_PEDIDOS = import.meta.env.VITE_API_PEDIDOS
 
+
 export const login = async (usuario) => {
   try {
     const respuesta = await fetch(URL_USUARIO);
@@ -24,15 +25,30 @@ export const login = async (usuario) => {
   }
 };
 
-  
-  export const crearUsuario = async (usuario) => {
+export const crearUsuario = async (usuario) => {
+  try {
+    const respuesta = await fetch(URL_USUARIO, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+  export const consultaCrearUsuario = async (usuario) => {
     try {
+      const { isAdmin, ...usuarioSinAdmin } = usuario;
       const respuesta = await fetch(URL_USUARIO, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(usuario),
+        body: JSON.stringify(usuarioSinAdmin),
       });
       return respuesta;
     } catch (error) {
@@ -109,6 +125,26 @@ export const consultaeditarProducto = async(producto, id)=>{
 export const borrarProducto = async (id) => {
     try {
         const respuesta = await fetch(`${URL_PRODUCTO}/${id}`,{
+            method: "DELETE"
+        });
+        return respuesta
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const borrarUsuario = async (id) => {
+    try {
+        const respuesta = await fetch(`${URL_USUARIO}/${id}`,{
+            method: "DELETE"
+        });
+        return respuesta
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const borrarPedido = async (id) => {
+    try {
+        const respuesta = await fetch(`${URL_PEDIDOS}/${id}`,{
             method: "DELETE"
         });
         return respuesta
