@@ -6,6 +6,16 @@ import Swal from "sweetalert2";
 import { borrarPedido } from "../../helpers/queries";
 
 const ItemPedido = ({ pedido, setPedidos }) => {
+
+  const calcularTotal = () => {
+    let total = 0;
+    pedido.productos.forEach((producto) => {
+      const precioTotalProducto = parseInt(producto.precio) * parseInt(producto.cantidad);
+      total += precioTotalProducto;
+    });
+    return total;
+  };
+
   const eliminarPedido = () => {
     Swal.fire({
       title: "¿Esta seguro de eliminar el pedido?",
@@ -49,13 +59,14 @@ const ItemPedido = ({ pedido, setPedidos }) => {
           <h3 className="text-start">Pedido</h3>
         </Card.Header>
         <Card.Body className="colorCard">
-          <h6>Nombre de Usuario: Juan Perez</h6>
+          <h6>Nombre de Usuario: {pedido.usuario}</h6>
           <h6>Pedido:</h6>
           <ul className="ps-5">
-            <li>2 Milanesa Napolitanas con Papas Fritas</li>
-            <li>1 Gaseosa</li>
+            {pedido.productos.map((producto, index) => (
+              <li key={index}>{producto.cantidad} {producto.nombreProducto}</li>
+            ))}
           </ul>
-          <h6 className="text-end">Total: $6500</h6>
+          <h6 className="text-end">Total: ${calcularTotal()}</h6>
         </Card.Body>
         <Card.Footer className="justify-content-end d-flex colorCard">
           <Button className="disabled btn-secondary me-md-2">
