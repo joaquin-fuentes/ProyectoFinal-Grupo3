@@ -1,6 +1,18 @@
 import ItemUsuario from "./ItemUsuario";
 import { Container, Table } from "react-bootstrap";
+import { useState } from "react";
+import { useEffect } from "react";
+import { obtenerUsuarios } from "../../helpers/queries";
 const AdminUsuarios = () => {
+
+  const [usuarios, setUsuarios] = useState([]);
+
+  useEffect(()=>{
+    obtenerUsuarios().then((respuesta)=>{
+      setUsuarios(respuesta);
+    })
+  },[])
+
   return (
     <Container className="mainSection my-4">
       <h1 className="display-4">Administrador de Usuarios</h1>
@@ -16,7 +28,9 @@ const AdminUsuarios = () => {
             </tr>
           </thead>
           <tbody>
-            <ItemUsuario></ItemUsuario>
+            {
+              usuarios.map((usuario)=> <ItemUsuario key={usuario.id} usuario={usuario} setUsuarios={setUsuarios}></ItemUsuario>)
+            }
           </tbody>
         </Table>
       </section>

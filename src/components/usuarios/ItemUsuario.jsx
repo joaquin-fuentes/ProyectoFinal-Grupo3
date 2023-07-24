@@ -5,6 +5,7 @@ import { borrarUsuario } from "../../helpers/queries";
 import Swal from "sweetalert2";
 
 const ItemUsuario = ({usuario, setUsuarios}) => {
+
   const eliminarUsuario = () => {
     Swal.fire({
       title: "¿Esta seguro de eliminar el usuario?",
@@ -38,13 +39,13 @@ const ItemUsuario = ({usuario, setUsuarios}) => {
 
   return (
     <tr>
-      <td>Juan Perez</td>
-      <td>juanperez@gmail.com</td>
+      <td>{usuario.nombreUsuario}</td>
+      <td>{usuario.email}</td>
       <td>Normal</td>
       <td>
         <Link
           className="btn btn-warning mb-2 mb-md-0"
-          to={`/administrador/usuarios/editar`}
+          to={`/administrador/usuarios/editar/${usuario.id}`}
         >
           <FaPenToSquare className="fs-4"></FaPenToSquare>
         </Link>

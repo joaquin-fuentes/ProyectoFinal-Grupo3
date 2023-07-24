@@ -25,6 +25,26 @@ export const login = async (usuario) => {
   }
 };
 
+export const obtenerUsuarios = async()=>{
+  try {
+      const respuesta = await fetch(URL_USUARIO)
+      const listaUsuarios = await respuesta.json();
+      return listaUsuarios;
+  } catch (error) {
+      console.log(error);
+  }
+}
+
+export const obtenerUsuario = async(id)=>{
+  try {
+      const respuesta = await fetch(`${URL_USUARIO}/${id}`)
+      const usuario = await respuesta.json();
+      return usuario;
+  } catch (error) {
+      console.log(error);
+  }
+}
+
 export const crearUsuario = async (usuario) => {
   try {
     const respuesta = await fetch(URL_USUARIO, {
@@ -135,16 +155,6 @@ export const borrarProducto = async (id) => {
 export const borrarUsuario = async (id) => {
     try {
         const respuesta = await fetch(`${URL_USUARIO}/${id}`,{
-            method: "DELETE"
-        });
-        return respuesta
-    } catch (error) {
-        console.log(error)
-    }
-}
-export const borrarPedido = async (id) => {
-    try {
-        const respuesta = await fetch(`${URL_PEDIDOS}/${id}`,{
             method: "DELETE"
         });
         return respuesta
