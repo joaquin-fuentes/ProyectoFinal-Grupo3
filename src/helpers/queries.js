@@ -25,6 +25,16 @@ export const login = async (usuario) => {
   }
 };
 
+export const obtenerUsuarios = async()=>{
+  try {
+      const respuesta = await fetch(URL_USUARIO)
+      const listaUsuarios = await respuesta.json();
+      return listaUsuarios;
+  } catch (error) {
+      console.log(error);
+  }
+}
+
 export const crearUsuario = async (usuario) => {
   try {
     const respuesta = await fetch(URL_USUARIO, {

@@ -1,9 +1,14 @@
 import ItemUsuario from "./ItemUsuario";
 import { Container, Table } from "react-bootstrap";
 import { useState } from "react";
+import { useEffect } from "react";
 const AdminUsuarios = () => {
 
   const [usuarios, setUsuarios] = useState([]);
+
+  useEffect(()=>{
+    
+  })
 
   return (
     <Container className="mainSection my-4">
