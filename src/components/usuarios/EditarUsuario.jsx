@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { obtenerUsuario } from "../../helpers/queries";
 
 const EditarUsuario = () => {
   const {
@@ -9,18 +11,27 @@ const EditarUsuario = () => {
     reset,
   } = useForm();
 
+  useEffect(()=>{
+    obtenerUsuario(id).then((respuesta)=>{
+      console.log(respuesta);
+      setValue('nombreUsuario',respuesta.nombreUsuario);
+      setValue('emailUsuario',respuesta.email);
+      setValue('perfil',respuesta.rol);
+    })
+  })
+
   return (
     <Container className="mainSection my-4 border rounded border-5 border-secondary admin-formulario text-white">
       <h1 className="display-4 text-center">Editar Usuario</h1>
       <hr />
-      <Form onSubmit={handleSubmit()}>
+      <Form onSubmit={handleSubmit(onsubmit)}>
         <Form.Group className="mb-3 disabled" controlId="formUsuario">
           <Form.Label className="fs-4">Nombre de Usuario</Form.Label>
-          <Form.Control type="text" disabled></Form.Control>
+          <Form.Control type="text" disabled {...register("nombreUsuario")}></Form.Control>
         </Form.Group>
         <Form.Group className="mb-3 disabled" controlId="formUsuario">
           <Form.Label className="fs-4">Email</Form.Label>
-          <Form.Control type="text" disabled></Form.Control>
+          <Form.Control type="text" disabled {...register("emailUsuario")}></Form.Control>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formEstado">
           <Form.Label className="fs-4">Estado de la cuenta*</Form.Label>

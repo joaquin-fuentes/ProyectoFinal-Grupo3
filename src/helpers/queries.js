@@ -35,6 +35,16 @@ export const obtenerUsuarios = async()=>{
   }
 }
 
+export const obtenerUsuario = async(id)=>{
+  try {
+      const respuesta = await fetch(`${URL_USUARIO}/${id}`)
+      const usuario = await respuesta.json();
+      return usuario;
+  } catch (error) {
+      console.log(error);
+  }
+}
+
 export const crearUsuario = async (usuario) => {
   try {
     const respuesta = await fetch(URL_USUARIO, {
