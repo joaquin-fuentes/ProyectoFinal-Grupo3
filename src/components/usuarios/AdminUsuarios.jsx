@@ -1,6 +1,10 @@
 import ItemUsuario from "./ItemUsuario";
 import { Container, Table } from "react-bootstrap";
+import { useState } from "react";
 const AdminUsuarios = () => {
+
+  const [usuarios, setUsuarios] = useState([]);
+
   return (
     <Container className="mainSection my-4">
       <h1 className="display-4">Administrador de Usuarios</h1>
@@ -16,6 +20,9 @@ const AdminUsuarios = () => {
             </tr>
           </thead>
           <tbody>
+            {
+              
+            }
             <ItemUsuario></ItemUsuario>
           </tbody>
         </Table>
