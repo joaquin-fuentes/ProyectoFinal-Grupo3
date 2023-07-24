@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button, Card, Col } from "react-bootstrap";
-import { FaSquareXmark} from "react-icons/fa6";
 import { HiX } from "react-icons/hi";
 import Swal from "sweetalert2";
-import { borrarPedido } from "../../helpers/queries";
+import { borrarPedido, obtenerPedidos } from "../../helpers/queries";
 
 const ItemPedido = ({ pedido, setPedidos }) => {
 
@@ -36,9 +35,9 @@ const ItemPedido = ({ pedido, setPedidos }) => {
               `El Pedido del usuario ${pedido.usuario} fue eliminado`,
               "success"
             );
-            ///obtenerPedidos().then((respuesta) => {
+            obtenerPedidos().then((respuesta) => {
             setPedidos(respuesta);
-            //})
+            })
           } else {
             Swal.fire("Se produjo un error", "Intentelo mas tarde", "error");
           }
@@ -53,13 +52,14 @@ const ItemPedido = ({ pedido, setPedidos }) => {
         <Card.Header className="colorCard">
           <span className="d-flex justify-content-end">
             <Button variant="danger">
-              <HiX className="fs-4"></HiX>
+              <HiX className="fs-4" onClick={eliminarPedido}></HiX>
             </Button>
           </span>
           <h3 className="text-start">Pedido</h3>
         </Card.Header>
         <Card.Body className="colorCard">
           <h6>Nombre de Usuario: {pedido.usuario}</h6>
+          <h6>Fecha: {pedido.fecha}</h6>
           <h6>Pedido:</h6>
           <ul className="ps-5">
             {pedido.productos.map((producto, index) => (
