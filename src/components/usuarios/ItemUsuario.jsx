@@ -45,7 +45,7 @@ const ItemUsuario = ({usuario, setUsuarios}) => {
       <td>
         <Link
           className="btn btn-warning mb-2 mb-md-0"
-          to={`/administrador/usuarios/editar${usuario.id}`}
+          to={`/administrador/usuarios/editar/${usuario.id}`}
         >
           <FaPenToSquare className="fs-4"></FaPenToSquare>
         </Link>
