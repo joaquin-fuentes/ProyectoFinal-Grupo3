@@ -31,9 +31,8 @@ const AdminUsuarios = () => {
           </thead>
           <tbody>
             {
-              
+              usuarios.map((usuario)=> <ItemUsuario key={usuario.id} usuario={usuario} setUsuarios={setUsuarios}></ItemUsuario>)
             }
-            <ItemUsuario></ItemUsuario>
           </tbody>
         </Table>
       </section>

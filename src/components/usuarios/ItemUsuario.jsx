@@ -5,6 +5,8 @@ import { borrarUsuario } from "../../helpers/queries";
 import Swal from "sweetalert2";
 
 const ItemUsuario = ({usuario, setUsuarios}) => {
+
+  
   const eliminarUsuario = () => {
     Swal.fire({
       title: "¿Esta seguro de eliminar el usuario?",
