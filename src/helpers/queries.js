@@ -142,16 +142,6 @@ export const borrarUsuario = async (id) => {
         console.log(error)
     }
 }
-export const borrarPedido = async (id) => {
-    try {
-        const respuesta = await fetch(`${URL_PEDIDOS}/${id}`,{
-            method: "DELETE"
-        });
-        return respuesta
-    } catch (error) {
-        console.log(error)
-    }
-}
 
 export const obtenerPedidos = async()=>{
   try {
