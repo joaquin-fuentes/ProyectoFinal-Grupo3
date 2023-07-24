@@ -9,11 +9,9 @@ const AdminUsuarios = () => {
 
   useEffect(()=>{
     obtenerUsuarios().then((respuesta)=>{
-      console.log(respuesta);
       setUsuarios(respuesta);
-      console.log(respuesta);
     })
-  })
+  },[])
 
   return (
     <Container className="mainSection my-4">
