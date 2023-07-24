@@ -1,6 +1,7 @@
 const URL_PRODUCTO = import.meta.env.VITE_API_PRODUCTO
 const URL_USUARIO = import.meta.env.VITE_API_USUARIO
-const URL_PEDIDO = import.meta.env.VITE_API_PEDIDO
+const URL_PEDIDOS = import.meta.env.VITE_API_PEDIDOS
+
 
 export const login = async (usuario) => {
   try {
@@ -143,7 +144,7 @@ export const borrarUsuario = async (id) => {
 }
 export const borrarPedido = async (id) => {
     try {
-        const respuesta = await fetch(`${URL_PEDIDO}/${id}`,{
+        const respuesta = await fetch(`${URL_PEDIDOS}/${id}`,{
             method: "DELETE"
         });
         return respuesta
@@ -152,3 +153,63 @@ export const borrarPedido = async (id) => {
     }
 }
 
+export const obtenerPedidos = async()=>{
+  try {
+      const respuesta = await fetch(URL_PEDIDOS)
+      const listaPedidos = await respuesta.json();
+      return listaPedidos;
+  } catch (error) {
+      console.log(error);
+  }
+}
+
+export const obtenerPedido = async(id)=>{
+  try {
+      const respuesta = await fetch(`${URL_PEDIDOS}/${id}`)
+      const pedido = await respuesta.json();
+      return pedido;
+  } catch (error) {
+      console.log(error);
+  }
+}
+
+export const crearPedido = async (pedido) => {
+  try {
+      const respuesta = await fetch(URL_PEDIDOS,{
+          method: "POST",
+          headers:{
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(pedido)
+      });
+      return respuesta
+  } catch (error) {
+      console.log(error)
+  }
+}
+
+export const consultaEditarPedido = async(pedido, id)=>{
+  try {
+      const respuesta = await fetch(`${URL_PEDIDOS}/${id}`, {
+          method: "PUT",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(pedido)
+      });
+      return respuesta;
+  } catch (error) {
+      console.log(error);
+  }
+}
+
+export const borrarPedido = async (id) => {
+  try {
+      const respuesta = await fetch(`${URL_PEDIDOS}/${id}`,{
+          method: "DELETE"
+      });
+      return respuesta
+  } catch (error) {
+      console.log(error)
+  }
+}

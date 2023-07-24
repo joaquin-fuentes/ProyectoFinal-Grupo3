@@ -52,5 +52,41 @@
       "isAdmin": false,
       "id": 2
     }
+  ],
+  "pedidos": [
+    {
+      "id": "1",
+      "usuario": "MaximoCozzetti",
+      "fecha": "23-07-2023",
+      "productos": [
+        {
+          "nombreProducto": "Fideos con Salsa",
+          "precio": "1500",
+          "cantidad": 2
+        },
+        {
+          "nombreProducto": "Milanesa a Caballo",
+          "precio": "1700",
+          "cantidad": 1
+        }
+      ]
+    },
+    {
+      "usuario": "admin",
+      "fecha": "15-07-2023",
+      "productos": [
+        {
+          "nombreProducto": "Fideos con Salsa",
+          "precio": "1500",
+          "cantidad": 1
+        },
+        {
+          "nombreProducto": "Sandwich de Milanesa",
+          "precio": "2000",
+          "cantidad": 2
+        }
+      ],
+      "id": "aUkIbA2"
+    }
   ]
 }
