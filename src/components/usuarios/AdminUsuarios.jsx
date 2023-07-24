@@ -2,12 +2,17 @@ import ItemUsuario from "./ItemUsuario";
 import { Container, Table } from "react-bootstrap";
 import { useState } from "react";
 import { useEffect } from "react";
+import { obtenerUsuarios } from "../../helpers/queries";
 const AdminUsuarios = () => {
 
   const [usuarios, setUsuarios] = useState([]);
 
   useEffect(()=>{
-    
+    obtenerUsuarios().then((respuesta)=>{
+      console.log(respuesta);
+      setUsuarios(respuesta);
+      console.log(respuesta);
+    })
   })
 
   return (
