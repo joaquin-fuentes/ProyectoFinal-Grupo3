@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 
 const ItemUsuario = ({usuario, setUsuarios}) => {
 
-  
   const eliminarUsuario = () => {
     Swal.fire({
       title: "¿Esta seguro de eliminar el usuario?",
@@ -40,8 +39,8 @@ const ItemUsuario = ({usuario, setUsuarios}) => {
 
   return (
     <tr>
-      <td>Juan Perez</td>
-      <td>juanperez@gmail.com</td>
+      <td>{usuario.nombreUsuario}</td>
+      <td>{usuario.email}</td>
       <td>Normal</td>
       <td>
         <Link
