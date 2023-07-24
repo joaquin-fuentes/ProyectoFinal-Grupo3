@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { FaSquareXmark, FaPenToSquare } from "react-icons/fa6";
-import { borrarUsuario } from "../../helpers/queries";
+import { borrarUsuario, obtenerUsuarios } from "../../helpers/queries";
 import Swal from "sweetalert2";
 
 const ItemUsuario = ({usuario, setUsuarios}) => {
@@ -26,9 +26,9 @@ const ItemUsuario = ({usuario, setUsuarios}) => {
               `El usuario ${usuario.usuario} fue eliminado`,
               "success"
             );
-            ///obtenerUsuarios().then((respuesta) => {
+            obtenerUsuarios().then((respuesta) => {
             setUsuarios(respuesta);
-            //})
+            })
           } else {
             Swal.fire("Se produjo un error", "Intentelo mas tarde", "error");
           }

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Button, Card, Col } from "react-bootstrap";
 import { HiX } from "react-icons/hi";
 import Swal from "sweetalert2";
