@@ -57,7 +57,7 @@
     {
       "id": "1",
       "usuario": "MaximoCozzetti",
-      "fecha": "23-07-2023",
+      "fecha": "2023/07/23",
       "productos": [
         {
           "nombreProducto": "Fideos con Salsa",
@@ -73,7 +73,7 @@
     },
     {
       "usuario": "admin",
-      "fecha": "15-07-2023",
+      "fecha": "2023/07/15",
       "productos": [
         {
           "nombreProducto": "Fideos con Salsa",
