@@ -9,7 +9,7 @@ const Footer = () => {
   const urlGoogle = "https://www.google.com/maps/search/?api=1&query=General+Paz+576%2C+T4000+San+Miguel+de+Tucumán%2C+Tucumán";
 
   return (
-    <footer className="bg-dark text-light py-4">
+    <footer className="bg-dark text-light py-4 mainSection">
       <Container>
         <Row>
           <Col md={3}>
