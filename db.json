@@ -43,6 +43,22 @@
       "imagen": "https://t2.uc.ltmcdn.com/es/posts/1/4/5/como_hacer_flan_de_chocolate_23541_600_square.jpg",
       "detalle": "Flan  de chocolate bañado con caramelo\n",
       "id": "Hk5YrIp"
+    },
+    {
+      "nombreProducto": "Leche Chocolatada",
+      "precio": "300",
+      "categoria": "Bebidas",
+      "imagen": "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/06/18172916/leche-con-chocolate.jpg",
+      "detalle": "Leche Chocolatada",
+      "id": "k6xbVWy"
+    },
+    {
+      "nombreProducto": "Leche Chocolatada",
+      "precio": "400",
+      "categoria": "Bebidas",
+      "imagen": "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/06/18172916/leche-con-chocolate.jpg",
+      "detalle": "Leche Chocolatada",
+      "id": "PpE0Qci"
     }
   ],
   "usuarios": [

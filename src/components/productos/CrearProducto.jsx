@@ -21,7 +21,8 @@ const CrearProducto = () => {
           'Producto creado',
           `El producto ${productoNuevo.nombreProducto} fue creado`,
           'success');
-          reset()
+          navegacion('/administrador/productos');
+          reset();
       }else{
         Swal.fire(
           'Error',
