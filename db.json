@@ -35,6 +35,14 @@
       "detalle": "Ravioles con salsa blanca",
       "cantidad": "30",
       "id": "NCcm7uZ"
+    },
+    {
+      "nombreProducto": "Flan de Chocolate",
+      "precio": "2300",
+      "categoria": "Postres",
+      "imagen": "https://t2.uc.ltmcdn.com/es/posts/1/4/5/como_hacer_flan_de_chocolate_23541_600_square.jpg",
+      "detalle": "Flan  de chocolate bañado con caramelo\n",
+      "id": "Hk5YrIp"
     }
   ],
   "usuarios": [
