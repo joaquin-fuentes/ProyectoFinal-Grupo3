@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 import { consultaEditarPedido, obtenerPedido } from "../../helpers/queries";
 
 const EditarPedido = () => {
@@ -17,8 +18,8 @@ const EditarPedido = () => {
   
   useEffect(()=>{
     obtenerPedido(id).then((respuesta)=>{
-      setValue('estado', respuesta.nombreProducto)
-      setValue('nota', respuesta.precio)
+      setValue('estado', respuesta.estado)
+      setValue('nota', respuesta.nota)
     })
   }, [])
 
@@ -44,16 +45,18 @@ const EditarPedido = () => {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3 disabled" controlId="formUsuario">
           <Form.Label className="fs-4">Usuario</Form.Label>
-          <Form.Control type="text" disabled></Form.Control>
+          <Form.Control type="text" disabled {...register("usuario")}></Form.Control>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formPedido">
+        {/* <Form.Group className="mb-3" controlId="formPedido">
           <Form.Label className="fs-4">Pedido</Form.Label>
           <Form.Control as="textarea" rows={3} disabled></Form.Control>
-        </Form.Group>
+        </Form.Group> */}
+
         <Form.Group className="mb-3" controlId="formFecha">
           <Form.Label className="fs-4">Fecha</Form.Label>
-          <Form.Control type="date" disabled></Form.Control>
+          <Form.Control type="date" disabled {...register("fecha")}></Form.Control>
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="formCategoria">
           <Form.Label className="fs-4">Estado*</Form.Label>
           <Form.Select
@@ -61,8 +64,8 @@ const EditarPedido = () => {
             {...register("estado", { required: "Debe elegir una opcion" })}
           >
             <option value="">Seleccione una Categoria</option>
-            <option value="Pendiente">Pendiente</option>
-            <option value="Realizado">Realizado</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="realizado">Realizado</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.estado?.message}
