@@ -1,19 +1,47 @@
+import { useEffect } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useNavigate, useParams } from "react-router-dom";
+import { consultaEditarPedido, obtenerPedido } from "../../helpers/queries";
 
 const EditarPedido = () => {
+  const {id}= useParams();
+  const navegacion = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    setValue
   } = useForm();
+  
+  useEffect(()=>{
+    obtenerPedido(id).then((respuesta)=>{
+      setValue('estado', respuesta.nombreProducto)
+      setValue('nota', respuesta.precio)
+    })
+  }, [])
+
+  const onSubmit = (pedidoEditado) =>{
+    consultaEditarPedido(pedidoEditado, id).then((respuesta)=>{
+      if (respuesta) {
+        if (respuesta.status === 200) {
+          Swal.fire('Pedido actualizado', `El pedido: ${pedidoEditado.fecha} fue editado correctamente`, 'success');
+          navegacion('/administrador/pedidos');
+        }else{
+          Swal.fire('Se produjo un error', `El pedido: ${pedidoEditado.fecha} no fue editado, intentelo mas tarde`, 'error');
+        }
+      } else{
+        Swal.fire('Se produjo un error', `El pedido: ${pedidoEditado.fecha} no fue editado, intentelo mas tarde`, 'error');
+      }
+    })
+  }
 
   return (
     <Container className="mainSection my-4 border rounded border-5 border-secondary admin-formulario text-white">
       <h1 className="display-4 text-center">Editar Pedido</h1>
       <hr />
-      <Form onSubmit={handleSubmit()}>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3 disabled" controlId="formUsuario">
           <Form.Label className="fs-4">Usuario</Form.Label>
           <Form.Control type="text" disabled></Form.Control>
