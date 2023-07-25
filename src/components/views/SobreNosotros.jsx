@@ -23,8 +23,8 @@ const AcercaDe = () => {
         <img src={brand} alt="Logo JSON" className="brandJSON" />
       </section>
       <hr />
-      <section className="bg-body-tertiary">
-        <h1 className="display-6 text-center mb-4">Nuestros chefs</h1>
+      <section className="bg-body-tertiary fondo-acerca">
+        <h1 className="display-6 text-center mb-4 pt-4 text-warning">Nuestros chefs</h1>
         <Row className="sobreNosotros-card">
           <Col md={5} className="mb-3 mx-1 p-1">
             <Card>

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Navbar, Container, Nav, Button, NavDropdown } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { FaArrowUp, FaShoppingCart } from "react-icons/fa";
+import { FaArrowUp, FaUtensils } from "react-icons/fa";
 import "../../App.css";
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.css';
@@ -62,7 +62,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 Chefs
               </NavLink>
               <NavLink className="nav-item nav-link" to={"/carrito"}>
-                <FaShoppingCart className="fs-4" />
+                <FaUtensils className="fs-4" />
               </NavLink>
 
               {usuarioLogueado.id ? (

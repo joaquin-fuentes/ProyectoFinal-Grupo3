@@ -197,6 +197,11 @@ html {
     width: 50%;
   }
 
+  .fondo-acerca {
+    background-image: url('../src/assets/Interior.jpg');
+    
+  }
+
   /* Pedido */
   .contenedorImgTabla{
     display: flex;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FaEnvelope, FaFacebook, FaInstagram, FaPhoneAlt, FaTiktok, FaTwitter, FaLocationArrow, FaPinterest } from 'react-icons/fa';
+import { FaEnvelope, FaFacebook, FaInstagram, FaPhoneAlt, FaYoutube, FaTwitter, FaLocationArrow, FaPinterest } from 'react-icons/fa';
 import '../../App.css';
 
 const Footer = () => {
@@ -58,7 +58,7 @@ const Footer = () => {
                 </li>
                 <li className="me-3">
                   <Link to="/404" className="footer-icon-link">
-                    <FaTiktok className="footer-icon" />
+                    <FaYoutube className="footer-icon" />
                   </Link>
                 </li>
                 <li className="me-3">
