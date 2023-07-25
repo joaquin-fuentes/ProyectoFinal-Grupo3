@@ -48,8 +48,9 @@
       "precio": "300",
       "categoria": "Bebidas",
       "imagen": "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/06/18172916/leche-con-chocolate.jpg",
-      "detalle": "Leche Chocolatada",
-      "id": "k6xbVWy"
+      "detalle": "Chocolatada",
+      "cantidad": "25",
+      "id": "PRajuMf"
     }
   ],
   "usuarios": [

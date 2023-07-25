@@ -160,6 +160,33 @@ const CrearProducto = () => {
             {errors.detalle?.message}
           </Form.Text>
         </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formPrecio">
+          <Form.Label className="fs-4">Cantidad*</Form.Label>
+          <Form.Control
+            type="number"
+            placeholder="Ingrese la cantidad"
+            {...register("cantidad", {
+              required: "La cantidad del producto es obligatorio",
+              min: {
+                value: 1,
+                message: "La cantidad minima es 1",
+              },
+              max: {
+                value: 30000,
+                message: "La cantidad máxima es 30.000",
+              },
+              pattern: {
+                value: /[0-9]{1,5}$/,
+                message: "Cantidad solo puede contener números",
+              },
+            })}
+          ></Form.Control>
+          <Form.Text className="text-danger">
+            {errors.cantidad?.message}
+          </Form.Text>
+        </Form.Group>
+
         <Button type="submit" className="btn btn-primary mb-2">
           Guardar Producto
         </Button>
