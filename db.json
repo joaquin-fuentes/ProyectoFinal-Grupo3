@@ -1,12 +1,11 @@
 {
   "productos": [
     {
-      "nombreProducto": "Fideos con Salsa",
-      "precio": "1500",
-      "categoria": "Al Plato",
-      "imagen": "https://www.recetasparaguay.com/base/stock/Recipe/92-image/92-image_web.jpg",
-      "detalle": "Tallarines con carne molida",
-      "cantidad": "20",
+      "nombreProducto": "Fideos con Salsita",
+      "precio": "15000",
+      "categoria": "Sandwich",
+      "imagen": "https://www.indega.com.py/primicia/wp-content/uploads/2022/04/pure-de-papa-con-pollo-broaster-large-qlJiPE4lyS.jpeg",
+      "detalle": "Tallarines con carne molidita",
       "id": "1"
     },
     {
