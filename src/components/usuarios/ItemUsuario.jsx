@@ -23,7 +23,7 @@ const ItemUsuario = ({usuario, setUsuarios}) => {
           if (respuesta.status === 200) {
             Swal.fire(
               "Usuario Eliminado",
-              `El usuario ${usuario.usuario} fue eliminado`,
+              `El usuario ${usuario.nombreUsuario} fue eliminado`,
               "success"
             );
             obtenerUsuarios().then((respuesta) => {
@@ -41,7 +41,7 @@ const ItemUsuario = ({usuario, setUsuarios}) => {
     <tr>
       <td>{usuario.nombreUsuario}</td>
       <td>{usuario.email}</td>
-      <td>Normal</td>
+      <td>{usuario.rol}</td>
       <td>
         <Link
           className="btn btn-warning mb-2 mb-md-0"

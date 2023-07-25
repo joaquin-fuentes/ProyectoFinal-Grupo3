@@ -9,7 +9,16 @@ const AdminUsuarios = () => {
 
   useEffect(()=>{
     obtenerUsuarios().then((respuesta)=>{
-      setUsuarios(respuesta);
+      if(respuesta)
+      {
+        setUsuarios(respuesta);
+      }
+      else{
+        Swal.fire(
+          'Se produjo un error al intentar cargar los datos',
+          `Intente realizar esta operacion mas tarde`,
+          'error');
+      }
     })
   },[])
 

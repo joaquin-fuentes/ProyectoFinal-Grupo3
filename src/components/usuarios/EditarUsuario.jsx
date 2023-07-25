@@ -20,9 +20,10 @@ const EditarUsuario = () => {
   useEffect(()=>{
     obtenerUsuario(id).then((respuesta)=>{
       setValue('nombreUsuario', respuesta.nombreUsuario);
-      setValue('emailUsuario', respuesta.email);
+      setValue('email', respuesta.email);
+      setValue('password', respuesta.password)
       setValue('estado', respuesta.estado);
-      setValue('perfil', respuesta.rol);
+      setValue('rol', respuesta.rol);
     })
   }, [])
 
@@ -38,8 +39,7 @@ const EditarUsuario = () => {
             }
         }else{
             Swal.fire('Se produjo un error', `El Usuario: ${usuarioEditado.nombreUsuario} no fue editado, intentelo mas tarde`, 'error');
-        }
-        
+        }  
     })
   }
 
@@ -52,10 +52,17 @@ const EditarUsuario = () => {
           <Form.Label className="fs-4">Nombre de Usuario</Form.Label>
           <Form.Control type="text" disabled {...register("nombreUsuario")}></Form.Control>
         </Form.Group>
+
         <Form.Group className="mb-3 disabled" controlId="formUsuario">
           <Form.Label className="fs-4">Email</Form.Label>
-          <Form.Control type="text" disabled {...register("emailUsuario")}></Form.Control>
+          <Form.Control type="text" disabled {...register("email")}></Form.Control>
         </Form.Group>
+
+        <Form.Group className="mb-3 disabled" controlId="formUsuario">
+          <Form.Label className="fs-4">Contraseña</Form.Label>
+          <Form.Control type="text" disabled {...register("password")}></Form.Control>
+        </Form.Group>
+
         <Form.Group className="mb-3" controlId="formEstado">
           <Form.Label className="fs-4">Estado de la cuenta*</Form.Label>
           <Form.Select
@@ -70,20 +77,22 @@ const EditarUsuario = () => {
             {errors.estado?.message}
           </Form.Text>
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="formPerfil">
           <Form.Label className="fs-4">Perfil del Usuario*</Form.Label>
           <Form.Select
             aria-label="Perfil"
-            {...register("perfil", { required: "Debe elegir una opcion" })}
+            {...register("rol", { required: "Debe elegir una opcion" })}
           >
             <option value="">Seleccione el perfil del usuario</option>
-            <option value="False">Cliente</option>
-            <option value="True">Administrador</option>
+            <option value="cliente">Cliente</option>
+            <option value="administrador">Administrador</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.perfil?.message}
           </Form.Text>
         </Form.Group>
+
         <Button type="submit" className="btn btn-warning mb-2">
           Guardar Cambios
         </Button>

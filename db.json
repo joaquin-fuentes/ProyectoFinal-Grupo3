@@ -67,12 +67,12 @@
       "id": 2
     },
     {
-      "id": 3,
       "nombreUsuario": "prueba",
       "email": "prueba@jsongourmet.com",
       "password": "321Xyz89",
-      "estado":"Habilitada",
-      "rol": "cliente"
+      "estado": "Suspendida",
+      "rol": "administrador",
+      "id": 3
     }
   ],
   "pedidos": [
