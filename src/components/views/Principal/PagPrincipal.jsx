@@ -12,9 +12,9 @@ const PagPrincipal = () => {
     return (
         <Container>
             <LandingPage></LandingPage>
-            <ContenedorCategorias categoriaBuscada={categoriaBuscada} setCategoriaBuscada={setCategoriaBuscada}></ContenedorCategorias>
+            <ContenedorCategorias setCategoriaBuscada={setCategoriaBuscada}></ContenedorCategorias>
             <FormularioBuscador></FormularioBuscador>
-            <ContenedorComidas></ContenedorComidas>
+            <ContenedorComidas categoriaBuscada={categoriaBuscada}></ContenedorComidas>
         </Container>
     );
 };

@@ -10,7 +10,7 @@ import Swal from "sweetalert2"
 
 
 
-const ContenedorComidas = () => {
+const ContenedorComidas = ({categoriaBuscada}) => {
 
   const [productos, setProductos] = useState([])
 
@@ -33,9 +33,9 @@ const ContenedorComidas = () => {
         <Row xs={1} md={2} lg={3}>
           {
             productos.map((producto) => {
-              // if (categoriaBuscada === producto.categoria || categoriaBuscada === "") {
+              if (categoriaBuscada === producto.categoria || categoriaBuscada === "" || categoriaBuscada === "Todos") {
                 return  <Comida producto={producto} key={producto.id}></Comida>
-              // }
+               }
             })
           }
         </Row>

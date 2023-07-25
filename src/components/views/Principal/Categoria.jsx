@@ -1,11 +1,10 @@
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const Categoria = ({categoriaBuscada, categoria , setCategoriaBuscada}) => {
+const Categoria = ({categoria , setCategoriaBuscada}) => {
   
   const filtroCategoria = () =>{
     setCategoriaBuscada(categoria)
-    console.log(categoriaBuscada)
   }
   return (
     <th>
