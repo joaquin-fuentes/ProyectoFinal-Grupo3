@@ -1,18 +1,18 @@
 import { Table } from "react-bootstrap";
 import Categoria from "./Categoria";
 
-const ContenedorCategorias = () => {
+const ContenedorCategorias = ({categoriaBuscada,setCategoriaBuscada}) => {
   return (
     <section className="table-responsive" id="categoria">
       <Table>
         <thead>
           <tr>
-            <Categoria categoria="Todos"></Categoria>
-            <Categoria categoria="Al Plato"></Categoria>
-            <Categoria categoria="Pastas"></Categoria>
-            <Categoria categoria="Pizzas"></Categoria>
-            <Categoria categoria="Postres"></Categoria>
-            <Categoria categoria="Bebidas"></Categoria>
+            <Categoria categoria="Todos" categoriaBuscada={categoriaBuscada} setCategoriaBuscada={setCategoriaBuscada}></Categoria>
+            <Categoria categoria="Al Plato" categoriaBuscada={categoriaBuscada} setCategoriaBuscada={setCategoriaBuscada}></Categoria>
+            <Categoria categoria="Pastas" categoriaBuscada={categoriaBuscada} setCategoriaBuscada={setCategoriaBuscada}></Categoria>
+            <Categoria categoria="Pizzas" categoriaBuscada={categoriaBuscada} setCategoriaBuscada={setCategoriaBuscada}></Categoria>
+            <Categoria categoria="Postres" categoriaBuscada={categoriaBuscada} setCategoriaBuscada={setCategoriaBuscada}></Categoria>
+            <Categoria categoria="Bebidas" categoriaBuscada={categoriaBuscada} setCategoriaBuscada={setCategoriaBuscada}></Categoria>
           </tr>
         </thead>
       </Table>
