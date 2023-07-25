@@ -3,8 +3,8 @@
     {
       "nombreProducto": "Fideos con Salsa",
       "precio": "1500",
-      "categoria": "Sandwich",
-      "imagen": "https://www.indega.com.py/primicia/wp-content/uploads/2022/04/pure-de-papa-con-pollo-broaster-large-qlJiPE4lyS.jpeg",
+      "categoria": "Pastas",
+      "imagen": "https://cocinachilena.cl/wp-content/uploads/2011/01/tuco-carne.jpg",
       "detalle": "Tallarines con carne molida",
       "id": "1"
     },
@@ -29,7 +29,7 @@
     {
       "nombreProducto": "Ravioles con Salsa Blanca",
       "precio": "1800",
-      "categoria": "Al Plato",
+      "categoria": "Pastas",
       "imagen": "https://jetextramar.com/wp-content/uploads/2021/10/receta-de-ravioli-de-carne-empresa-en-Valencia.jpg",
       "detalle": "Ravioles con salsa blanca",
       "cantidad": "30",
