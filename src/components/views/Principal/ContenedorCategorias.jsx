@@ -7,12 +7,12 @@ const ContenedorCategorias = () => {
       <Table>
         <thead>
           <tr>
-            <Categoria categoria="Categoria"></Categoria>
-            <Categoria categoria="Categoria"></Categoria>
-            <Categoria categoria="Categoria"></Categoria>
-            <Categoria categoria="Categoria"></Categoria>
-            <Categoria categoria="Categoria"></Categoria>
-            <Categoria categoria="Categoria"></Categoria>
+            <Categoria categoria="Todos"></Categoria>
+            <Categoria categoria="Al Plato"></Categoria>
+            <Categoria categoria="Pastas"></Categoria>
+            <Categoria categoria="Pizzas"></Categoria>
+            <Categoria categoria="Postres"></Categoria>
+            <Categoria categoria="Bebidas"></Categoria>
           </tr>
         </thead>
       </Table>
