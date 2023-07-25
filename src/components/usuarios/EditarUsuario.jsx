@@ -58,11 +58,6 @@ const EditarUsuario = () => {
           <Form.Control type="text" disabled {...register("email")}></Form.Control>
         </Form.Group>
 
-        <Form.Group className="mb-3 disabled" controlId="formUsuario">
-          <Form.Label className="fs-4">Contraseña</Form.Label>
-          <Form.Control type="text" disabled {...register("password")}></Form.Control>
-        </Form.Group>
-
         <Form.Group className="mb-3" controlId="formEstado">
           <Form.Label className="fs-4">Estado de la cuenta*</Form.Label>
           <Form.Select
