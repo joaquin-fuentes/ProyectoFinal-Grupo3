@@ -20,7 +20,8 @@ const Comida = ({producto}) => {
                 {producto.detalle}
               </p>
               <h5 className="card-title" id="precio-comida">$ {producto.precio}</h5>
-              <Link id="btn-comida" className="btn">
+              <Link to={`/detalleProducto/${producto.id}`} id="btn-verdetalle" className="btn w-100 my-2" >Ver detalle</Link>
+              <Link id="btn-comida" className="btn w-100">
                 Agregar al pedido
               </Link>
             </div>
