@@ -79,7 +79,7 @@
     {
       "id": "1",
       "usuario": "MaximoCozzetti",
-      "fecha": "2023/07/23",
+      "fecha": "2023-07-23",
       "estado": "pendiente",
       "nota": "sin verdura",
       "productos": [
@@ -97,7 +97,7 @@
     },
     {
       "usuario": "admin",
-      "fecha": "2023/07/15",
+      "fecha": "2023-07-15",
       "estado": "realizado",
       "nota": "salsa blanca",
       "productos": [

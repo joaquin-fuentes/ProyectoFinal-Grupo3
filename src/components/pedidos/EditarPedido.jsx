@@ -18,6 +18,9 @@ const EditarPedido = () => {
   
   useEffect(()=>{
     obtenerPedido(id).then((respuesta)=>{
+      console.log(respuesta);
+      setValue('usuario', respuesta.usuario)
+      setValue('fecha', respuesta.fecha)
       setValue('estado', respuesta.estado)
       setValue('nota', respuesta.nota)
     })
