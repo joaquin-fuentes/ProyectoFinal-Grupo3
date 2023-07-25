@@ -19,10 +19,11 @@ const EditarUsuario = () => {
 
   useEffect(()=>{
     obtenerUsuario(id).then((respuesta)=>{
-      console.log(respuesta);
-      setValue('nombreUsuario',respuesta.nombreUsuario);
-      setValue('emailUsuario',respuesta.email);
-      setValue('perfil',respuesta.rol);
+      setValue('nombreUsuario', respuesta.nombreUsuario);
+      setValue('email', respuesta.email);
+      setValue('password', respuesta.password)
+      setValue('estado', respuesta.estado);
+      setValue('rol', respuesta.rol);
     })
   }, [])
 
@@ -32,14 +33,13 @@ const EditarUsuario = () => {
         if (respuesta) {
             if (respuesta.status === 200) {
                 Swal.fire('Usuario actualizado', `El Usuario: ${usuarioEditado.nombreUsuario} fue editado correctamente`, 'success');
-                navegacion('/admin');
+                navegacion('/administrador/usuarios');
             }else{
                 Swal.fire('Se produjo un error', `El Usuario: ${usuarioEditado.nombreUsuario} no fue editado, intentelo mas tarde`, 'error');
             }
         }else{
             Swal.fire('Se produjo un error', `El Usuario: ${usuarioEditado.nombreUsuario} no fue editado, intentelo mas tarde`, 'error');
-        }
-        
+        }  
     })
   }
 
@@ -52,10 +52,12 @@ const EditarUsuario = () => {
           <Form.Label className="fs-4">Nombre de Usuario</Form.Label>
           <Form.Control type="text" disabled {...register("nombreUsuario")}></Form.Control>
         </Form.Group>
+
         <Form.Group className="mb-3 disabled" controlId="formUsuario">
           <Form.Label className="fs-4">Email</Form.Label>
-          <Form.Control type="text" disabled {...register("emailUsuario")}></Form.Control>
+          <Form.Control type="text" disabled {...register("email")}></Form.Control>
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="formEstado">
           <Form.Label className="fs-4">Estado de la cuenta*</Form.Label>
           <Form.Select
@@ -70,20 +72,22 @@ const EditarUsuario = () => {
             {errors.estado?.message}
           </Form.Text>
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="formPerfil">
           <Form.Label className="fs-4">Perfil del Usuario*</Form.Label>
           <Form.Select
             aria-label="Perfil"
-            {...register("perfil", { required: "Debe elegir una opcion" })}
+            {...register("rol", { required: "Debe elegir una opcion" })}
           >
             <option value="">Seleccione el perfil del usuario</option>
-            <option value="Cliente">Cliente</option>
-            <option value="Administrador">Administrador</option>
+            <option value="cliente">Cliente</option>
+            <option value="administrador">Administrador</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.perfil?.message}
           </Form.Text>
         </Form.Group>
+
         <Button type="submit" className="btn btn-warning mb-2">
           Guardar Cambios
         </Button>

@@ -3,10 +3,9 @@
     {
       "nombreProducto": "Fideos con Salsa",
       "precio": "1500",
-      "categoria": "Al Plato",
-      "imagen": "https://www.recetasparaguay.com/base/stock/Recipe/92-image/92-image_web.jpg",
+      "categoria": "Sandwich",
+      "imagen": "https://www.indega.com.py/primicia/wp-content/uploads/2022/04/pure-de-papa-con-pollo-broaster-large-qlJiPE4lyS.jpeg",
       "detalle": "Tallarines con carne molida",
-      "cantidad": "20",
       "id": "1"
     },
     {
@@ -35,6 +34,23 @@
       "detalle": "Ravioles con salsa blanca",
       "cantidad": "30",
       "id": "NCcm7uZ"
+    },
+    {
+      "nombreProducto": "Flan de Chocolate",
+      "precio": "2300",
+      "categoria": "Postres",
+      "imagen": "https://t2.uc.ltmcdn.com/es/posts/1/4/5/como_hacer_flan_de_chocolate_23541_600_square.jpg",
+      "detalle": "Flan  de chocolate bañado con caramelo\n",
+      "id": "Hk5YrIp"
+    },
+    {
+      "nombreProducto": "Leche Chocolatada",
+      "precio": "300",
+      "categoria": "Bebidas",
+      "imagen": "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/06/18172916/leche-con-chocolate.jpg",
+      "detalle": "Chocolatada",
+      "cantidad": "7",
+      "id": "PRajuMf"
     }
   ],
   "usuarios": [
@@ -47,17 +63,26 @@
     },
     {
       "nombreUsuario": "MaximoCozzetti",
-      "email": "Maximo.Cozzetti@gmail.com",
-      "password": "TortugaMaritima1",
-      "isAdmin": false,
+      "estado": "Habilitada",
+      "perfil": "True",
       "id": 2
+    },
+    {
+      "nombreUsuario": "prueba",
+      "email": "prueba@jsongourmet.com",
+      "estado": "Habilitada",
+      "rol": "cliente",
+      "password": "321Xyz89",
+      "id": 3
     }
   ],
   "pedidos": [
     {
       "id": "1",
       "usuario": "MaximoCozzetti",
-      "fecha": "2023/07/23",
+      "fecha": "2023-07-23",
+      "estado": "pendiente",
+      "nota": "sin verdura",
       "productos": [
         {
           "nombreProducto": "Fideos con Salsa",
@@ -73,7 +98,9 @@
     },
     {
       "usuario": "admin",
-      "fecha": "2023/07/15",
+      "fecha": "2023-07-15",
+      "estado": "realizado",
+      "nota": "salsa blanca",
       "productos": [
         {
           "nombreProducto": "Fideos con Salsa",

@@ -1,18 +1,51 @@
 import { useForm } from "react-hook-form";
 import { Container, Form, Button } from "react-bootstrap";
+import { useEffect } from "react";
+import { consultaeditarProducto, obtenerProducto } from "../../helpers/queries";
+import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 const EditarProducto = () => {
+  const {id}= useParams();
+  const navegacion = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    setValue
   } = useForm();
+
+  useEffect(()=>{
+    obtenerProducto(id).then((respuesta)=>{
+      setValue('nombreProducto', respuesta.nombreProducto)
+      setValue('precio', respuesta.precio)
+      setValue('categoria', respuesta.categoria)
+      setValue('imagen', respuesta.imagen)
+      setValue('detalle', respuesta.detalle)
+      setValue('cantidad', respuesta.cantidad)
+    })
+  }, [])
+
+  const onSubmit = (productoEditado) =>{
+    consultaeditarProducto(productoEditado, id).then((respuesta)=>{
+      if (respuesta) {
+        if (respuesta.status === 200) {
+          Swal.fire('Producto actualizado', `El producto: ${productoEditado.nombreProducto} fue editado correctamente`, 'success');
+          navegacion('/administrador/productos');
+        }else{
+          Swal.fire('Se produjo un error', `El producto: ${productoEditado.nombreProducto} no fue editado, intentelo mas tarde`, 'error');
+        }
+      } else{
+        Swal.fire('Se produjo un error', `El producto: ${productoEditado.nombreProducto} no fue editado, intentelo mas tarde`, 'error');
+      }
+    })
+  }
 
   return (
     <Container className="mainSection my-4 border rounded border-5 border-secondary admin-formulario text-white">
       <h1 className="display-4 text-center">Editar Producto</h1>
       <hr />
-      <Form onSubmit={handleSubmit()}>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formProducto">
           <Form.Label className="fs-4">Producto*</Form.Label>
           <Form.Control
@@ -136,6 +169,33 @@ const EditarProducto = () => {
             {errors.detalle?.message}
           </Form.Text>
         </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formPrecio">
+          <Form.Label className="fs-4">Cantidad*</Form.Label>
+          <Form.Control
+            type="number"
+            placeholder="Ingrese la cantidad"
+            {...register("cantidad", {
+              required: "La cantidad del producto es obligatorio",
+              min: {
+                value: 1,
+                message: "La cantidad minima es 1",
+              },
+              max: {
+                value: 30000,
+                message: "La cantidad máxima es 30.000",
+              },
+              pattern: {
+                value: /[0-9]{1,5}$/,
+                message: "Cantidad solo puede contener números",
+              },
+            })}
+          ></Form.Control>
+          <Form.Text className="text-danger">
+            {errors.cantidad?.message}
+          </Form.Text>
+        </Form.Group>
+
         <Button type="submit" className="btn btn-warning mb-2">
           Editar Producto
         </Button>

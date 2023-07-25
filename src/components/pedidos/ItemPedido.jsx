@@ -1,5 +1,7 @@
 import { Button, Card, Col } from "react-bootstrap";
+import { FaPenToSquare } from "react-icons/fa6";
 import { HiX } from "react-icons/hi";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { borrarPedido, obtenerPedidos } from "../../helpers/queries";
 
@@ -68,9 +70,15 @@ const ItemPedido = ({ pedido, setPedidos }) => {
           <h6 className="text-end">Total: ${calcularTotal()}</h6>
         </Card.Body>
         <Card.Footer className="justify-content-end d-flex colorCard">
-          <Button className="disabled btn-secondary me-md-2">
+          {/* <Button className="disabled btn-secondary me-md-2">
             Pendiente...
-          </Button>
+          </Button> */}
+        <Link
+          className="btn btn-warning me-2"
+          to={`/administrador/pedidos/editar/${pedido.id}`}
+        >
+          <FaPenToSquare className="fs-4"></FaPenToSquare>
+        </Link>
           <Button className="btn-success">Realizado</Button>
         </Card.Footer>
       </Card>

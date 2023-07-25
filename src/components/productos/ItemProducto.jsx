@@ -45,7 +45,7 @@ const ItemProducto = ({ producto, setProductos }) => {
       <td>
         <Link
           className="btn btn-warning mb-2 mb-md-0"
-          to={`/administrador/editar`}
+          to={`/administrador/productos/editar/${producto.id}`}
         >
           <FaPenToSquare className="fs-4"></FaPenToSquare>
         </Link>

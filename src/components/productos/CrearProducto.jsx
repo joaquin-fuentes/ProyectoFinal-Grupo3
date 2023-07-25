@@ -2,8 +2,10 @@ import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearProducto } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const CrearProducto = () => {
+  const navegacion = useNavigate();
   const {
     register,
     handleSubmit,
@@ -19,7 +21,8 @@ const CrearProducto = () => {
           'Producto creado',
           `El producto ${productoNuevo.nombreProducto} fue creado`,
           'success');
-          reset()
+          navegacion('/administrador/productos');
+          reset();
       }else{
         Swal.fire(
           'Error',
@@ -157,6 +160,33 @@ const CrearProducto = () => {
             {errors.detalle?.message}
           </Form.Text>
         </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formPrecio">
+          <Form.Label className="fs-4">Cantidad*</Form.Label>
+          <Form.Control
+            type="number"
+            placeholder="Ingrese la cantidad"
+            {...register("cantidad", {
+              required: "La cantidad del producto es obligatorio",
+              min: {
+                value: 1,
+                message: "La cantidad minima es 1",
+              },
+              max: {
+                value: 30000,
+                message: "La cantidad máxima es 30.000",
+              },
+              pattern: {
+                value: /[0-9]{1,5}$/,
+                message: "Cantidad solo puede contener números",
+              },
+            })}
+          ></Form.Control>
+          <Form.Text className="text-danger">
+            {errors.cantidad?.message}
+          </Form.Text>
+        </Form.Group>
+
         <Button type="submit" className="btn btn-primary mb-2">
           Guardar Producto
         </Button>
