@@ -1,11 +1,11 @@
 {
   "productos": [
     {
-      "nombreProducto": "Fideos con Salsita",
-      "precio": "15000",
+      "nombreProducto": "Fideos con Salsa",
+      "precio": "1500",
       "categoria": "Sandwich",
       "imagen": "https://www.indega.com.py/primicia/wp-content/uploads/2022/04/pure-de-papa-con-pollo-broaster-large-qlJiPE4lyS.jpeg",
-      "detalle": "Tallarines con carne molidita",
+      "detalle": "Tallarines con carne molida",
       "id": "1"
     },
     {
@@ -50,14 +50,6 @@
       "imagen": "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/06/18172916/leche-con-chocolate.jpg",
       "detalle": "Leche Chocolatada",
       "id": "k6xbVWy"
-    },
-    {
-      "nombreProducto": "Leche Chocolatada",
-      "precio": "400",
-      "categoria": "Bebidas",
-      "imagen": "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/06/18172916/leche-con-chocolate.jpg",
-      "detalle": "Leche Chocolatada",
-      "id": "PpE0Qci"
     }
   ],
   "usuarios": [
