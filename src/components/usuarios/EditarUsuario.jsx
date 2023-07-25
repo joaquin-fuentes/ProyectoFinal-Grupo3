@@ -22,7 +22,7 @@ const EditarUsuario = () => {
       setValue('nombreUsuario', respuesta.nombreUsuario);
       setValue('emailUsuario', respuesta.email);
       setValue('estado', respuesta.estado);
-      setValue('perfil', respuesta.isAdmin);
+      setValue('perfil', respuesta.rol);
     })
   }, [])
 
