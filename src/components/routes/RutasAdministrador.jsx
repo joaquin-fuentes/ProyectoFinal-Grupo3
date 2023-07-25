@@ -32,7 +32,7 @@ const RutasAdministrador = () => {
           element={<AdminUsuarios></AdminUsuarios>}
         ></Route>
         <Route
-          path="/usuarios/editar/*"
+          path="/usuarios/editar/:id"
           element={<EditarUsuario></EditarUsuario>}
         ></Route>
       </Routes>
