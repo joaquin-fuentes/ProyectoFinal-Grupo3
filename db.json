@@ -69,9 +69,9 @@
     {
       "nombreUsuario": "prueba",
       "email": "prueba@jsongourmet.com",
+      "estado": "Habilitada",
+      "rol": "cliente",
       "password": "321Xyz89",
-      "estado": "Suspendida",
-      "rol": "administrador",
       "id": 3
     }
   ],
@@ -80,6 +80,7 @@
       "id": "1",
       "usuario": "MaximoCozzetti",
       "fecha": "2023/07/23",
+      "estado": "pendiente",
       "productos": [
         {
           "nombreProducto": "Fideos con Salsa",
@@ -96,6 +97,7 @@
     {
       "usuario": "admin",
       "fecha": "2023/07/15",
+      "estado": "pendiente",
       "productos": [
         {
           "nombreProducto": "Fideos con Salsa",
