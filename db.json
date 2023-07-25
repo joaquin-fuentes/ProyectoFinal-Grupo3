@@ -62,17 +62,9 @@
     },
     {
       "nombreUsuario": "MaximoCozzetti",
-      "emailUsuario": "Maximo.Cozzetti@gmail.com",
       "estado": "Habilitada",
-      "perfil": "Cliente",
+      "perfil": "True",
       "id": 2
-    },
-    {
-      "nombreUsuario": "agustinSandoval",
-      "email": "sandovalagustin989@gmail.com",
-      "password": "Yjp6g3g3",
-      "isAdmin": false,
-      "id": 3
     }
   ],
   "pedidos": [

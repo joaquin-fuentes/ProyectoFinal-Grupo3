@@ -24,7 +24,7 @@ const RutasAdministrador = () => {
         ></Route>
         <Route path="/pedidos" element={<AdminPedidos></AdminPedidos>}></Route>
         <Route
-          path="/pedidos/editar/*"
+          path="/pedidos/editar/:id"
           element={<EditarPedido></EditarPedido>}
         ></Route>
         <Route
