@@ -19,10 +19,10 @@ const EditarUsuario = () => {
 
   useEffect(()=>{
     obtenerUsuario(id).then((respuesta)=>{
-      console.log(respuesta);
-      setValue('nombreUsuario',respuesta.nombreUsuario);
-      setValue('emailUsuario',respuesta.email);
-      setValue('perfil',respuesta.rol);
+      setValue('nombreUsuario', respuesta.nombreUsuario);
+      setValue('emailUsuario', respuesta.email);
+      setValue('estado', respuesta.estado);
+      setValue('perfil', respuesta.isAdmin);
     })
   }, [])
 
@@ -32,7 +32,7 @@ const EditarUsuario = () => {
         if (respuesta) {
             if (respuesta.status === 200) {
                 Swal.fire('Usuario actualizado', `El Usuario: ${usuarioEditado.nombreUsuario} fue editado correctamente`, 'success');
-                navegacion('/admin');
+                navegacion('/administrador/usuarios');
             }else{
                 Swal.fire('Se produjo un error', `El Usuario: ${usuarioEditado.nombreUsuario} no fue editado, intentelo mas tarde`, 'error');
             }
@@ -77,8 +77,8 @@ const EditarUsuario = () => {
             {...register("perfil", { required: "Debe elegir una opcion" })}
           >
             <option value="">Seleccione el perfil del usuario</option>
-            <option value="Cliente">Cliente</option>
-            <option value="Administrador">Administrador</option>
+            <option value="False">Cliente</option>
+            <option value="True">Administrador</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.perfil?.message}
