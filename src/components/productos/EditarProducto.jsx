@@ -1,18 +1,49 @@
 import { useForm } from "react-hook-form";
 import { Container, Form, Button } from "react-bootstrap";
+import { useEffect } from "react";
+import { consultaeditarProducto, obtenerProducto } from "../../helpers/queries";
+import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 const EditarProducto = () => {
+  const {id}= useParams();
+  const navegacion = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    setValue
   } = useForm();
+
+  useEffect(()=>{
+    obtenerProducto(id).then((respuesta)=>{
+      setValue('nombreProducto', respuesta.nombreProducto)
+      setValue('precio', respuesta.precio)
+      setValue('categoria', respuesta.categoria)
+      setValue('imagen', respuesta.imagen)
+      setValue('detalle', respuesta.detalle)
+    })
+  }, [])
+
+  const onSubmit = (productoEditado) =>{
+    consultaeditarProducto(productoEditado, id).then((respuesta)=>{
+      if (respuesta) {
+        if (respuesta.status === 200) {
+          Swal.fire('Producto actualizado', `El producto: ${productoEditado.nombreProducto} fue editado correctamente`, 'success');
+        }else{
+          Swal.fire('Se produjo un error', `El producto: ${productoEditado.nombreProducto} no fue editado, intentelo mas tarde`, 'error');
+        }
+      } else{
+        Swal.fire('Se produjo un error', `El producto: ${productoEditado.nombreProducto} no fue editado, intentelo mas tarde`, 'error');
+      }
+    })
+  }
 
   return (
     <Container className="mainSection my-4 border rounded border-5 border-secondary admin-formulario text-white">
       <h1 className="display-4 text-center">Editar Producto</h1>
       <hr />
-      <Form onSubmit={handleSubmit()}>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formProducto">
           <Form.Label className="fs-4">Producto*</Form.Label>
           <Form.Control
