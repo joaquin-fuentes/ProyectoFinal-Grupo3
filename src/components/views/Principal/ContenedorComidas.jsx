@@ -7,10 +7,11 @@ import { useState, useEffect } from "react";
 import Comida from "./Comida";
 import { obtenerProductos } from "../../../helpers/queries";
 import Swal from "sweetalert2"
+import ContenedorCategorias from "./ContenedorCategorias";
 
 
 
-const ContenedorComidas = ({categoriaBuscada}) => {
+const ContenedorComidas = ({categoriaBuscada, setCategoriaBuscada, busqueda}) => {
 
   const [productos, setProductos] = useState([])
 
@@ -18,16 +19,22 @@ const ContenedorComidas = ({categoriaBuscada}) => {
   useEffect(() => {
     obtenerProductos().then((respuesta) => {
       if (respuesta != null) {
+        if(busqueda.length > 0) {
+          const busquedaMayus = busqueda.charAt(0).toUpperCase() + busqueda.slice(1);
+          const productosBuscados = respuesta.filter(value => value.nombreProducto.includes(busquedaMayus))
+          return setProductos(productosBuscados)
+        }
         setProductos(respuesta)
       } else {
         Swal.fire("Error", "No se pudo obtener los datos de la API", "error")
         // navegacion("/error404")
       }
     })
-  }, [])
-
+  }, [busqueda])
 
   return (
+    <>
+    <ContenedorCategorias setCategoriaBuscada={setCategoriaBuscada}></ContenedorCategorias>
     <Container className="my-5">
       <CardGroup>
         <Row xs={1} md={2} lg={3}>
@@ -35,12 +42,13 @@ const ContenedorComidas = ({categoriaBuscada}) => {
             productos.map((producto) => {
               if (categoriaBuscada === producto.categoria || categoriaBuscada === "" || categoriaBuscada === "Todos") {
                 return  <Comida producto={producto} key={producto.id}></Comida>
-               }
+              }
             })
           }
         </Row>
       </CardGroup>
     </Container>
+    </>
   );
 };
 
