@@ -78,29 +78,28 @@
   ],
   "pedidos": [
     {
+      "usuario": "admin",
+      "fecha": "2023/07/26",
+      "estado": "pendiente",
+      "nota": "",
       "productosDelMenu": [
         "1",
         "2",
-        "3",
-        "PRajuMf",
-        "PRajuMf"
+        "1"
       ],
-      "usuario": "admin",
-      "estado": "pendiente",
-      "nota": "prueba de nota",
-      "fecha": "2023/07/26",
-      "id": "lhnVKOp"
+      "id": "eJ4EV-F"
     },
     {
+      "usuario": "admin",
+      "fecha": "2023/07/26",
+      "estado": "realizado",
+      "nota": "",
       "productosDelMenu": [
         "1",
-        "2"
+        "2",
+        "1"
       ],
-      "usuario": "admin",
-      "estado": "pendiente",
-      "nota": "",
-      "fecha": "2023/07/26",
-      "id": "-NQr97e"
+      "id": "O7663YX"
     }
   ]
 }
