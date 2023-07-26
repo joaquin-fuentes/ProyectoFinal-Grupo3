@@ -9,7 +9,7 @@ const Comida = ({producto}) => {
           <div className="col-md-5">
             <Image
               src={producto.imagen}
-              className="imagenCard rounded-start object-fit-cover"
+              className="imagenCard w-100 rounded-start object-fit-cover"
               alt="..."
             ></Image>
           </div>

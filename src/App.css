@@ -275,8 +275,24 @@ textarea{
   color: #fff !important;
 }
 
-.imagenCard{
-  width: 150px;
-  aspect-ratio: 1/2;
+@media (min-width: 992px)
+{
+  .imagenCard{
+    aspect-ratio: 1/2;
+  }
 }
 
+@media (min-width: 768px) and (max-width: 991px)
+{
+  .imagenCard{
+    aspect-ratio: 1/2.4;
+  }
+}
+
+
+@media (min-width: 320px) and (max-width: 767px)
+{
+  .imagenCard{
+    aspect-ratio: 1/0.5;
+  }
+}
