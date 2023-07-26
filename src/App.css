@@ -27,7 +27,6 @@ h1, h2{
 .navbar-cristal {
   background-color: lightslategray; 
   backdrop-filter: blur(10px); 
-  height: 60px;
 }
 
 .navbar-cristal .nav-link:hover {
