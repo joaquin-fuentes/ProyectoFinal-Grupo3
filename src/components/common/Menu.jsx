@@ -23,6 +23,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         sessionStorage.removeItem('usuario');
+        sessionStorage.removeItem('productosEnPedido');
         setUsuarioLogueado({});
         navegar('/');
       }

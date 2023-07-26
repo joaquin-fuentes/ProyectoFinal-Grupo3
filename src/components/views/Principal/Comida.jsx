@@ -7,31 +7,41 @@ const Comida = ({ producto }) => {
 
   const agregarProductoAlPedido = (idProducto) => {
 
-    Swal.fire({
-      title: 'Estás seguro?',
-      text: "Seguro que deseas agregar este producto al pedido?",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, estoy seguro!',
-      cancelButtonText: 'Cancelar',
-
-    }).then((result) => {
-      if (result.isConfirmed) {
-        // Obtener el array actual de nombres de id de productos desde la sessionStorage
-        const productosEnPedido = JSON.parse(sessionStorage.getItem("productosEnPedido")) || [];
-        // Agregar el nuevo id de producto al array
-        productosEnPedido.push(idProducto);
-        // Guardar el array actualizado en la sessionStorage con la clave "productosEnPedido"
-        sessionStorage.setItem("productosEnPedido", JSON.stringify(productosEnPedido));
-        Swal.fire(
-          'Agregado!',
-          'El producto fue agregado con exito al pedido',
-          'success'
-        )
-      }
-    })
+    const usuarioEnSession = JSON.parse(sessionStorage.getItem('usuario')) || null;
+    if(usuarioEnSession){
+      Swal.fire({
+        title: 'Estás seguro?',
+        text: "Seguro que deseas agregar este producto al pedido?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, estoy seguro!',
+        cancelButtonText: 'Cancelar',
+  
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Obtener el array actual de nombres de id de productos desde la sessionStorage
+          const productosEnPedido = JSON.parse(sessionStorage.getItem("productosEnPedido")) || [];
+          // Agregar el nuevo id de producto al array
+          productosEnPedido.push(idProducto);
+          // Guardar el array actualizado en la sessionStorage con la clave "productosEnPedido"
+          sessionStorage.setItem("productosEnPedido", JSON.stringify(productosEnPedido));
+          Swal.fire(
+            'Agregado!',
+            'El producto fue agregado con exito al pedido',
+            'success'
+          )
+        }
+      })
+    } else{
+      Swal.fire(
+        'Alerta',
+        'Debe loguearse para poder agregar productos al pedido',
+        'warning'
+      )
+    }
+    
   }
 
   return (

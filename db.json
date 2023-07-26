@@ -90,6 +90,17 @@
       "nota": "prueba de nota",
       "fecha": "2023/07/26",
       "id": "lhnVKOp"
+    },
+    {
+      "productosDelMenu": [
+        "1",
+        "2"
+      ],
+      "usuario": "admin",
+      "estado": "pendiente",
+      "nota": "",
+      "fecha": "2023/07/26",
+      "id": "-NQr97e"
     }
   ]
 }
