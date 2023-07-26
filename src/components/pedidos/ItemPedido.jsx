@@ -109,9 +109,9 @@ const ItemPedido = ({ pedido, setPedidos, actualizarPedidos }) => {
 
   const verificarEstado = () => {
     if (pedidoEstado.estado === "pendiente") {
-      return <Button className="btn-primary" onClick={realizarPedido}>Pendiente...</Button>;
+      return <Button className="btn-success" onClick={realizarPedido}>Pendiente...</Button>;
     } else {
-      return <Button className="btn-success" disabled >Realizado</Button>;
+      return <Button className="btn-danger" disabled >Realizado</Button>;
     }
 
   };

@@ -87,24 +87,12 @@
         "2",
         "1"
       ],
-      "id": "-NQr97e"
-    },
-    {
-      "usuario": "admin",
-      "fecha": "2023/07/26",
-      "estado": "pendiente",
-      "nota": "",
-      "productosDelMenu": [
-        "1",
-        "2",
-        "1"
-      ],
       "id": "eJ4EV-F"
     },
     {
       "usuario": "admin",
       "fecha": "2023/07/26",
-      "estado": "pendiente",
+      "estado": "realizado",
       "nota": "",
       "productosDelMenu": [
         "1",
