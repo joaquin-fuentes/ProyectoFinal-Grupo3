@@ -78,29 +78,40 @@
   ],
   "pedidos": [
     {
+      "usuario": "admin",
+      "fecha": "2023/07/26",
+      "estado": "pendiente",
+      "nota": "",
       "productosDelMenu": [
         "1",
         "2",
-        "3",
-        "PRajuMf",
-        "PRajuMf"
+        "1"
       ],
-      "usuario": "admin",
-      "estado": "pendiente",
-      "nota": "prueba de nota",
-      "fecha": "2023/07/26",
-      "id": "lhnVKOp"
+      "id": "-NQr97e"
     },
     {
-      "productosDelMenu": [
-        "1",
-        "2"
-      ],
       "usuario": "admin",
+      "fecha": "2023/07/26",
       "estado": "pendiente",
       "nota": "",
+      "productosDelMenu": [
+        "1",
+        "2",
+        "1"
+      ],
+      "id": "eJ4EV-F"
+    },
+    {
+      "usuario": "admin",
       "fecha": "2023/07/26",
-      "id": "-NQr97e"
+      "estado": "pendiente",
+      "nota": "",
+      "productosDelMenu": [
+        "1",
+        "2",
+        "1"
+      ],
+      "id": "O7663YX"
     }
   ]
 }
