@@ -2,9 +2,22 @@ import React from 'react';
 import { Container, Breadcrumb, Table, Button, Form } from "react-bootstrap"
 import { BsFillTrashFill } from "react-icons/bs"
 import { useForm } from "react-hook-form";
-
+import { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
 
 const Pedido = () => {
+
+    const [productosDelMenu, setProductosDelMenu] = useState([])
+    const [nota, setNota] = useState("")
+    const [usuario, setUsuario] = useState("")
+    const [fecha, setFecha] = useState("")
+    const [estado, setEstado] = useState("")
+
+    useEffect(() => {
+        // Obtener el array de nombres de productos desde la sessionStorage
+        const productosGuardadosEnSession = JSON.parse(sessionStorage.getItem("productosEnPedido")) || [];
+        setProductosDelMenu(productosGuardadosEnSession);
+    }, [])
 
     const {
         register,
@@ -13,8 +26,45 @@ const Pedido = () => {
         reset
     } = useForm();
 
+    const borrarProductoDelPedido = (index) => {
+        Swal.fire({
+            title: 'Estas seguro?',
+            text: "Seguro que deseas eliminar el producto del pedido?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, borrar!',
+            cancelButtonText: "Cancelar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Copiar el array de productos para poder modificarlo
+                const nuevosProductos = [...productosDelMenu];
+                // Eliminar el producto específico del array usando el índice
+                nuevosProductos.splice(index, 1);
+                // Actualizar el estado local con el array actualizado
+                setProductosDelMenu(nuevosProductos);
+                // Guardar el array actualizado en la sessionStorage
+                sessionStorage.setItem("productosEnPedido", JSON.stringify(nuevosProductos));
+                Swal.fire(
+                    'Eliminado!',
+                    'El producto fue eliminado con exito!',
+                    'success'
+                  )
+            }
+        })
+
+    };
+
     const onSubmit = (nota) => {
         console.log(nota)
+    }
+    const calcularTotal =()=>{
+        let total = 0
+        productosDelMenu.forEach((productoDelMenu)=>{
+            total = total + +productoDelMenu.precio
+        })
+        return total
     }
 
     return (
@@ -32,37 +82,20 @@ const Pedido = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className="text-center align-middle"><Button variant="danger"><BsFillTrashFill /></Button></td>
-                            <td className='text-center align-middle'>
-                                <img className='imgTabla' src="https://fegasacruz.org/wp-content/uploads/2020/08/f7cbe0acb20add4be4804bc052302767.jpg" alt="Milanesa con pure" />
-                            </td>
-                            <td className="text-center align-middle">Milanesa con puré</td>
-                            <td className="text-center align-middle">$1500</td>
-                            {/* <td className="contenedorCantidad text-center align-middle d-flex justify-content-center align-items-center ">
-                                <Button variant='outline-danger' className='m-2'>-</Button>
-                                <div>2</div>
-                                <Button variant='outline-primary' className='m-2'>+</Button>
 
-                            </td>
-                            <td className="text-center align-middle">$3000</td> */}
-                        </tr>
-                        <tr>
-                            <td className="text-center align-middle"><Button variant="danger"><BsFillTrashFill /></Button></td>
-                            <td className="text-center align-middle">
-                                <img className='imgTabla' src="https://miro.medium.com/v2/resize:fit:1200/1*F8l4EawhVuNF_EsS1evv6w.jpeg" alt="Sanguche de milanesa" />
-                            </td>
-                            <td className="text-center align-middle">Sanguche de milanesa</td>
-                            <td className="text-center align-middle">$1200</td>
-                        </tr>
-                        <tr>
-                            <td className="text-center align-middle"><Button variant="danger"><BsFillTrashFill /></Button></td>
-                            <td className="text-center align-middle">
-                                <img className='imgTabla' src="https://www.cocinavital.mx/wp-content/uploads/2017/10/ravioles-en-salsa-de-pimienta-1.jpg" alt="Ravioles con salsa" />
-                            </td>
-                            <td className="text-center align-middle">Ravioles con salsa roja</td>
-                            <td className="text-center align-middle">$1300</td>
-                        </tr>
+                        {
+                            productosDelMenu.map((productoDelMenu, index) => {
+                                return <tr key={index}>
+                                    <td className="text-center align-middle"><Button variant="danger" type='button' onClick={() => borrarProductoDelPedido(index)}><BsFillTrashFill /></Button></td>
+                                    <td className="text-center align-middle">
+                                        <img className='imgTabla' src={productoDelMenu.imagen} alt="Sanguche de milanesa" />
+                                    </td>
+                                    <td className="text-center align-middle">{productoDelMenu.nombreProducto}</td>
+                                    <td className="text-center align-middle">${productoDelMenu.precio}</td>
+                                </tr>
+                            })
+                        }
+
                     </tbody>
                 </Table>
             </div>
@@ -84,7 +117,7 @@ const Pedido = () => {
                         {errors.nota?.message}
                     </Form.Text>
                 </Form.Group>
-                <h3 className='my-2'>TOTAL PEDIDO: <span> $4000</span></h3>
+                <h3 className='my-2'>TOTAL PEDIDO: <span> ${calcularTotal()}</span></h3>
 
                 <Button type='submit' variant="primary" size="lg" className='my-3'>
                     Realizar Pedido
