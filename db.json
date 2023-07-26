@@ -78,95 +78,18 @@
   ],
   "pedidos": [
     {
-      "usuario": "admin",
-      "fecha": "2023-07-15",
-      "estado": "realizado",
-      "nota": "salsa blanca",
       "productosDelMenu": [
-        {
-          "nombreProducto": "Fideos con Salsa",
-          "precio": "1500",
-          "cantidad": 1
-        },
-        {
-          "nombreProducto": "Sandwich de Milanesa",
-          "precio": "2000",
-          "cantidad": 2
-        }
-      ],
-      "id": "aUkIbA2"
-    },
-    {
-      "productosDelMenu": [
-        {
-          "nombreProducto": "Fideos con Salsa",
-          "imagen": "https://cocinachilena.cl/wp-content/uploads/2011/01/tuco-carne.jpg",
-          "precio": "1500"
-        },
-        {
-          "nombreProducto": "Milanesa a Caballo",
-          "imagen": "https://media.lmneuquen.com/p/7e0c76e74c99f6ec8c82e3fb61c43116/adjuntos/195/imagenes/005/541/0005541097/1200x675/smart/milanesas-a-caballojpg.jpg",
-          "precio": "1700"
-        },
-        {
-          "nombreProducto": "Fideos con Salsa",
-          "imagen": "https://cocinachilena.cl/wp-content/uploads/2011/01/tuco-carne.jpg",
-          "precio": "1500"
-        }
+        "1",
+        "2",
+        "3",
+        "PRajuMf",
+        "PRajuMf"
       ],
       "usuario": "admin",
       "estado": "pendiente",
-      "nota": "2da prueba",
+      "nota": "prueba de nota",
       "fecha": "2023/07/26",
-      "id": "u6Q_nj5"
-    },
-    {
-      "productosDelMenu": [
-        {
-          "nombreProducto": "Fideos con Salsa",
-          "imagen": "https://cocinachilena.cl/wp-content/uploads/2011/01/tuco-carne.jpg",
-          "precio": "1500"
-        },
-        {
-          "nombreProducto": "Milanesa a Caballo",
-          "imagen": "https://media.lmneuquen.com/p/7e0c76e74c99f6ec8c82e3fb61c43116/adjuntos/195/imagenes/005/541/0005541097/1200x675/smart/milanesas-a-caballojpg.jpg",
-          "precio": "1700"
-        }
-      ],
-      "usuario": "admin",
-      "estado": "pendiente",
-      "nota": "prueba de pedido",
-      "fecha": "2023/07/26",
-      "id": "1jbZJ7c"
-    },
-    {
-      "productosDelMenu": [
-        {
-          "nombreProducto": "Fideos con Salsa",
-          "imagen": "https://cocinachilena.cl/wp-content/uploads/2011/01/tuco-carne.jpg",
-          "precio": "1500"
-        },
-        {
-          "nombreProducto": "Milanesa a Caballo",
-          "imagen": "https://media.lmneuquen.com/p/7e0c76e74c99f6ec8c82e3fb61c43116/adjuntos/195/imagenes/005/541/0005541097/1200x675/smart/milanesas-a-caballojpg.jpg",
-          "precio": "1700"
-        },
-        {
-          "nombreProducto": "Fideos con Salsa",
-          "imagen": "https://cocinachilena.cl/wp-content/uploads/2011/01/tuco-carne.jpg",
-          "precio": "1500"
-        },
-        {
-          "nombreProducto": "Fideos con Salsa",
-          "imagen": "https://cocinachilena.cl/wp-content/uploads/2011/01/tuco-carne.jpg",
-          "precio": "1500"
-        }
-      ],
-      "usuario": "admin",
-      "estado": "pendiente",
-      "nota": "",
-      "fecha": "2023/07/26",
-      "id": "el5NRQ8"
+      "id": "lhnVKOp"
     }
   ]
 }

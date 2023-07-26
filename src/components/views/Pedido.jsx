@@ -95,11 +95,7 @@ const Pedido = () => {
             }
         })
     };
-    
-    
-    
-    
-    
+      
 
     const onSubmit = (nota) => {
         Swal.fire({
@@ -121,11 +117,7 @@ const Pedido = () => {
                 // obtenerFechaDeHoy()
                 // console.log(fecha)
                 const nuevoPedido = {
-                    productosDelMenu: productosDelMenu.map((producto) => ({
-                        nombreProducto: producto.nombreProducto,
-                        imagen: producto.imagen,
-                        precio: producto.precio,
-                    })),
+                    productosDelMenu: productosDelMenu.map((producto) => producto.id), // Solo seleccionar el id de cada producto
                     usuario: usuario.nombreUsuario,
                     estado,
                     nota: nota.nota,

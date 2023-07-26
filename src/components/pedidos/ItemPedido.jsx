@@ -3,14 +3,36 @@ import { FaPenToSquare } from "react-icons/fa6";
 import { HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { borrarPedido, obtenerPedidos } from "../../helpers/queries";
+import { borrarPedido, obtenerPedidos, obtenerProductos } from "../../helpers/queries";
+import { useEffect, useState } from "react";
 
 const ItemPedido = ({ pedido, setPedidos }) => {
 
+  const [productos, setProductos] = useState([])
+
+  useEffect(()=>{
+    obtenerProductos().then((respuesta) => {
+      if(respuesta)
+      {
+        setProductos(respuesta);
+      }
+      else{
+        Swal.fire(
+          'Se produjo un error al intentar cargar los datos',
+          `Intente realizar esta operacion mas tarde`,
+          'error');
+      }
+    })
+  },[])
+
   const calcularTotal = () => {
     let total = 0;
-    pedido.productosDelMenu.forEach((productoDelMenu) => {
-      total = total + +productoDelMenu.precio
+    pedido.productosDelMenu.forEach((idProducto) => {
+      productos.forEach((productoDB)=>{
+        if(productoDB.id === idProducto){
+          total = total + +productoDB.precio
+        }
+      })
     });
     return total;
   };
@@ -62,8 +84,12 @@ const ItemPedido = ({ pedido, setPedidos }) => {
           <h6>Fecha: {pedido.fecha}</h6>
           <h6>Pedido:</h6>
           <ul className="ps-5">
-            {pedido.productosDelMenu.map((producto, index) => (
-              <li key={index}>{producto.cantidad} {producto.nombreProducto}</li>
+            {pedido.productosDelMenu.map((idProducto, index) => (
+              <li key={index}>{productos.map((productoDB)=>{if(productoDB.id === idProducto){
+                return productoDB.nombreProducto
+              }})} - ${productos.map((productoDB)=>{if(productoDB.id === idProducto){
+                return productoDB.precio
+              }})} </li>
             ))}
           </ul>
           <h6>Nota: {pedido.nota}</h6>
