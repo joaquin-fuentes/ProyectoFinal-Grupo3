@@ -78,42 +78,29 @@
   ],
   "pedidos": [
     {
-      "id": "1",
-      "usuario": "MaximoCozzetti",
-      "fecha": "2023-07-23",
+      "productosDelMenu": [
+        "1",
+        "2",
+        "3",
+        "PRajuMf",
+        "PRajuMf"
+      ],
+      "usuario": "admin",
       "estado": "pendiente",
-      "nota": "sin verdura",
-      "productos": [
-        {
-          "nombreProducto": "Fideos con Salsa",
-          "precio": "1500",
-          "cantidad": 2
-        },
-        {
-          "nombreProducto": "Milanesa a Caballo",
-          "precio": "1700",
-          "cantidad": 1
-        }
-      ]
+      "nota": "prueba de nota",
+      "fecha": "2023/07/26",
+      "id": "lhnVKOp"
     },
     {
-      "usuario": "admin",
-      "fecha": "2023-07-15",
-      "estado": "realizado",
-      "nota": "salsa blanca",
-      "productos": [
-        {
-          "nombreProducto": "Fideos con Salsa",
-          "precio": "1500",
-          "cantidad": 1
-        },
-        {
-          "nombreProducto": "Sandwich de Milanesa",
-          "precio": "2000",
-          "cantidad": 2
-        }
+      "productosDelMenu": [
+        "1",
+        "2"
       ],
-      "id": "aUkIbA2"
+      "usuario": "admin",
+      "estado": "pendiente",
+      "nota": "",
+      "fecha": "2023/07/26",
+      "id": "-NQr97e"
     }
   ]
 }

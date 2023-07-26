@@ -57,7 +57,7 @@ const EditarPedido = () => {
 
         <Form.Group className="mb-3" controlId="formFecha">
           <Form.Label className="fs-4">Fecha</Form.Label>
-          <Form.Control type="date" disabled {...register("fecha")}></Form.Control>
+          <Form.Control type="text" disabled {...register("fecha")}></Form.Control>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formCategoria">
