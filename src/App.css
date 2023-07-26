@@ -274,3 +274,9 @@ textarea{
   background-color: #8c7851 !important;
   color: #fff !important;
 }
+
+.imagenCard{
+  width: 150px;
+  aspect-ratio: 1/2;
+}
+
