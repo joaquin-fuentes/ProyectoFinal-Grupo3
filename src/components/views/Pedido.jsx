@@ -18,7 +18,15 @@ const Pedido = () => {
     useEffect(() => {
         // Obtener el array de productos desde la sessionStorage
         const productosGuardadosEnSession = JSON.parse(sessionStorage.getItem("productosEnPedido")) || [];
-        setProductosDelMenu(productosGuardadosEnSession);
+        // Realizar la transformación para guardar solo los atributos deseados
+        const productosSimplificados = productosGuardadosEnSession.map((producto) => ({
+            nombreProducto: producto.nombreProducto,
+            imagen: producto.imagen,
+            precio: producto.precio,
+        }));
+        // Establecer los productos simplificados en el estado local
+        setProductosDelMenu(productosSimplificados);
+
         // Obtener el usuario desde la sessionStorage
         const usaurioEnSession = JSON.parse(sessionStorage.getItem("usuario")) || [];
         setUsuario(usaurioEnSession);
@@ -81,17 +89,26 @@ const Pedido = () => {
                 // console.log(nota)
                 // obtenerFechaDeHoy()
                 // console.log(fecha)
-                const nuevoPedido = {...pedido, productosDelMenu, usuario:usuario.nombreUsuario, estado,nota: nota.nota, fecha }
-                console.log(nuevoPedido)
-                crearPedido(nuevoPedido).then((respuesta)=>{
-                    if(respuesta.status === 201){
+                const nuevoPedido = {
+                    productosDelMenu: productosDelMenu.map((producto) => ({
+                        nombreProducto: producto.nombreProducto,
+                        imagen: producto.imagen,
+                        precio: producto.precio,
+                    })),
+                    usuario: usuario.nombreUsuario,
+                    estado,
+                    nota: nota.nota,
+                    fecha,
+                }; console.log(nuevoPedido)
+                crearPedido(nuevoPedido).then((respuesta) => {
+                    if (respuesta.status === 201) {
                         Swal.fire(
                             'Listo!',
                             'El pedido fue creado correctamente',
                             'success'
                         )
                         reset()
-                    } else{
+                    } else {
                         Swal.fire(
                             'Error!',
                             `No se pudo procesar su peticion`,
@@ -99,7 +116,7 @@ const Pedido = () => {
                         )
                     }
                 })
-               
+
             }
         })
 

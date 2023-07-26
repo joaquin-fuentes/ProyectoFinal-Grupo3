@@ -9,9 +9,8 @@ const ItemPedido = ({ pedido, setPedidos }) => {
 
   const calcularTotal = () => {
     let total = 0;
-    pedido.productos.forEach((producto) => {
-      const precioTotalProducto = parseInt(producto.precio) * parseInt(producto.cantidad);
-      total += precioTotalProducto;
+    pedido.productosDelMenu.forEach((productoDelMenu) => {
+      total = total + +productoDelMenu.precio
     });
     return total;
   };
@@ -63,10 +62,11 @@ const ItemPedido = ({ pedido, setPedidos }) => {
           <h6>Fecha: {pedido.fecha}</h6>
           <h6>Pedido:</h6>
           <ul className="ps-5">
-            {pedido.productos.map((producto, index) => (
+            {pedido.productosDelMenu.map((producto, index) => (
               <li key={index}>{producto.cantidad} {producto.nombreProducto}</li>
             ))}
           </ul>
+          <h6>Nota: {pedido.nota}</h6>
           <h6 className="text-end">Total: ${calcularTotal()}</h6>
         </Card.Body>
         <Card.Footer className="justify-content-end d-flex colorCard">
