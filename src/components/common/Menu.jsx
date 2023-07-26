@@ -81,7 +81,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                     </NavDropdown>
                   ) : null}
 
-                  <Button variant="dark" onClick={logout}>
+                  <Button variant="dark" onClick={logout} className="btn-cerrar-sesion">
                     Cerrar Sesion
                   </Button>
                 </>
