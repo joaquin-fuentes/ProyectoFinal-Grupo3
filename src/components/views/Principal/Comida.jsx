@@ -5,7 +5,7 @@ import Swal from "sweetalert2"
 
 const Comida = ({ producto }) => {
 
-  const agregarProductoAlPedido = (producto) => {
+  const agregarProductoAlPedido = (idProducto) => {
 
     Swal.fire({
       title: 'Estás seguro?',
@@ -19,10 +19,10 @@ const Comida = ({ producto }) => {
 
     }).then((result) => {
       if (result.isConfirmed) {
-        // Obtener el array actual de nombres de productos desde la sessionStorage
+        // Obtener el array actual de nombres de id de productos desde la sessionStorage
         const productosEnPedido = JSON.parse(sessionStorage.getItem("productosEnPedido")) || [];
-        // Agregar el nuevo nombre de producto al array
-        productosEnPedido.push(producto);
+        // Agregar el nuevo id de producto al array
+        productosEnPedido.push(idProducto);
         // Guardar el array actualizado en la sessionStorage con la clave "productosEnPedido"
         sessionStorage.setItem("productosEnPedido", JSON.stringify(productosEnPedido));
         Swal.fire(
@@ -53,7 +53,7 @@ const Comida = ({ producto }) => {
               </p>
               <h5 className="card-title" id="precio-comida">$ {producto.precio}</h5>
               <Link to={`/detalleProducto/${producto.id}`} id="btn-verdetalle" className="btn w-100 mb-2" >Ver detalle</Link>
-              <Button id="btn-comida" className="btn w-100" type="button" onClick={() => agregarProductoAlPedido(producto)}>
+              <Button id="btn-comida" className="btn w-100" type="button" onClick={() => agregarProductoAlPedido(producto.id)}>
                 Agregar al pedido
               </Button>
             </div>

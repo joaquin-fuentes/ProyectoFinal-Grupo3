@@ -4,10 +4,10 @@ import { BsFillTrashFill } from "react-icons/bs"
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
-import { crearPedido } from '../../helpers/queries';
+import { crearPedido, obtenerProducto, obtenerProductos } from '../../helpers/queries';
 
 const Pedido = () => {
-
+    const [productos, setProductos] = useState([])
     const [productosDelMenu, setProductosDelMenu] = useState([])
     const [nota, setNota] = useState("")
     const [usuario, setUsuario] = useState("")
@@ -16,22 +16,39 @@ const Pedido = () => {
     const [pedido, setPedido] = useState({})
 
     useEffect(() => {
-        // Obtener el array de productos desde la sessionStorage
-        const productosGuardadosEnSession = JSON.parse(sessionStorage.getItem("productosEnPedido")) || [];
-        // Realizar la transformación para guardar solo los atributos deseados
-        const productosSimplificados = productosGuardadosEnSession.map((producto) => ({
-            nombreProducto: producto.nombreProducto,
-            imagen: producto.imagen,
-            precio: producto.precio,
-        }));
-        // Establecer los productos simplificados en el estado local
-        setProductosDelMenu(productosSimplificados);
+        const productosGuardadosEnSession = JSON.parse(sessionStorage.getItem('productosEnPedido')) || [];
+    
+        // Obtener los productos de la base de datos
+        obtenerProductos().then((respuesta) => {
+            if (respuesta) {
+                setProductos(respuesta);
+    
+                // Filtrar los productos que coinciden con los IDs guardados en la sesión
+                const productosEnMenu = [];
+                productosGuardadosEnSession.forEach((idProducto) => {
+                    const productosRepetidos = respuesta.filter((producto) => producto.id === idProducto);
+                    productosEnMenu.push(...productosRepetidos);
+                });
+    
+                // Actualizar el estado con los productos filtrados
+                setProductosDelMenu(productosEnMenu);
+    
+            
+            } else {
+                Swal.fire(
+                    'Se produjo un error al intentar cargar los datos',
+                    'Intente realizar esta operación más tarde',
+                    'error'
+                );
+            }
+        });
+    
+        const usuarioEnSession = JSON.parse(sessionStorage.getItem('usuario')) || [];
+        setUsuario(usuarioEnSession);
+        obtenerFechaDeHoy();
+    }, []);
 
-        // Obtener el usuario desde la sessionStorage
-        const usaurioEnSession = JSON.parse(sessionStorage.getItem("usuario")) || [];
-        setUsuario(usaurioEnSession);
-        obtenerFechaDeHoy()
-    }, [])
+
 
     const {
         register,
@@ -54,21 +71,35 @@ const Pedido = () => {
             if (result.isConfirmed) {
                 // Copiar el array de productos para poder modificarlo
                 const nuevosProductos = [...productosDelMenu];
+                // Obtener el ID del producto que se eliminará
+                const idProductoEliminado = nuevosProductos[index].id;
                 // Eliminar el producto específico del array usando el índice
                 nuevosProductos.splice(index, 1);
                 // Actualizar el estado local con el array actualizado
                 setProductosDelMenu(nuevosProductos);
+    
+                // Obtener el array de productos desde la sessionStorage
+                const productosGuardadosEnSession = JSON.parse(sessionStorage.getItem("productosEnPedido")) || [];
+                // Encontrar el índice del producto a eliminar en el array de la sessionStorage
+                const indexProductoEnSession = productosGuardadosEnSession.indexOf(idProductoEliminado);
+                // Eliminar el producto específico del array de la sessionStorage usando el índice encontrado
+                productosGuardadosEnSession.splice(indexProductoEnSession, 1);
                 // Guardar el array actualizado en la sessionStorage
-                sessionStorage.setItem("productosEnPedido", JSON.stringify(nuevosProductos));
+                sessionStorage.setItem("productosEnPedido", JSON.stringify(productosGuardadosEnSession));
+    
                 Swal.fire(
                     'Eliminado!',
-                    'El producto fue eliminado con exito!',
+                    'El producto fue eliminado con éxito!',
                     'success'
                 )
             }
         })
-
     };
+    
+    
+    
+    
+    
 
     const onSubmit = (nota) => {
         Swal.fire({
@@ -154,20 +185,20 @@ const Pedido = () => {
                         </tr>
                     </thead>
                     <tbody>
-
-                        {
-                            productosDelMenu.map((productoDelMenu, index) => {
-                                return <tr key={index}>
-                                    <td className="text-center align-middle"><Button variant="danger" type='button' onClick={() => borrarProductoDelPedido(index)}><BsFillTrashFill /></Button></td>
-                                    <td className="text-center align-middle">
-                                        <img className='imgTabla' src={productoDelMenu.imagen} alt="Sanguche de milanesa" />
-                                    </td>
-                                    <td className="text-center align-middle">{productoDelMenu.nombreProducto}</td>
-                                    <td className="text-center align-middle">${productoDelMenu.precio}</td>
-                                </tr>
-                            })
-                        }
-
+                        {productosDelMenu.map((producto, index) => (
+                            <tr key={index}>
+                                <td className="text-center align-middle">
+                                    <Button variant="danger" type="button" onClick={() => borrarProductoDelPedido(index, producto.id)}>
+                                        <BsFillTrashFill />
+                                    </Button>
+                                </td>
+                                <td className="text-center align-middle">
+                                    <img className="imgTabla" src={producto.imagen} alt={producto.nombreProducto} />
+                                </td>
+                                <td className="text-center align-middle">{producto.nombreProducto}</td>
+                                <td className="text-center align-middle">${producto.precio}</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </Table>
             </div>
