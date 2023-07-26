@@ -71,7 +71,7 @@ html {
   background: linear-gradient(to right, #161616 65%, #C0FF0D 40%);
 } */
 .banner{
-  height: 100vh;
+  height: 100dvh;
 }
 #banner-image{
   display:none;
