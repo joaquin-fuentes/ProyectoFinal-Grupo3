@@ -61,7 +61,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
               <NavLink className="nav-item nav-link" to={"/AcercaDe"}>
                 Chefs
               </NavLink>
-              <NavLink className="nav-item nav-link" to={"/carrito"}>
+              <NavLink className="nav-item nav-link" to={"/pedido"}>
                 <FaUtensils className="fs-4" />
               </NavLink>
 

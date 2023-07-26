@@ -93,13 +93,14 @@ html {
 }
 
 .categoria{
-  width: 170px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  background-color: var(--detalles);
-  align-items: center;
-  text-decoration: none;
-  color: #fafafa;
+  width: 170px !important;
+  aspect-ratio: 1/1 !important;
+  border-radius: 50% !important;
+  background-color: var(--detalles) !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  color: #fafafa !important;
+  border-color: black !important;
 }
 
 .categoria span{
@@ -273,4 +274,25 @@ textarea{
   background-color: #8c7851 !important;
   color: #fff !important;
 }
-  
+
+@media (min-width: 992px)
+{
+  .imagenCard{
+    aspect-ratio: 1/2;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px)
+{
+  .imagenCard{
+    aspect-ratio: 1/2.4;
+  }
+}
+
+
+@media (min-width: 320px) and (max-width: 767px)
+{
+  .imagenCard{
+    aspect-ratio: 1/0.5;
+  }
+}
