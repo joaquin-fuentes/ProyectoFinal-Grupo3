@@ -4,6 +4,7 @@ import { BsFillTrashFill } from "react-icons/bs"
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
+import { crearPedido } from '../../helpers/queries';
 
 const Pedido = () => {
 
@@ -11,12 +12,17 @@ const Pedido = () => {
     const [nota, setNota] = useState("")
     const [usuario, setUsuario] = useState("")
     const [fecha, setFecha] = useState("")
-    const [estado, setEstado] = useState("")
+    const [estado, setEstado] = useState("pendiente")
+    const [pedido, setPedido] = useState({})
 
     useEffect(() => {
-        // Obtener el array de nombres de productos desde la sessionStorage
+        // Obtener el array de productos desde la sessionStorage
         const productosGuardadosEnSession = JSON.parse(sessionStorage.getItem("productosEnPedido")) || [];
         setProductosDelMenu(productosGuardadosEnSession);
+        // Obtener el usuario desde la sessionStorage
+        const usaurioEnSession = JSON.parse(sessionStorage.getItem("usuario")) || [];
+        setUsuario(usaurioEnSession);
+        obtenerFechaDeHoy()
     }, [])
 
     const {
@@ -50,22 +56,71 @@ const Pedido = () => {
                     'Eliminado!',
                     'El producto fue eliminado con exito!',
                     'success'
-                  )
+                )
             }
         })
 
     };
 
     const onSubmit = (nota) => {
-        console.log(nota)
+        Swal.fire({
+            title: 'Estás seguro?',
+            text: "Seguro que desea realizar el pedido?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, estoy seguro!',
+            cancelButtonText: 'Cancelar',
+
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // console.log(productosDelMenu)
+                // console.log(usuario.nombreUsuario)
+                // console.log(estado)
+                // console.log(nota)
+                // obtenerFechaDeHoy()
+                // console.log(fecha)
+                const nuevoPedido = {...pedido, productosDelMenu, usuario:usuario.nombreUsuario, estado,nota: nota.nota, fecha }
+                console.log(nuevoPedido)
+                crearPedido(nuevoPedido).then((respuesta)=>{
+                    if(respuesta.status === 201){
+                        Swal.fire(
+                            'Listo!',
+                            'El pedido fue creado correctamente',
+                            'success'
+                        )
+                        reset()
+                    } else{
+                        Swal.fire(
+                            'Error!',
+                            `No se pudo procesar su peticion`,
+                            'error'
+                        )
+                    }
+                })
+               
+            }
+        })
+
     }
-    const calcularTotal =()=>{
+    const calcularTotal = () => {
         let total = 0
-        productosDelMenu.forEach((productoDelMenu)=>{
+        productosDelMenu.forEach((productoDelMenu) => {
             total = total + +productoDelMenu.precio
         })
         return total
     }
+    const obtenerFechaDeHoy = () => {
+        const hoy = new Date();
+        const dia = hoy.getDate();
+        const mes = hoy.getMonth() + 1; // Los meses en JavaScript comienzan desde 0, por lo que se suma 1 para obtener el mes correcto.
+        const anio = hoy.getFullYear();
+        // Formatear la fecha como 'YYYY/MM/DD' (año/mes/día)
+        const fechaHoy = `${anio}/${mes < 10 ? '0' + mes : mes}/${dia < 10 ? '0' + dia : dia}`;
+        setFecha(fechaHoy)
+    };
+
 
     return (
         <Container className='mainSection my-3'>
