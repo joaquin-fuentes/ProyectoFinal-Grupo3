@@ -3,14 +3,18 @@ import LandingPage from "./LandingPage";
 import ContenedorCategorias from "./ContenedorCategorias";
 import FormularioBuscador from "./FormularioBuscador";
 import ContenedorComidas from "./ContenedorComidas";
+import { useState } from "react";
 
 const PagPrincipal = () => {
+
+    const [categoriaBuscada, setCategoriaBuscada] =  useState('')
+
     return (
         <Container>
             <LandingPage></LandingPage>
-            <ContenedorCategorias></ContenedorCategorias>
+            <ContenedorCategorias setCategoriaBuscada={setCategoriaBuscada}></ContenedorCategorias>
             <FormularioBuscador></FormularioBuscador>
-            <ContenedorComidas></ContenedorComidas>
+            <ContenedorComidas categoriaBuscada={categoriaBuscada}></ContenedorComidas>
         </Container>
     );
 };

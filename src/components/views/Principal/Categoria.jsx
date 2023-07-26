@@ -1,11 +1,16 @@
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const Categoria = ({ categoria }) => {
+const Categoria = ({categoria , setCategoriaBuscada}) => {
+  
+  const filtroCategoria = () =>{
+    setCategoriaBuscada(categoria)
+  }
   return (
     <th>
-      <Link className="categoria my-4 d-flex justify-content-center">
+      <Button className="categoria my-4 d-flex justify-content-center" onClick={filtroCategoria}>
         <span>{categoria}</span>
-      </Link>
+      </Button>
     </th>
   );
 };
