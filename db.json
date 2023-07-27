@@ -62,7 +62,6 @@
       "isAdmin": true,
       "estado": true
     },
-   
     {
       "nombreUsuario": "prueba",
       "email": "prueba@jsongourmet.com",
@@ -86,6 +85,7 @@
       "fecha": "2023/07/26",
       "estado": "pendiente",
       "nota": "",
+      "subTotal": 4700,
       "productosDelMenu": [
         "1",
         "2",
@@ -96,14 +96,28 @@
     {
       "usuario": "admin",
       "fecha": "2023/07/26",
-      "estado": "realizado",
+      "estado": "pendiente",
       "nota": "",
       "productosDelMenu": [
         "1",
         "2",
         "1"
       ],
+      "subTotal": 4700,
       "id": "O7663YX"
+    },
+    {
+      "productosDelMenu": [
+        "1",
+        "2",
+        "3"
+      ],
+      "usuario": "joaquin",
+      "estado": "pendiente",
+      "nota": "",
+      "fecha": "2023/07/27",
+      "subTotal": 5200,
+      "id": "OE7_BU9"
     }
   ]
 }
