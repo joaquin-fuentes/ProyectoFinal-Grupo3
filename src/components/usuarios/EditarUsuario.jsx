@@ -65,8 +65,8 @@ const EditarUsuario = () => {
             {...register("estado", { required: "Debe elegir una opcion" })}
           >
             <option value="">Seleccione el estado de la cuenta</option>
-            <option value="Habilitada">Habilitada</option>
-            <option value="Suspendida">Suspendida</option>
+            <option value="true">Habilitada</option>
+            <option value="false">Suspendida</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.estado?.message}
@@ -80,8 +80,8 @@ const EditarUsuario = () => {
             {...register("rol", { required: "Debe elegir una opcion" })}
           >
             <option value="">Seleccione el perfil del usuario</option>
-            <option value="cliente">Cliente</option>
-            <option value="administrador">Administrador</option>
+            <option value="false">Cliente</option>
+            <option value="true">Administrador</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.perfil?.message}

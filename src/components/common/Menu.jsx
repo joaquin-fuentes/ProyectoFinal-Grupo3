@@ -46,8 +46,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
     };
   }, []);
   
-  console.log("usuario logueado")
-  console.log(usuarioLogueado)
+
   return (
     <>
       <Navbar className="navbar-cristal" variant="dark" expand="lg">
