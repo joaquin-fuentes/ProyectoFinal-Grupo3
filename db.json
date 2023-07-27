@@ -73,7 +73,7 @@
     {
       "nombreUsuario": "joaquin",
       "email": "joaquin@gmail.com",
-      "estado": true,
+      "estado": false,
       "isAdmin": false,
       "password": "Contraseña1",
       "id": 4
