@@ -62,7 +62,6 @@
       "isAdmin": true,
       "estado": true
     },
-   
     {
       "nombreUsuario": "prueba",
       "email": "prueba@jsongourmet.com",
@@ -74,9 +73,9 @@
     {
       "nombreUsuario": "joaquin",
       "email": "joaquin@gmail.com",
-      "password": "Contraseña1",
+      "estado": false,
       "isAdmin": false,
-      "estado": true,
+      "password": "Contraseña1",
       "id": 4
     }
   ],
