@@ -59,19 +59,15 @@
       "nombreUsuario": "admin",
       "email": "admin@jsongourmet.com",
       "password": "123Xyz89",
-      "rol": "administrador"
+      "isAdmin": true,
+      "estado": true
     },
-    {
-      "nombreUsuario": "MaximoCozzetti",
-      "estado": "Habilitada",
-      "perfil": "True",
-      "id": 2
-    },
+   
     {
       "nombreUsuario": "prueba",
       "email": "prueba@jsongourmet.com",
-      "estado": "Habilitada",
-      "rol": "cliente",
+      "isAdmin": false,
+      "estado": true,
       "password": "321Xyz89",
       "id": 3
     },

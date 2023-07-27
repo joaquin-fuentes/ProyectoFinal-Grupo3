@@ -45,7 +45,9 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+  
+  console.log("usuario logueado")
+  console.log(usuarioLogueado)
   return (
     <>
       <Navbar className="navbar-cristal" variant="dark" expand="lg">
@@ -65,10 +67,10 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
               <NavLink className="nav-item nav-link" to={"/pedido"}>
                 <FaUtensils className="fs-4" />
               </NavLink>
-
+               
               {usuarioLogueado.id ? (
                 <>
-                  {usuarioLogueado.rol === "administrador" ? (
+                  {usuarioLogueado.isAdmin === true ? (
                     <NavDropdown title="Administrador" id="admin-dropdown">
                       <NavDropdown.Item as={NavLink} to={"/administrador/productos"}>
                         Productos
