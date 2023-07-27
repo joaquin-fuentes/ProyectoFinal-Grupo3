@@ -74,6 +74,14 @@
       "rol": "cliente",
       "password": "321Xyz89",
       "id": 3
+    },
+    {
+      "nombreUsuario": "joaquin",
+      "email": "joaquin@gmail.com",
+      "password": "Contraseña1",
+      "isAdmin": false,
+      "estado": true,
+      "id": 4
     }
   ],
   "pedidos": [
