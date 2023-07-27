@@ -21,7 +21,7 @@ const Login = ({ setUsuarioLogueado }) => {
     login(usuario).then((respuesta) => {
       if (respuesta) {
         if (respuesta !== "") {
-          const usuarioSinAdmin = { ...respuesta, isAdmin: false };
+          const usuarioSinAdmin = { ...respuesta};
           sessionStorage.setItem("usuario", JSON.stringify(usuarioSinAdmin));
           setUsuarioLogueado(usuarioSinAdmin);
           Swal.fire("Bienvenido", "Ha ingresado correctamente", "success");
