@@ -38,7 +38,6 @@ const EditarUsuario = () => {
   }, [])
 
   const onSubmit = (usuarioEditado) =>{
-    console.log(usuarioEditado);
     usuarioEditado.estado = usuarioEditado.estado === "habilitada" ? true : false;
     usuarioEditado.isAdmin = usuarioEditado.isAdmin === "administrador" ? true : false;
 

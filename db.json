@@ -6,6 +6,7 @@
       "categoria": "Pastas",
       "imagen": "https://cocinachilena.cl/wp-content/uploads/2011/01/tuco-carne.jpg",
       "detalle": "Tallarines con carne molida",
+      "estado": true,
       "id": "1"
     },
     {
@@ -14,7 +15,7 @@
       "categoria": "Al Plato",
       "imagen": "https://media.lmneuquen.com/p/7e0c76e74c99f6ec8c82e3fb61c43116/adjuntos/195/imagenes/005/541/0005541097/1200x675/smart/milanesas-a-caballojpg.jpg",
       "detalle": "Milanesa con huevo frito encima",
-      "cantidad": "50",
+      "estado": true,
       "id": "2"
     },
     {
@@ -23,7 +24,7 @@
       "categoria": "Sandwich",
       "imagen": "https://viapais.com.ar/resizer/CcjliTVz5-RWNoJhvckdpF8Jk_s=/980x640/smart/filters:quality(75):format(webp)/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/OZT2FBRENREQBJGFGJY6TY6ZNY.png",
       "detalle": "Sandwich de Milanesa",
-      "cantidad": "10",
+      "estado": true,
       "id": "3"
     },
     {
@@ -32,7 +33,7 @@
       "categoria": "Pastas",
       "imagen": "https://jetextramar.com/wp-content/uploads/2021/10/receta-de-ravioli-de-carne-empresa-en-Valencia.jpg",
       "detalle": "Ravioles con salsa blanca",
-      "cantidad": "30",
+      "estado": false,
       "id": "NCcm7uZ"
     },
     {
@@ -41,6 +42,7 @@
       "categoria": "Postres",
       "imagen": "https://t2.uc.ltmcdn.com/es/posts/1/4/5/como_hacer_flan_de_chocolate_23541_600_square.jpg",
       "detalle": "Flan  de chocolate bañado con caramelo\n",
+      "estado": true,
       "id": "Hk5YrIp"
     },
     {
@@ -49,8 +51,26 @@
       "categoria": "Bebidas",
       "imagen": "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/06/18172916/leche-con-chocolate.jpg",
       "detalle": "Chocolatada",
-      "cantidad": "7",
+      "estado": true,
       "id": "PRajuMf"
+    },
+    {
+      "nombreProducto": "Asdsd",
+      "precio": "202",
+      "categoria": "Postres",
+      "imagen": "https://cocinachilena.cl/wp-content/uploads/2011/01/tuco-carne.jpg",
+      "detalle": "Producto de prueba",
+      "estado": false,
+      "id": "0KI27Cf"
+    },
+    {
+      "nombreProducto": "Asdasdad",
+      "precio": "555",
+      "categoria": "Al Plato",
+      "imagen": "https://cocinachilena.cl/wp-content/uploads/2011/01/tuco-carne.jpg",
+      "detalle": "Sssdddsd",
+      "estado": true,
+      "id": "X5DC_gM"
     }
   ],
   "usuarios": [
