@@ -41,7 +41,7 @@ const ContenedorComidas = ({categoriaBuscada, setCategoriaBuscada, busqueda}) =>
           {
             productos.map((producto) => {
               if (categoriaBuscada === producto.categoria || categoriaBuscada === "" || categoriaBuscada === "Todos") {
-                return  <Comida producto={producto} key={producto.id}></Comida>
+                return  <Comida producto={producto} key={producto._id}></Comida>
               }
             })
           }

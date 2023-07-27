@@ -73,7 +73,7 @@ const DetalleProducto = () => {
                         <p className="fw-bold ">Detalle: <span className="fw-normal"> {producto.detalle}</span></p>
 
                         <p className="fw-bold">Precio: <span className="fw-normal">${producto.precio}</span></p>
-                        <Button id="btn-comida" className="btn w-100" type="button" onClick={() => agregarProductoAlPedido(producto.id)}>
+                        <Button id="btn-comida" className="btn w-100" type="button" onClick={() => agregarProductoAlPedido(producto._id)}>
                             Agregar al pedido
                         </Button>
 

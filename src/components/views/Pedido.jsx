@@ -26,7 +26,7 @@ const Pedido = () => {
                 // Filtrar los productos que coinciden con los IDs guardados en la sesión
                 const productosEnMenu = [];
                 productosGuardadosEnSession.forEach((idProducto) => {
-                    const productosRepetidos = respuesta.filter((producto) => producto.id === idProducto);
+                    const productosRepetidos = respuesta.filter((producto) => producto._id === idProducto);
                     productosEnMenu.push(...productosRepetidos);
                 });
     
@@ -111,7 +111,7 @@ const Pedido = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 const nuevoPedido = {
-                    productosDelMenu: productosDelMenu.map((producto) => producto.id), // Solo seleccionar el id de cada producto
+                    productosDelMenu: productosDelMenu.map((producto) => producto._id), // Solo seleccionar el id de cada producto
                     usuario: usuario.nombreUsuario,
                     estado,
                     nota: nota.nota,
@@ -176,7 +176,7 @@ const Pedido = () => {
                         {productosDelMenu.map((producto, index) => (
                             <tr key={index}>
                                 <td className="text-center align-middle">
-                                    <Button variant="danger" type="button" onClick={() => borrarProductoDelPedido(index, producto.id)}>
+                                    <Button variant="danger" type="button" onClick={() => borrarProductoDelPedido(index, producto._id)}>
                                         <BsFillTrashFill />
                                     </Button>
                                 </td>

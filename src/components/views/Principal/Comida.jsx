@@ -62,8 +62,8 @@ const Comida = ({ producto }) => {
                 {producto.detalle}
               </p>
               <h5 className="card-title" id="precio-comida">$ {producto.precio}</h5>
-              <Link to={`/detalleProducto/${producto.id}`} id="btn-verdetalle" className="btn w-100 mb-2" >Ver detalle</Link>
-              <Button id="btn-comida" className="btn w-100" type="button" onClick={() => agregarProductoAlPedido(producto.id)}>
+              <Link to={`/detalleProducto/${producto._id}`} id="btn-verdetalle" className="btn w-100 mb-2" >Ver detalle</Link>
+              <Button id="btn-comida" className="btn w-100" type="button" onClick={() => agregarProductoAlPedido(producto._id)}>
                 Agregar al pedido
               </Button>
             </div>
