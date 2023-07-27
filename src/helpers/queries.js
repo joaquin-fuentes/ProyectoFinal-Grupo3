@@ -107,7 +107,6 @@ export const crearUsuario = async (usuario) => {
   
   export const obtenerProducto = async(id)=>{
     try {
-        console.log(id);
         const respuesta = await fetch(`${URL_PRODUCTO}/${id}`)
         const producto = await respuesta.json();
         return producto;
