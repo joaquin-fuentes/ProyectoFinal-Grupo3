@@ -40,7 +40,7 @@ const ItemPedido = ({ pedido, setPedidos, actualizarPedidos }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         //aqui tengo que hacer la peticion delete
-        borrarPedido(pedido.id).then((respuesta) => {
+        borrarPedido(pedido._id).then((respuesta) => {
           if (respuesta.status === 200) {
             Swal.fire(
               "Pedido Eliminado",
@@ -71,7 +71,7 @@ const ItemPedido = ({ pedido, setPedidos, actualizarPedidos }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         const pedidoEditado = { ...pedidoEstado, estado: "realizado" };
-        consultaEditarPedido(pedidoEditado, pedido.id).then((respuesta) => {
+        consultaEditarPedido(pedidoEditado, pedido._id).then((respuesta) => {
           if (respuesta && respuesta.status === 200) {
             setPedidoEstado(pedidoEditado); // Actualiza el estado de pedidoEstado
             Swal.fire(
@@ -126,11 +126,11 @@ const ItemPedido = ({ pedido, setPedidos, actualizarPedidos }) => {
           <ul className="ps-5">
             {pedido.productosDelMenu.map((idProducto, index) => (
               <li key={index}>{productos.map((productoDB) => {
-                if (productoDB.id === idProducto) {
+                if (productoDB._id === idProducto) {
                   return productoDB.nombreProducto
                 }
               })} - ${productos.map((productoDB) => {
-                if (productoDB.id === idProducto) {
+                if (productoDB._id === idProducto) {
                   return productoDB.precio
                 }
               })} </li>
@@ -142,7 +142,7 @@ const ItemPedido = ({ pedido, setPedidos, actualizarPedidos }) => {
         <Card.Footer className="justify-content-end d-flex">
           <Link
             className="btn btn-warning me-2"
-            to={`/administrador/pedidos/editar/${pedido.id}`}
+            to={`/administrador/pedidos/editar/${pedido._id}`}
           >
             <FaPenToSquare className="fs-4"></FaPenToSquare>
           </Link>

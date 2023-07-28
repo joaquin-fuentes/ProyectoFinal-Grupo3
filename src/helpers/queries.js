@@ -51,7 +51,7 @@ export const obtenerUsuario = async(id)=>{
 
 export const crearUsuario = async (usuario) => {
   try {
-    const respuesta = await fetch(URL_USUARIO, {
+    const respuesta = await fetch(URL_USUARIO+'/registro', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
