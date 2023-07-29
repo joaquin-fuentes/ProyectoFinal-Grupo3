@@ -3,14 +3,14 @@ import { FaPenToSquare } from "react-icons/fa6";
 import { HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { borrarPedido, obtenerPedidos, obtenerProductos, consultaEditarPedido } from "../../helpers/queries";
+import { borrarPedido, obtenerPedidos, obtenerProductos, consultaEditarPedido, obtenerUsuario } from "../../helpers/queries";
 import { useEffect, useState } from "react";
 
 const ItemPedido = ({ pedido, setPedidos, actualizarPedidos }) => {
 
   const [productos, setProductos] = useState([])
   const [pedidoEstado, setPedidoEstado] = useState(pedido);
-
+  const [usuario, setUsuario] = useState();
   useEffect(() => {
     obtenerProductos().then((respuesta) => {
       if (respuesta) {
@@ -24,6 +24,9 @@ const ItemPedido = ({ pedido, setPedidos, actualizarPedidos }) => {
       }
     })
     verificarEstado()
+    obtenerUsuario(pedido.usuario).then((respuesta)=>{
+      setUsuario(respuesta)
+    })
   }, [pedidoEstado])
 
 
@@ -121,7 +124,7 @@ const ItemPedido = ({ pedido, setPedidos, actualizarPedidos }) => {
           <h3 className="text-start">Pedido</h3>
         </Card.Header>
         <Card.Body>
-          <h6>Nombre de Usuario: {pedido.usuario}</h6>
+          <h6>Nombre de Usuario: {usuario?.nombreUsuario}</h6>
           <h6>Fecha: {pedido.fecha}</h6>
           <h6>Pedido:</h6>
           <ul className="ps-5">

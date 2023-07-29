@@ -149,12 +149,12 @@ const Pedido = () => {
     }
     const obtenerFechaDeHoy = () => {
         const hoy = new Date();
-        const dia = hoy.getDate();
-        const mes = hoy.getMonth() + 1; // Los meses en JavaScript comienzan desde 0, por lo que se suma 1 para obtener el mes correcto.
-        const anio = hoy.getFullYear();
+        // const dia = hoy.getDate();
+        // const mes = hoy.getMonth() + 1; // Los meses en JavaScript comienzan desde 0, por lo que se suma 1 para obtener el mes correcto.
+        // const anio = hoy.getFullYear();
         // Formatear la fecha como 'YYYY/MM/DD' (año/mes/día)
-        const fechaHoy = `${anio}/${mes < 10 ? '0' + mes : mes}/${dia < 10 ? '0' + dia : dia }`;
-        setFecha(fechaHoy)
+        // const fechaHoy = `${anio}/${mes < 10 ? '0' + mes : mes}/${dia < 10 ? '0' + dia : dia }`;
+        setFecha(hoy)
     };
 
 
