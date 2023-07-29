@@ -18,8 +18,8 @@ const AdminPedidos = () => {
   }, [])
 
   useEffect(() => {
-    const pedidosPendientes = pedidos.filter((pedido) => pedido.estado === "pendiente");
-    const pedidosRealizados = pedidos.filter((pedido) => pedido.estado === "realizado");
+    const pedidosPendientes = pedidos.filter((pedido) => pedido.estado === true);
+    const pedidosRealizados = pedidos.filter((pedido) => pedido.estado === false);
     setPendientes(pedidosPendientes);
     setRealizados(pedidosRealizados);
   }, [pedidos]);

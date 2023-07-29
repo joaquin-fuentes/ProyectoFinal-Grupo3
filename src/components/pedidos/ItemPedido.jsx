@@ -70,7 +70,8 @@ const ItemPedido = ({ pedido, setPedidos, actualizarPedidos }) => {
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
-        const pedidoEditado = { ...pedidoEstado, estado: "realizado" };
+        const pedidoEditado = { ...pedidoEstado, estado: false };
+        console.log(pedidoEditado)
         consultaEditarPedido(pedidoEditado, pedido._id).then((respuesta) => {
           if (respuesta && respuesta.status === 200) {
             setPedidoEstado(pedidoEditado); // Actualiza el estado de pedidoEstado
@@ -94,15 +95,15 @@ const ItemPedido = ({ pedido, setPedidos, actualizarPedidos }) => {
   }
 
   const verificarEstado = () => {
-    if (pedidoEstado.estado === "pendiente") {
-      return <Button className="btn-success" onClick={realizarPedido}>Pendiente...</Button>;
+    if (pedidoEstado.estado === true) {
+      return <Button className="btn-success" onClick={realizarPedido}>Entregar</Button>;
     } else {
       return <Button className="btn-danger" disabled >Realizado</Button>;
     }
 
   };
   const manejadorColorCard = () => {
-    if (pedido.estado === "pendiente") {
+    if (pedido.estado === true) {
       return "colorCard m-2"
     } else {
       return "bg-primary text-white m-2"

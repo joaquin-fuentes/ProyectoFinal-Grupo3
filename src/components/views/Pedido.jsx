@@ -12,7 +12,7 @@ const Pedido = () => {
     const [nota, setNota] = useState("")
     const [usuario, setUsuario] = useState("")
     const [fecha, setFecha] = useState("")
-    const [estado, setEstado] = useState("pendiente")
+    const [estado, setEstado] = useState(true)
     const [pedido, setPedido] = useState({})
 
     useEffect(() => {
@@ -153,7 +153,7 @@ const Pedido = () => {
         const mes = hoy.getMonth() + 1; // Los meses en JavaScript comienzan desde 0, por lo que se suma 1 para obtener el mes correcto.
         const anio = hoy.getFullYear();
         // Formatear la fecha como 'YYYY/MM/DD' (año/mes/día)
-        const fechaHoy = `${anio}/${mes < 10 ? '0' + mes : mes}/${dia < 10 ? '0' + dia : dia}`;
+        const fechaHoy = `${anio}/${mes < 10 ? '0' + mes : mes}/${dia < 10 ? '0' + dia : dia }`;
         setFecha(fechaHoy)
     };
 
