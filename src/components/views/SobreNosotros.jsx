@@ -34,7 +34,7 @@ const AcercaDe = () => {
                 <Col md={4}>
                   <Card.Img
                     src={chef1}
-                    className="img-fluid rounded-circle card-chefs"
+                    className="img-fluid rounded-circle"
                     alt="Foto Mauro Diaz Santilli"
                   />
                 </Col>
@@ -77,7 +77,7 @@ const AcercaDe = () => {
                 <Col md={4}>
                   <Card.Img
                     src={chef3}
-                    className="img-fluid rounded-circle card-chefs"
+                    className="img-fluid rounded-circle"
                     alt="Foto Federico Ledesma"
                   />
                 </Col>
