@@ -41,7 +41,7 @@ const AdminPedidos = () => {
         <Row>
           {pendientes.map((pedido) => (
             <ItemPedido
-              key={pedido.id}
+              key={pedido._id}
               pedido={pedido}
               setPedidos={setPedidos}
               actualizarPedidos={actualizarPedidos}
@@ -57,7 +57,7 @@ const AdminPedidos = () => {
         <Row>
           {realizados.map((pedido) => (
             <ItemPedido
-              key={pedido.id}
+              key={pedido._id}
               pedido={pedido}
               setPedidos={setPedidos}
             />

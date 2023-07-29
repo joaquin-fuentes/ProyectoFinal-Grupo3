@@ -67,7 +67,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 <FaUtensils className="fs-4" />
               </NavLink>
                
-              {usuarioLogueado.id ? (
+              {usuarioLogueado.uid ? (
                 <>
                   {usuarioLogueado.isAdmin === true ? (
                     <NavDropdown title="Administrador" id="admin-dropdown">
