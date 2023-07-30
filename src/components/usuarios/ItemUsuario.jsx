@@ -38,7 +38,6 @@ const ItemUsuario = ({usuario, setUsuarios}) => {
   }
 
 
-  console.log(usuario.estado)
   return (
     <tr>
       <td>{usuario.nombreUsuario}</td>

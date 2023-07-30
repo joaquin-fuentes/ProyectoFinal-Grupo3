@@ -21,20 +21,23 @@ const Login = ({ setUsuarioLogueado }) => {
       if (respuesta) {
         if (respuesta !== "") {
           const usuarioSinAdmin = { ...respuesta};
-          console.log(usuarioSinAdmin)
           if(usuarioSinAdmin.estado === true){
           sessionStorage.setItem("usuario", JSON.stringify(usuarioSinAdmin));
           setUsuarioLogueado(usuarioSinAdmin);
           Swal.fire("Bienvenido", "Ha ingresado correctamente", "success");
           navegacion("/");
           } else{
-            Swal.fire("Error", "Usuario suspendido, por favor comuniquese con el adminsitrador para solucionar el inconveniente. Gracias.", "error");
+            if(respuesta.status === 400){
+              Swal.fire("Error", "Email o contraseña incorrecto", "error");
+            } else{
+              Swal.fire("Error", "Usuario suspendido, por favor comuniquese con el adminsitrador para solucionar el inconveniente. Gracias.", "error");
+            }
           }
         } else {
-          Swal.fire("Error", "Contraseña incorrecta", "error");
+          Swal.fire("Error", "Email o contraseña incorrecto", "error");
         }
       } else {
-        Swal.fire("Error", "Email incorrecto", "error");
+        Swal.fire("Error", "Email o contraseña incorrecto", "error");
       }
     });
   };
