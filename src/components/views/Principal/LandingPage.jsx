@@ -15,7 +15,7 @@ const LandingPage = () => {
           </div>
         </Col>
         <Col lg={6} md={12} className="text-primary text-center text-md-start texto-landing align-self-center">
-          <h1 className="my-3 display-4">JSONGourmet</h1>
+          <h1 className="my-3 display-4">BON DIA!</h1>
           <p className="display-6">Menu especial!</p>
           <p>Disfruta de las mejores comidas y en el momento que quieras!</p>
           <div className="text-center">
