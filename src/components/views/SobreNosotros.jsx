@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import brand from "../../assets/brand.png"
 import chef1 from "../../assets/chefs/MauroDiazSantilli.jpeg"
+import chef2 from "../../assets/chefs/JoaquinFuentes.jpeg"
 import chef3 from "../../assets/chefs/FedericoLedesma.jpeg"
 import chef4 from "../../assets/chefs/JulianMartin.jpeg"
 import chef5 from "../../assets/chefs/AgustinSandoval.jpeg"
@@ -56,8 +57,8 @@ const AcercaDe = () => {
               <Row className="g-0">
                 <Col md={4}>
                   <Card.Img
-                    src="../assets/chefs/"
-                    className="img-fluid rounded-circle"
+                    src={chef2}
+                    className="img-fluid rounded-circle p-2"
                     alt="Foto Joaquin Fuentes"
                   />
                 </Col>
@@ -65,7 +66,7 @@ const AcercaDe = () => {
                   <Card.Body>
                     <Card.Title>Joaquin Fuentes</Card.Title>
                     <Card.Text>
-                      Añadir descripcion
+                      Realizó maquetado de pagina de detalle de pedidos, detalle de pedidos, carrito y rutas protegidas
                     </Card.Text>
                   </Card.Body>
                 </Col>
