@@ -111,7 +111,7 @@ const ItemPedido = ({ pedido, setPedidos, actualizarPedidos }) => {
     if (pedidoEstado.estado === true) {
       return <Button className="btn-success" onClick={realizarPedido}>Entregar</Button>;
     } else {
-      return <Button className="btn-danger" disabled >Realizado</Button>;
+      return <Button className="btn-danger" disabled >Entregado</Button>;
     }
 
   };
@@ -119,12 +119,12 @@ const ItemPedido = ({ pedido, setPedidos, actualizarPedidos }) => {
     if (pedido.estado === true) {
       return "colorCard m-2"
     } else {
-      return "bg-primary text-white m-2"
+      return "bg-dark text-white m-2"
     }
   }
 
   const fechaformateada = formatearFecha(pedido.fecha)
-  
+
   return (
     <Col xs={12} md={6} lg={6}>
       <Card className={manejadorColorCard()}>
