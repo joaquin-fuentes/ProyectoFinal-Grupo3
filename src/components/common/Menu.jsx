@@ -50,7 +50,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
 
   return (
     <>
-      <Navbar className="navbar-cristal" variant="dark" expand="lg">
+      <Navbar className="navbar-cristal py-0" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to={"/"}>
             <img src={logo} alt="Logo Bon dia" className="logoJSON" />

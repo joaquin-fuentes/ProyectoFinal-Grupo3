@@ -214,8 +214,7 @@ padding: 0 0 0.5em 0;
 
 .error404-img {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100vh;
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -239,6 +238,10 @@ padding: 0 0 0.5em 0;
     left: 50%;
     transform: translateX(-50%);
 
+  }
+  #btn-error404{
+    background-color: var(--detalles);
+    border: none;
   }
 
   /*Sobre Nosotros*/
