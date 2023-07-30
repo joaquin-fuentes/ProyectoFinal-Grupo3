@@ -1,6 +1,5 @@
-import React from 'react';
 import { Container, Row, Col, Breadcrumb, Button } from "react-bootstrap"
-import { useParams, Link } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { obtenerProducto } from "../../helpers/queries"
 import Swal from 'sweetalert2';
@@ -92,7 +91,7 @@ const DetalleProducto = () => {
                 </Col>
             </Row>
             <Breadcrumb>
-                <Breadcrumb.Item href="/">Volver a la página principal</Breadcrumb.Item>
+            <a href="/" className='volver-atras'>Volver</a>
             </Breadcrumb>
         </Container>
     );
