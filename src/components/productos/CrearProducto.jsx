@@ -42,6 +42,8 @@ const CrearProducto = () => {
         <Form.Group className="mb-3" controlId="formProducto">
           <Form.Label className="fs-4">Producto*</Form.Label>
           <Form.Control
+          minLength={2}
+          maxLength={50}
             type="text"
             placeholder="Ej: Milanesa con Papas Fritas"
             {...register("nombreProducto", {
@@ -52,12 +54,12 @@ const CrearProducto = () => {
                   "El nombre del producto debe contener como mínimo 2 carácteres",
               },
               maxLength: {
-                value: 50,
+                value: 80,
                 message:
-                  "El nombre del producto debe contener como máximo 50 carácteres",
+                  "El nombre del producto debe contener como máximo 80 carácteres",
               },
               pattern: {
-                value: /^[A-Z\u00D1][A-ZÁ-Úa-zá-ú\s0-9\u00F1\u00D1]{1,49}$/,
+                value: /^[A-Z\u00D1][A-ZÁ-Úa-zá-ú\s0-9\u00F1\u00D1]{1,79}$/,
                 message:
                   "El nombre del producto debe comenzar con letra mayúscula además solo puede contener letras y numeros entre 2 y 50 carácteres",
               },
@@ -70,10 +72,12 @@ const CrearProducto = () => {
         <Form.Group className="mb-3" controlId="formPrecio">
           <Form.Label className="fs-4">Precio*</Form.Label>
           <Form.Control
+          minLength={1}
+          maxLength={5}
             type="text"
             placeholder="Ej: 2500"
             {...register("precio", {
-              required: "El nombre del producto es obligatorio",
+              required: "El precio del producto es obligatorio",
               min: {
                 value: 1,
                 message: "El precio minimo es 1",
@@ -139,6 +143,8 @@ const CrearProducto = () => {
           <Form.Control
             as="textarea"
             rows={3}
+            minLength={8}
+            maxLength={150}
             {...register("detalle", {
               required: "El detalle del producto es obligatorio",
               minLength: {
@@ -152,7 +158,7 @@ const CrearProducto = () => {
                   "El detalle del Producto debe contener como máximo 150 carácteres",
               },
               pattern: {
-                value: /^(?=.*[A-Z])[A-Za-zÁÉÍÓÚáéíóúÑñ0-9:,.\s]{7,199}$/,
+                value: /^(?=.*[A-Z])[A-Za-zÁÉÍÓÚáéíóúÑñ0-9:,.\s]{8,150}$/,
                 message:
                   "El detalle del producto debe comenzar con mayúscula y debe contener como mínimo 8 carácteres y como máximo 150 carácteres (puede usar letras, números y signos de puntuación)",
               },
