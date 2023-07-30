@@ -12,7 +12,6 @@
 }
 
 
-
 h1, h2{
   font-family: 'Castoro Titling', cursive;
   color: var(--texto-secundario)!important;
@@ -27,6 +26,26 @@ h1, h2{
   background-color: var(--detalles);
   border: none;
 }
+
+.detalleProductoInicio{
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Número de líneas permitidas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cuerpoInfoCardProducto{
+  display: flex;
+  flex-direction: column;
+
+}
+.cuerpoInfoCardProductoInterno{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
 /*Navbbar*/
 
 .navbar-cristal {
