@@ -30,12 +30,12 @@ h1, h2{
 /*Navbbar*/
 
 .navbar-cristal {
-  background-color: lightslategray; 
+  background-color: var(--detalles); 
   backdrop-filter: blur(10px); 
 }
 
 .navbar-cristal .nav-link:hover {
-  color: goldenrod;
+  color: #dab879;
 }
 
 .logoJSON{
@@ -47,12 +47,12 @@ h1, h2{
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: goldenrod;
+  background-color: var(--detalles);
   color: #fff;
   border: none;
-  padding: 10px;
+  padding: 0.6em;
   border-radius: 50%;
-  font-size: 24px;
+  font-size: 1.3rem;
   cursor: pointer;
   z-index: 1000;
   opacity: 0;
@@ -69,10 +69,11 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (max-width: 991.98px) {
-  .btn-cerrar-sesion {
-    margin-top: 20px; 
-  }
+#btn-cerrar-sesion {
+border: none;
+background-color: var(--detalles);
+font-size: 1.4rem;
+padding: 0 0 0.5em 0;
 }
 
 /*Landing Page*/
@@ -311,6 +312,10 @@ textarea{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)!important;
     opacity: 1;
   }
+
+  #btn-cerrar-sesion{
+    padding:0 1em;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px)
@@ -325,5 +330,8 @@ textarea{
 {
   .imagenCard{
     aspect-ratio: 1/0.5;
+  }
+  .btn-cerrar-sesion {
+    margin-top: 20px; 
   }
 }
