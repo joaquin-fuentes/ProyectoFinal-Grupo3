@@ -1,10 +1,9 @@
-import React from 'react';
 import { Container, Breadcrumb, Table, Button, Form } from "react-bootstrap"
 import { BsFillTrashFill } from "react-icons/bs"
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
-import { crearPedido, obtenerProducto, obtenerProductos } from '../../helpers/queries';
+import { crearPedido, obtenerProductos } from '../../helpers/queries';
 
 const Pedido = () => {
     const [productos, setProductos] = useState([])
@@ -211,12 +210,12 @@ const Pedido = () => {
                 <h3 className='my-2'>TOTAL PEDIDO: <span> ${calcularTotal()}</span></h3>
                 {productosDelMenu.length ? (
                     <>
-                    <Button type='submit' variant="primary" size="lg" className='my-3'>
+                    <Button type='submit' size="lg" className='my-3' id='btn-realizar-pedido'>
                     Realizar Pedido
                 </Button></>
                 ): (
                     <>
-                    <Button type='submit' variant="primary" size="lg" className='my-3 disabled'>
+                    <Button type='submit' size="lg" className='my-3 disabled' id='btn-realizar-pedido'>
                     Realizar Pedido
                 </Button>
                     </>
@@ -224,7 +223,7 @@ const Pedido = () => {
                 
             </Form>
             <Breadcrumb className='my-4'>
-                <Breadcrumb.Item href="/">Volver a la página principal</Breadcrumb.Item>
+                <a href="/" className='volver-atras'>Volver</a>
             </Breadcrumb>
         </Container>
     );
