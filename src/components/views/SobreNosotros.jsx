@@ -107,7 +107,7 @@ const AcercaDe = () => {
                   <Card.Body>
                     <Card.Title>Julian Martin</Card.Title>
                     <Card.Text>
-                      Realizo validaciones de productos, pedidos y usuarios, alta y baja de productos y las categorias.
+                      Realizó validaciones de productos, pedidos y usuarios, alta y baja de productos y las categorias.
                     </Card.Text>
                   </Card.Body>
                 </Col>
