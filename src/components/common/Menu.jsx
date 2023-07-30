@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { Navbar, Container, Nav, Button, NavDropdown } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { FaArrowUp, FaUtensils } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa";
+import { MdFastfood, MdLogin } from "react-icons/md";
 import { FiLogOut } from "react-icons/fi";
 import "../../App.css";
 import Swal from "sweetalert2";
@@ -63,10 +64,6 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
               <NavLink className="nav-item nav-link" to={"/AcercaDe"}>
                 Chefs
               </NavLink>
-              <NavLink className="nav-item nav-link" to={"/pedido"}>
-                <FaUtensils className="fs-4" />
-              </NavLink>
-
               {usuarioLogueado.uid ? (
                 <>
                   {usuarioLogueado.isAdmin === true ? (
@@ -91,21 +88,24 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                       </NavDropdown.Item>
                     </NavDropdown>
                   ) : null}
-
+                  <NavLink className="nav-item nav-link" to={"/pedido"}>
+                    <MdFastfood className="fs-4" />
+                  </NavLink>
                   <div>
-                  <Button
-                    variant="dark"
-                    onClick={logout}
-                    id="btn-cerrar-sesion"
-                  >
-                    <FiLogOut></FiLogOut>
-                  </Button>
+                    <Button
+                      variant="dark"
+                      onClick={logout}
+                      className="nav-item nav-link"
+                      id="btn-cerrar-sesion"
+                    >
+                      <FiLogOut className="fs-4"></FiLogOut>
+                    </Button>
                   </div>
                 </>
               ) : (
                 <>
                   <NavLink className="nav-item nav-link" to={"/login"}>
-                    Iniciar sesion
+                    <MdLogin className="fs-4"></MdLogin>
                   </NavLink>
                   <NavLink className="nav-item nav-link" to={"/registro"}>
                     Registrarse
