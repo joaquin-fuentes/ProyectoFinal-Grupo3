@@ -70,6 +70,7 @@ const RegistroUsuarios = () => {
                 type="text"
                 name="nombreUsuario"
                 placeholder="Ingrese su nombre de usuario"
+                maxLength={50}
                 onChange={handleChange}
                 {...register('nombreUsuario', {
                   required: 'El nombre de usuario es obligatorio',
@@ -105,6 +106,7 @@ const RegistroUsuarios = () => {
               <Form.Control
                 type="password"
                 name="password"
+                minLength={8}
                 placeholder="Ingrese una contraseña"
                 onChange={handleChange}
                 {...register('password', {
