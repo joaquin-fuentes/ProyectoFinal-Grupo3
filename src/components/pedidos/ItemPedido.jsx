@@ -144,12 +144,7 @@ const ItemPedido = ({ pedido, setPedidos, actualizarPedidos }) => {
           <h6 className="text-end">Total: ${pedido.subTotal}</h6>
         </Card.Body>
         <Card.Footer className="justify-content-end d-flex">
-          <Link
-            className="btn btn-warning me-2"
-            to={`/administrador/pedidos/editar/${pedido._id}`}
-          >
-            <FaPenToSquare className="fs-4"></FaPenToSquare>
-          </Link>
+          
           {verificarEstado()}
 
         </Card.Footer>
