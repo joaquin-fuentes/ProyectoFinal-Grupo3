@@ -76,6 +76,10 @@ font-size: 1.4rem;
 padding: 0 0 0.5em 0;
 }
 
+.headLine{
+  background-color: var(--detalles)!important;
+}
+
 /*Landing Page*/
 
 /* .banner-image {
