@@ -98,8 +98,8 @@ html {
   animation: pulso 2s infinite;
 }
 
-.categoria{
-  width: 170px !important;
+/* .categoria{
+  width: 150px !important;
   aspect-ratio: 1/1 !important;
   border-radius: 50% !important;
   background-color: var(--detalles) !important;
@@ -107,6 +107,18 @@ html {
   text-decoration: none !important;
   color: #fafafa !important;
   border-color: black !important;
+} */
+.categoria {
+  width: 140px !important;
+  aspect-ratio: 1/1 !important;
+  border-radius: 50% !important;
+  background-color: var(--detalles) !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  color: #fafafa !important;
+  font-weight: bold !important;
+  border: 2px solid var(--texto-secundario) !important;
+  transition: all 0.3s ease !important;
 }
 
 .categoria span{
@@ -285,6 +297,14 @@ textarea{
 {
   .imagenCard{
     aspect-ratio: 1/2;
+  }
+  .categoria{
+    opacity: .85;
+  }
+  .categoria:hover {
+    transform: scale(1.1)!important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)!important;
+    opacity: 1;
   }
 }
 
