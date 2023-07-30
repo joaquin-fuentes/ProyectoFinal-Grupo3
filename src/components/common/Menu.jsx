@@ -53,7 +53,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
       <Navbar className="navbar-cristal" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to={"/"}>
-            <img src={logo} alt="Logo JSON" className="logoJSON" />
+            <img src={logo} alt="Logo Bon dia" className="logoJSON" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar-gourmet" />
           <Navbar.Collapse id="navbar-gourmet">
