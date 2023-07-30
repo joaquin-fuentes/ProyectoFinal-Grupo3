@@ -58,6 +58,8 @@ const EditarProducto = () => {
           <Form.Label className="fs-4">Producto*</Form.Label>
           <Form.Control
             type="text"
+            minLength={2}
+            maxLength={50}
             placeholder="Ej: Milanesa con Papas Fritas"
             {...register("nombreProducto", {
               required: "El nombre del producto es obligatorio",
@@ -86,9 +88,11 @@ const EditarProducto = () => {
           <Form.Label className="fs-4">Precio*</Form.Label>
           <Form.Control
             type="text"
+            minLength={1}
+            maxLength={5}
             placeholder="Ej: 2500"
             {...register("precio", {
-              required: "El nombre del producto es obligatorio",
+              required: "El precio del producto es obligatorio",
               min: {
                 value: 1,
                 message: "El precio minimo es 1",
@@ -154,6 +158,8 @@ const EditarProducto = () => {
           <Form.Control
             as="textarea"
             rows={3}
+            minLength={8}
+            maxLength={150}
             {...register("detalle", {
               required: "El detalle del producto es obligatorio",
               minLength: {
@@ -167,7 +173,7 @@ const EditarProducto = () => {
                   "El detalle del Producto debe contener como máximo 150 carácteres",
               },
               pattern: {
-                value: /^(?=.*[A-Z])[A-Za-zÁÉÍÓÚáéíóúÑñ0-9:,.\s]{7,199}$/,
+                value: /^(?=.*[A-Z])[A-Za-zÁÉÍÓÚáéíóúÑñ0-9:,.\s]{8,150}$/,
                 message:
                   "El detalle del producto debe comenzar con mayúscula y debe contener como mínimo 8 carácteres y como máximo 150 carácteres (puede usar letras, números y signos de puntuación)",
               },
