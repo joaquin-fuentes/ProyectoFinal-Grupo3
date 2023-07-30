@@ -1,7 +1,5 @@
 import { Button, Card, Col } from "react-bootstrap";
-import { FaPenToSquare } from "react-icons/fa6";
 import { HiX } from "react-icons/hi";
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { borrarPedido, obtenerPedidos, obtenerProductos, consultaEditarPedido, obtenerUsuario } from "../../helpers/queries";
 import { useEffect, useState } from "react";
