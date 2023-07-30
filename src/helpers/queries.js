@@ -5,7 +5,6 @@ const URL_PEDIDOS = import.meta.env.VITE_API_PEDIDOS
 
 export const login = async (usuario) =>{
   try {
-    console.log(usuario);
     const respuesta = await fetch(URL_USUARIO, {
       method: "POST",
       headers: {
