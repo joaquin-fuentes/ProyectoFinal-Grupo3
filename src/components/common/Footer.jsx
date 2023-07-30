@@ -12,7 +12,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col md={3}>
-            <h5>JSONGourmet</h5>
+            <h5>BON DIA</h5>
             <ul className="list-unstyled">
               <li><Link to="/" className="footer-link">Inicio</Link></li>
               <li><Link to="/AcercaDe" className="footer-link">Acerca de</Link></li>
@@ -72,7 +72,7 @@ const Footer = () => {
               </li>
               <li className="my-3">
                 <FaEnvelope className="footer-icon" />
-                <Link to="/404" className="footer-text footer-link">JSON.Gourmet@gmail.com</Link>
+                <Link to="/404" className="footer-text footer-link">bondia@contact.com</Link>
               </li>
               <li>
                 <FaLocationArrow className="footer-icon" />
