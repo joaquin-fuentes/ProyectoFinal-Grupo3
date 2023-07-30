@@ -156,7 +156,7 @@ html {
 }
 
 .footer-link:hover {
-  color: goldenrod;
+  color: var(--detalles)
 }
 
 .footer-icon-link {
@@ -164,7 +164,7 @@ html {
 }
 
 .footer-icon {
-  fill: #b8860b;
+  fill: var(--detalles);
 }
 
 .footer-icon:hover {
