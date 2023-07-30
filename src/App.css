@@ -15,6 +15,7 @@
 
 h1, h2{
   font-family: 'Castoro Titling', cursive;
+  color: var(--texto-secundario)!important;
 }
 
 .mainSection{
@@ -22,6 +23,10 @@ h1, h2{
   overflow: hidden;
 }
 
+#btn-agregar-producto{
+  background-color: var(--detalles);
+  border: none;
+}
 /*Navbbar*/
 
 .navbar-cristal {
