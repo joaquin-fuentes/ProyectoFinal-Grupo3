@@ -45,6 +45,15 @@ h1, h2{
   margin-bottom: 100px;
   text-decoration: none;
 }
+#btn-realizar-pedido{
+  background-color: var(--detalles);
+  border: none;
+}
+.volver-atras{
+  font-size: 1.2rem;
+  color: var(--detalles);
+  text-decoration: none;
+}
 .btn-floating {
   position: fixed;
   bottom: 20px;

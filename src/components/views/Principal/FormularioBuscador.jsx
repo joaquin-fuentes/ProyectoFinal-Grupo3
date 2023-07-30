@@ -1,6 +1,6 @@
 import { Container, Form, Button } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
-import { FaShoppingBasket } from "react-icons/fa";
+import { MdFastfood } from "react-icons/md";
 import ContenedorComidas from "./ContenedorComidas";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -22,7 +22,7 @@ const FormularioBuscador = () => {
 
   const mostrarBotonFlotanteDelPEdido = (hayProductosEnPedido) => {
     if (hayProductosEnPedido) {
-      return <Link to="/pedido" className="btn-floating show-button btn-pedido rounded"> <FaShoppingBasket></FaShoppingBasket>Ver Pedido</Link>
+      return <Link to="/pedido" className="btn-floating show-button btn-pedido rounded"><MdFastfood className="fs-4" /></Link>
     }
   }
 
