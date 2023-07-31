@@ -68,7 +68,7 @@ const Footer = () => {
               </div>
               <li className="pt-2">
                 <FaPhoneAlt className="footer-icon" />
-                <span className="footer-text">+038142567890</span>
+                <a href="https://wa.me/543815970428" target="_blank" rel="noopener noreferrer" className="footer-text">+038142567890</a>
               </li>
               <li className="my-3">
                 <FaEnvelope className="footer-icon" />
