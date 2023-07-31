@@ -13,6 +13,8 @@ const Pedido = () => {
     const [fecha, setFecha] = useState("")
     const [estado, setEstado] = useState(true)
     const [pedido, setPedido] = useState({})
+    const [pedidoEnviado, setPedidoEnviado] = useState(false);
+
 
     useEffect(() => {
         const productosGuardadosEnSession = JSON.parse(sessionStorage.getItem('productosEnPedido')) || [];
@@ -126,6 +128,8 @@ const Pedido = () => {
                             'success'
                         )
                         reset()
+                        sessionStorage.removeItem("productosEnPedido");
+                        setPedidoEnviado(true); // Establecer pedidoEnviado en true después del envío exitoso
                     } else {
                         Swal.fire(
                             'Error!',
@@ -148,11 +152,6 @@ const Pedido = () => {
     }
     const obtenerFechaDeHoy = () => {
         const hoy = new Date();
-        // const dia = hoy.getDate();
-        // const mes = hoy.getMonth() + 1; // Los meses en JavaScript comienzan desde 0, por lo que se suma 1 para obtener el mes correcto.
-        // const anio = hoy.getFullYear();
-        // Formatear la fecha como 'YYYY/MM/DD' (año/mes/día)
-        // const fechaHoy = `${anio}/${mes < 10 ? '0' + mes : mes}/${dia < 10 ? '0' + dia : dia }`;
         setFecha(hoy)
     };
 
@@ -161,6 +160,7 @@ const Pedido = () => {
         <Container className='mainSection my-3'>
             <h2>Pedido</h2>
             <hr />
+            {!pedidoEnviado && ( // Solo renderiza la tabla de productos si pedidoEnviado es false
             <div className='table-responsive'>
                 <Table striped bordered hover size="sm">
                     <thead>
@@ -189,6 +189,13 @@ const Pedido = () => {
                     </tbody>
                 </Table>
             </div>
+              )}
+            {pedidoEnviado ? ( // Muestra el mensaje cuando el pedido se envíe con éxito
+            <div>
+                <h3>El pedido fue enviado con éxito.</h3>
+                <p>Gracias por su pedido.</p>
+            </div>
+        ) : (
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group className="mb-3">
                     <Form.Label>Nota para el pedido (opcional):</Form.Label>
@@ -221,7 +228,8 @@ const Pedido = () => {
                     </>
                 )}
                 
-            </Form>
+                </Form>
+        )}
             <Breadcrumb className='my-4'>
                 <a href="/" className='volver-atras'>Volver</a>
             </Breadcrumb>
