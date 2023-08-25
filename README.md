@@ -29,7 +29,7 @@ El alcance de este proyecto se centra en realizar todos los pasos del CRUD y deb
 - BootStrap
 - Node.js
 - React
-- Backend: https://github.com/Fedreric/Backend-Menu-PROYECTO-FINAL-RC
+- Backend: https://github.com/joaquin-fuentes/Backend-Menu-PROYECTO-FINAL-RC
 
 
 ## Para clonar el repositorio 💻
