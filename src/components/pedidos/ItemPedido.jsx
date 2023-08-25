@@ -84,7 +84,6 @@ const ItemPedido = ({ pedido, setPedidos, actualizarPedidos }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         const pedidoEditado = { ...pedidoEstado, estado: false };
-        console.log(pedidoEditado)
         consultaEditarPedido(pedidoEditado, pedido._id).then((respuesta) => {
           if (respuesta && respuesta.status === 200) {
             setPedidoEstado(pedidoEditado); // Actualiza el estado de pedidoEstado

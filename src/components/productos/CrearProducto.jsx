@@ -16,7 +16,6 @@ const CrearProducto = () => {
   const onSubtmit = (productoNuevo) => {
     const productoCompleto = {...productoNuevo, estado: true}
     crearProducto(productoCompleto).then((respuesta)  => {
-      console.log(productoCompleto)
       if(respuesta.status === 201)
       {
         Swal.fire(
