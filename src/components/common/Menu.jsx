@@ -3,7 +3,7 @@ import { Navbar, Container, Nav, Button, NavDropdown } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { FaArrowUp } from "react-icons/fa";
-import { MdFastfood, MdLogin } from "react-icons/md";
+import { MdFastfood } from "react-icons/md";
 import { FiLogOut } from "react-icons/fi";
 import "../../App.css";
 import Swal from "sweetalert2";
@@ -89,23 +89,16 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                     </NavDropdown>
                   ) : null}
                   <NavLink className="nav-item nav-link" to={"/pedido"}>
-                    <MdFastfood className="fs-4" />
+                    Mis Pedidos
                   </NavLink>
-                  <div>
-                    <Button
-                      variant="dark"
-                      onClick={logout}
-                      className="nav-item nav-link"
-                      id="btn-cerrar-sesion"
-                    >
-                      <FiLogOut className="fs-4"></FiLogOut>
-                    </Button>
-                  </div>
+                  <NavLink className="nav-item nav-link" onClick={logout} >
+                    Cerrar Sesion
+                  </NavLink>
                 </>
               ) : (
                 <>
                   <NavLink className="nav-item nav-link" to={"/login"}>
-                    <MdLogin className="fs-4"></MdLogin>
+                    Iniciar Sesion
                   </NavLink>
                   <NavLink className="nav-item nav-link" to={"/registro"}>
                     Registrarse

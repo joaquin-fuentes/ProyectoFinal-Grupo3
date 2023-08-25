@@ -36,7 +36,7 @@ function App() {
         <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>} ></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
-      <Footer></Footer>
+      <Footer usuarioLogueado={usuarioLogueado}></Footer>
     </BrowserRouter>
   );
 }
