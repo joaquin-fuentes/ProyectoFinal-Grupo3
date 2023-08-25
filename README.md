@@ -35,7 +35,7 @@ El alcance de este proyecto se centra en realizar todos los pasos del CRUD y deb
 ## Para clonar el repositorio 💻
 
 bash
-git clone Link del repositorio
+git clone [Link del repositorio](https://github.com/joaquin-fuentes/ProyectoFinal-Grupo3)
 npm install
 npm run dev
 
