@@ -89,18 +89,11 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                     </NavDropdown>
                   ) : null}
                   <NavLink className="nav-item nav-link" to={"/pedido"}>
-                    <MdFastfood className="fs-4" />
+                    Mis Pedidos
                   </NavLink>
-                  <div>
-                    <Button
-                      variant="dark"
-                      onClick={logout}
-                      className="nav-item nav-link"
-                      id="btn-cerrar-sesion"
-                    >
-                      <FiLogOut className="fs-4"></FiLogOut>
-                    </Button>
-                  </div>
+                  <NavLink className="nav-item nav-link" onClick={logout} >
+                    Cerrar Sesion
+                  </NavLink>
                 </>
               ) : (
                 <>
