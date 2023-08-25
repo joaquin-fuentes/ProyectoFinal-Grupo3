@@ -3,7 +3,7 @@ import { Navbar, Container, Nav, Button, NavDropdown } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { FaArrowUp } from "react-icons/fa";
-import { MdFastfood, MdLogin } from "react-icons/md";
+import { MdFastfood } from "react-icons/md";
 import { FiLogOut } from "react-icons/fi";
 import "../../App.css";
 import Swal from "sweetalert2";
@@ -105,7 +105,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
               ) : (
                 <>
                   <NavLink className="nav-item nav-link" to={"/login"}>
-                    <MdLogin className="fs-4"></MdLogin>
+                    Iniciar Sesion
                   </NavLink>
                   <NavLink className="nav-item nav-link" to={"/registro"}>
                     Registrarse
