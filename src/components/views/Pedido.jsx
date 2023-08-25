@@ -70,38 +70,41 @@ const Pedido = () => {
             cancelButtonText: "Cancelar"
         }).then((result) => {
             if (result.isConfirmed) {
-                // Copiar el array de productos para poder modificarlo
-                const nuevosProductos = [...productosDelMenu];
-                // Obtener el producto que se eliminará
-                const productoEliminado = nuevosProductos[index];
-                // Actualizar la cantidad del producto eliminado
-                if (productoEliminado.cantidad > 1) {
-                    productoEliminado.cantidad--;
-                } else {
-                    nuevosProductos.splice(index, 1); // Eliminar el producto si la cantidad llega a 0
+                const nuevosProductos = productosDelMenu.map((producto) => ({ ...producto }));
+                const productoAEliminar = nuevosProductos.find((producto) => producto._id === idProducto);
+    
+                if (productoAEliminar) {
+                    if (productoAEliminar.cantidad > 1) {
+                        productoAEliminar.cantidad--;
+                    } else {
+                        const indexProducto = nuevosProductos.findIndex((producto) => producto._id === idProducto);
+                        if (indexProducto !== -1) {
+                            nuevosProductos.splice(indexProducto, 1);
+                        }
+                    }
+    
+                    setProductosDelMenu(nuevosProductos);
+    
+                    // Actualizar la sesión con los productos
+                    const productosGuardadosEnSession = JSON.parse(sessionStorage.getItem("productosEnPedido")) || [];
+                    const indexProductoEnSession = productosGuardadosEnSession.indexOf(idProducto);
+    
+                    if (productoAEliminar.cantidad > 0) {
+                        productosGuardadosEnSession[indexProductoEnSession] = productoAEliminar._id;
+                    } else {
+                        productosGuardadosEnSession.splice(indexProductoEnSession, 1);
+                    }
+    
+                    sessionStorage.setItem("productosEnPedido", JSON.stringify(productosGuardadosEnSession));
+    
+                    Swal.fire(
+                        'Eliminado!',
+                        'El producto fue eliminado con éxito!',
+                        'success'
+                    )
                 }
-                // Actualizar el estado local con el array actualizado
-                setProductosDelMenu(nuevosProductos);
-
-                // Actualizar la sesión con los productos
-                const productosGuardadosEnSession = JSON.parse(sessionStorage.getItem("productosEnPedido")) || [];
-                const indexProductoEnSession = productosGuardadosEnSession.indexOf(idProducto);
-
-                if (productoEliminado.cantidad > 0) {
-                    productosGuardadosEnSession[indexProductoEnSession] = productoEliminado._id;
-                } else {
-                    productosGuardadosEnSession.splice(indexProductoEnSession, 1);
-                }
-
-                sessionStorage.setItem("productosEnPedido", JSON.stringify(productosGuardadosEnSession));
-
-                Swal.fire(
-                    'Eliminado!',
-                    'El producto fue eliminado con éxito!',
-                    'success'
-                )
             }
-        })
+        });
     };
 
 
