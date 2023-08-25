@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { FaEnvelope, FaFacebook, FaInstagram, FaPhoneAlt, FaYoutube, FaTwitter, FaLocationArrow, FaPinterest } from 'react-icons/fa';
 import '../../App.css';
 
-const Footer = () => {
+const Footer = ({usuarioLogueado}) => {
 
   const urlGoogle = "https://www.google.com/maps/search/?api=1&query=General+Paz+576%2C+T4000+San+Miguel+de+Tucumán%2C+Tucumán";
 
@@ -30,11 +30,19 @@ const Footer = () => {
           </Col>
           <Col md={3}>
             <h5>Mi Cuenta</h5>
-            <ul className="list-unstyled">
+            {usuarioLogueado.uid ? 
+              <>
+              <ul className="list-unstyled">
+              <li><Link to="/carrito" className="footer-link">Mis Productos</Link></li>
+              </ul>
+              </>
+             : <>
+              <ul className="list-unstyled">
               <li><Link to="/login" className="footer-link">Iniciar Sesión</Link></li>
               <li><Link to="/registro" className="footer-link">Registrarse</Link></li>
               <li><Link to="/carrito" className="footer-link">Mis Productos</Link></li>
             </ul>
+            </>}
           </Col>
           <Col md={3}>
             <h5>Contactenos</h5>
