@@ -99,13 +99,6 @@ html {
   scroll-behavior: smooth;
 }
 
-#btn-cerrar-sesion {
-border: none;
-background-color: var(--detalles);
-font-size: 1.4rem;
-padding: 0 0 0.5em 0;
-}
-
 .headLine{
   background-color: var(--detalles)!important;
 }
