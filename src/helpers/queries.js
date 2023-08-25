@@ -23,8 +23,6 @@ export const login = async (usuario) =>{
       token: datos.token
     };
   } catch (error) {
-    console.log("errores en el login");
-    return;
   }
 }
 
@@ -34,7 +32,6 @@ export const obtenerUsuarios = async()=>{
       const listaUsuarios = await respuesta.json();
       return listaUsuarios;
   } catch (error) {
-      console.log(error);
   }
 }
 
@@ -44,7 +41,6 @@ export const obtenerUsuario = async(id)=>{
       const usuario = await respuesta.json();
       return usuario;
   } catch (error) {
-      console.log(error);
   }
 }
 
@@ -59,7 +55,6 @@ export const crearUsuario = async (usuario) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
   }
 };
 
@@ -75,7 +70,6 @@ export const crearUsuario = async (usuario) => {
       });
       return respuesta;
     } catch (error) {
-      console.log(error);
     }
   };
 
@@ -90,7 +84,6 @@ export const crearUsuario = async (usuario) => {
         });
         return respuesta;
     } catch (error) {
-        console.log(error);
     }
   }
 
@@ -100,7 +93,6 @@ export const crearUsuario = async (usuario) => {
         const listaProductos = await respuesta.json();
         return listaProductos;
     } catch (error) {
-        console.log(error);
     }
   }
   
@@ -110,7 +102,6 @@ export const crearUsuario = async (usuario) => {
         const producto = await respuesta.json();
         return producto;
     } catch (error) {
-        console.log(error);
     }
   }
   
@@ -126,7 +117,6 @@ export const crearProducto = async (producto) => {
         });
         return respuesta
     } catch (error) {
-        console.log(error)
     }
 }
 
@@ -141,7 +131,6 @@ export const consultaeditarProducto = async(producto, id)=>{
       });
       return respuesta;
   } catch (error) {
-      console.log(error);
   }
 }
 
@@ -152,7 +141,6 @@ export const borrarProducto = async (id) => {
         });
         return respuesta
     } catch (error) {
-        console.log(error)
     }
 }
 export const borrarUsuario = async (id) => {
@@ -162,7 +150,6 @@ export const borrarUsuario = async (id) => {
         });
         return respuesta
     } catch (error) {
-        console.log(error)
     }
 }
 
@@ -173,7 +160,6 @@ export const borrarPedido = async (id) => {
       });
       return respuesta
   } catch (error) {
-      console.log(error)
   }
 }
 
@@ -183,7 +169,6 @@ export const obtenerPedidos = async()=>{
       const listaPedidos = await respuesta.json();
       return listaPedidos;
   } catch (error) {
-      console.log(error);
   }
 }
 
@@ -193,7 +178,6 @@ export const obtenerPedido = async(id)=>{
       const pedido = await respuesta.json();
       return pedido;
   } catch (error) {
-      console.log(error);
   }
 }
 
@@ -208,7 +192,6 @@ export const crearPedido = async (pedido) => {
       });
       return respuesta
   } catch (error) {
-      console.log(error)
   }
 }
 
@@ -223,6 +206,5 @@ export const consultaEditarPedido = async(pedido, id)=>{
       });
       return respuesta;
   } catch (error) {
-      console.log(error);
   }
 }

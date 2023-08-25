@@ -119,7 +119,7 @@ const Pedido = () => {
                     fecha,
                     subTotal: calcularTotal()
 
-                }; console.log(nuevoPedido)
+                };
                 crearPedido(nuevoPedido).then((respuesta) => {
                     if (respuesta.status === 201) {
                         Swal.fire(
